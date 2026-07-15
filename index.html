@@ -1449,16 +1449,34 @@ function importarPlanilha(event){
 // ── INICIALIZAÇÃO ─────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function(){
   filtrarPainel();
+  carregarDadosGitHub();
 });
 
 // ── CONFIGURAÇÃO GITHUB ───────────────────────────────────────────────────────
-const GH_USER  = 'BrunoPfiffer97';
-const GH_REPO  = 'risotolandia';
-const GH_FILE  = 'index.html';
-const GH_BRANCH= 'main';
+const GH_USER   = 'BrunoPfiffer97';
+const GH_REPO   = 'risotolandia';
+const GH_DADOS  = 'dados.json';
+const GH_BRANCH = 'main';
+
+async function carregarDadosGitHub(){
+  try {
+    const url = `https://raw.githubusercontent.com/${GH_USER}/${GH_REPO}/${GH_BRANCH}/${GH_DADOS}?t=${Date.now()}`;
+    const r = await fetch(url);
+    if(!r.ok) return;
+    const dados = await r.json();
+    if(dados.PU_REAL && Object.keys(dados.PU_REAL).length > 0){
+      Object.assign(PU_REAL, dados.PU_REAL);
+    }
+    if(dados.COMP_CUSTOS && dados.COMP_CUSTOS.length > 0){
+      COMP_CUSTOS.length = 0;
+      dados.COMP_CUSTOS.forEach(p => COMP_CUSTOS.push(p));
+    }
+    filtrarPainel();
+    toast('✓ Preços atualizados do servidor.');
+  } catch(e) { /* usa dados embutidos */ }
+}
 
 function salvarVersaoAtualizada(){
-  // Verificar token
   let token = localStorage.getItem('gh_token');
   if(!token){
     token = prompt('🔑 Cole seu token do GitHub (ghp_...):\n\nEle será salvo no navegador para próximas vezes.');
@@ -1466,65 +1484,46 @@ function salvarVersaoAtualizada(){
     localStorage.setItem('gh_token', token);
   }
 
-  toast('⏳ Salvando no GitHub...');
+  toast('⏳ Salvando preços no GitHub...');
 
-  // Limpar conteúdo dinâmico para não salvar HTML estático
-  const tbodyPainel = document.getElementById('painel-tbody');
-  const tbodyBackup = tbodyPainel ? tbodyPainel.innerHTML : '';
-  if(tbodyPainel) tbodyPainel.innerHTML = '';
-
-  // Montar HTML atualizado
-  let novoHtml = document.documentElement.outerHTML;
-
-  // Restaurar conteúdo dinâmico
-  if(tbodyPainel) tbodyPainel.innerHTML = tbodyBackup;
-  const puAtual   = JSON.stringify(PU_REAL, null, 0);
-  const compAtual = JSON.stringify(COMP_CUSTOS, null, 0);
-  novoHtml = novoHtml.replace(/const PU_REAL=\{[^;]*\};/, 'const PU_REAL=' + puAtual + ';');
-  novoHtml = novoHtml.replace(/let COMP_CUSTOS=\[[^\]]*(?:\][^\]]*)*\];/, 'let COMP_CUSTOS=' + compAtual + ';');
-
-  const conteudoBase64 = btoa(unescape(encodeURIComponent(novoHtml)));
-  const apiUrl = `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_FILE}`;
+  const dados = {
+    PU_REAL: PU_REAL,
+    COMP_CUSTOS: COMP_CUSTOS,
+    atualizado: new Date().toLocaleString('pt-BR')
+  };
+  const conteudoBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(dados, null, 2))));
+  const apiUrl = `https://api.github.com/repos/${GH_USER}/${GH_REPO}/contents/${GH_DADOS}`;
   const headers = {
     'Authorization': 'token ' + token,
     'Content-Type': 'application/json',
     'Accept': 'application/vnd.github.v3+json'
   };
 
-  // Buscar SHA atual do arquivo (necessário para update)
   fetch(apiUrl + '?ref=' + GH_BRANCH, { headers })
     .then(r => r.json())
     .then(data => {
-      const sha = data.sha || null;
       const body = {
-        message: '🍽️ Atualização automática — ' + new Date().toLocaleString('pt-BR'),
+        message: '💰 Preços atualizados — ' + new Date().toLocaleString('pt-BR'),
         content: conteudoBase64,
         branch: GH_BRANCH
       };
-      if(sha) body.sha = sha;
-      return fetch(apiUrl, {
-        method: 'PUT',
-        headers,
-        body: JSON.stringify(body)
-      });
+      if(data.sha) body.sha = data.sha;
+      return fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
     })
     .then(r => r.json())
     .then(res => {
       if(res.content){
-        toast('✅ Salvo no GitHub! Netlify atualizando em instantes...');
+        toast('✅ Preços salvos! Disponíveis para todos ao abrir o app.');
       } else if(res.message){
-        // Token inválido — limpar e pedir novamente
         if(res.message.includes('Bad credentials')){
           localStorage.removeItem('gh_token');
-          toast('❌ Token inválido! Clique Salvar novamente para inserir o token correto.');
+          toast('❌ Token inválido! Clique Salvar novamente.');
         } else {
           toast('❌ Erro: ' + res.message);
         }
       }
     })
-    .catch(err => {
-      toast('❌ Erro de conexão: ' + err.message);
-    });
+    .catch(err => toast('❌ Erro de conexão: ' + err.message));
 }
 
 </script>
