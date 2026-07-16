@@ -62,7 +62,7 @@
     "FEIJAO CARIOCA 90G": 0.1639,
     "FEIJAO PRETO 90G": 0.1154,
     "BATATA SAUTE 55G": 0.2212,
-    "ARROZ 110G": 0.1156,
+    "ARROZ 110G": 0.15,
     "LARANJA 100G": 0.31,
     "CHA DE HORTELA 190ML": 0.065,
     "MAMAO FATIADO 85G": 0.4497,
@@ -131,7 +131,7 @@
     "BISC.ROSQ. LEITE (09 UN)CONS 3 DIAS 50G": 0.4795,
     "QUEIJO 15G": 0.58,
     "MELAO PICADO 150G": 0.4491,
-    "MACA 100G": 0.44,
+    "MACA 100G": 0.5,
     "MANGA PICADA 90 GR": 1.244,
     "CHINEQUE DE BANANA 60G": 0.45,
     "BROCOLIS COZIDO 50G": 0.3961,
@@ -557,7 +557,7 @@
     {
       "nome": "ARROZ 110G",
       "mar": 0.1156,
-      "abr": 0.1156,
+      "abr": 0.15,
       "mai": 0.1156,
       "fev": 0.1156,
       "jul": 0.1156,
@@ -1919,7 +1919,7 @@
     {
       "nome": "MACA 100G",
       "mar": 0.44,
-      "abr": 0.44,
+      "abr": 0.5,
       "mai": 0.44,
       "fev": 0.44,
       "jul": 0.44,
@@ -3587,5 +3587,5 @@
       "jun": 0.1144
     }
   ],
-  "atualizado": "16/07/2026, 11:52:22"
+  "atualizado": "16/07/2026, 11:53:22"
 }
