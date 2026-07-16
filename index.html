@@ -859,6 +859,7 @@ function atualizarGrid(){
   const tvs=document.getElementById('tv-sem');if(tvs)tvs.textContent='R$ 0,00';
   const tvm=document.getElementById('tv-mes');if(tvm)tvm.textContent='R$ 0,00';
   selSem(0);
+  setTimeout(aplicarSeparacaoRefeicoes, 50);
 }
 
 function irCardapio(){
@@ -913,7 +914,30 @@ function selSem(idx){
   }
 }
 
-function recalc(){
+function aplicarSeparacaoRefeicoes(){
+  ['grid-card','grid-regular-merenda','grid-integral-inner'].forEach(gid=>{
+    const g = document.getElementById(gid);
+    if(!g) return;
+    // Número de linhas de cada refeição no contrato
+    const linhasPorRef = gid==='grid-card' ? [3,1,6,2,2]
+                       : gid==='grid-regular-merenda' ? [4]
+                       : [3,6,3];
+    const gcells = Array.from(g.querySelectorAll('.gcell'));
+    let offset = 0;
+    linhasPorRef.forEach((linhas, refIdx) => {
+      if(refIdx > 0){
+        // Marcar as 6 primeiras células desta refeição com borda superior
+        for(let d=0; d<6; d++){
+          const c = gcells[offset*6 + d];
+          if(c) c.style.borderTop = '5px solid #EBEBEB';
+        }
+      }
+      offset += linhas;
+    });
+  });
+}
+
+
   const gridId=CT==='c05'?'grid-card':(CT==='c03'&&modalidade==='integral'?'grid-integral-inner':'grid-regular-merenda');
   const gridEl=document.getElementById(gridId);
   const d=[0,0,0,0,0,0];
@@ -1460,6 +1484,7 @@ function importarPlanilha(event){
 document.addEventListener('DOMContentLoaded', function(){
   filtrarPainel();
   carregarDadosGitHub();
+  setTimeout(aplicarSeparacaoRefeicoes, 100);
 });
 
 // ── CONFIGURAÇÃO GITHUB ───────────────────────────────────────────────────────
