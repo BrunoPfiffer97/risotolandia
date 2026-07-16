@@ -1536,53 +1536,32 @@ function salvarVersaoAtualizada(){
     'Accept': 'application/vnd.github.v3+json'
   };
 
-  // Buscar SHA atual do arquivo (sem cache)
-  fetch(apiUrl + '?ref=' + GH_BRANCH + '&t=' + Date.now(), { headers, cache: 'no-store' })
-    .then(r => r.ok ? r.json() : {})
-    .then(data => {
-      const body = {
-        message: '💰 Preços atualizados — ' + new Date().toLocaleString('pt-BR'),
-        content: conteudoBase64,
-        branch: GH_BRANCH
-      };
-      if(data.sha) body.sha = data.sha;
-      return fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
-    })
-    .then(r => r.json())
-    .then(res => {
-      if(res.content){
-        toast('✅ Preços salvos! Disponíveis para todos ao abrir o app.');
-      } else if(res.message && res.message.includes('does not match')){
-        // SHA desatualizado — buscar SHA correto e tentar novamente
-        toast('⏳ Atualizando SHA, tentando novamente...');
-        fetch(apiUrl + '?ref=' + GH_BRANCH, { headers })
-          .then(r => r.json())
-          .then(data2 => {
-            const body2 = {
-              message: '💰 Preços atualizados — ' + new Date().toLocaleString('pt-BR'),
-              content: conteudoBase64,
-              branch: GH_BRANCH
-            };
-            if(data2.sha) body2.sha = data2.sha;
-            return fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body2) });
-          })
-          .then(r => r.json())
-          .then(res2 => {
-            if(res2.content) toast('✅ Preços salvos!');
-            else toast('❌ Erro: ' + res2.message);
-          });
-      } else if(res.message){
-        if(res.message.includes('Bad credentials')){
-          localStorage.removeItem('gh_token');
-          toast('❌ Token inválido! Clique Salvar novamente.');
-        } else if(res.message.includes('Not Found') || res.message.includes('not found')){
-          toast('❌ Branch não encontrado. Verifique o token e tente novamente.');
-        } else {
-          toast('❌ Erro: ' + res.message);
-        }
-      }
-    })
-    .catch(err => toast('❌ Erro de conexão: ' + err.message));
+  // Função auxiliar para salvar com SHA correto
+  async function tentarSalvar(tentativa){
+    // Sempre buscar SHA mais fresco
+    const rSha = await fetch(apiUrl + '?ref=' + GH_BRANCH + '&t=' + Date.now(), { headers, cache: 'no-store' });
+    const dataSha = rSha.ok ? await rSha.json() : {};
+    const body = {
+      message: '💰 Preços atualizados — ' + new Date().toLocaleString('pt-BR'),
+      content: conteudoBase64,
+      branch: GH_BRANCH
+    };
+    if(dataSha.sha) body.sha = dataSha.sha;
+    const rPut = await fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
+    const res = await rPut.json();
+    if(res.content){
+      toast('✅ Preços salvos! Disponíveis para todos ao abrir o app.');
+    } else if(res.message && res.message.includes('does not match') && tentativa < 3){
+      await new Promise(r => setTimeout(r, 500));
+      await tentarSalvar(tentativa + 1);
+    } else if(res.message && res.message.includes('Bad credentials')){
+      localStorage.removeItem('gh_token');
+      toast('❌ Token inválido! Clique Salvar novamente.');
+    } else if(res.message){
+      toast('❌ Erro: ' + res.message);
+    }
+  }
+  tentarSalvar(1).catch(err => toast('❌ Erro de conexão: ' + err.message));
 }
 
 </script>
