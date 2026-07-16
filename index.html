@@ -1161,7 +1161,7 @@ function gerarPDFCardapio(){
     const anoMes = mes.split('/')[1] || '';
 
     semsHTML += `
-      <div style="margin-bottom:18px;${s>0?'page-break-before:always':''}">`
+      <div style="margin-bottom:18px;${s>0?'page-break-before:always':''}">
         <div style="background:${c.cor};color:#fff;padding:7px 12px;border-radius:6px 6px 0 0;font-size:11px;font-weight:700;display:flex;justify-content:space-between;align-items:center">
           <span>Semana ${s+1} — ${d0} a ${d5}/${anoMes}</span>
           <span style="font-size:10px;opacity:.8">Total semana: ${totalSem>0?fmt2(totalSem):'—'}</span>
