@@ -1536,15 +1536,15 @@ function salvarVersaoAtualizada(){
     'Accept': 'application/vnd.github.v3+json'
   };
 
+  // Buscar SHA atual do arquivo
   fetch(apiUrl + '?ref=' + GH_BRANCH, { headers })
-    .then(r => r.json())
+    .then(r => r.ok ? r.json() : {})
     .then(data => {
       const body = {
         message: '💰 Preços atualizados — ' + new Date().toLocaleString('pt-BR'),
         content: conteudoBase64,
         branch: GH_BRANCH
       };
-      // Se arquivo já existe, incluir SHA para update; se não existe, cria novo
       if(data.sha) body.sha = data.sha;
       return fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
     })
@@ -1552,12 +1552,30 @@ function salvarVersaoAtualizada(){
     .then(res => {
       if(res.content){
         toast('✅ Preços salvos! Disponíveis para todos ao abrir o app.');
+      } else if(res.message && res.message.includes('does not match')){
+        // SHA desatualizado — buscar SHA correto e tentar novamente
+        toast('⏳ Atualizando SHA, tentando novamente...');
+        fetch(apiUrl + '?ref=' + GH_BRANCH, { headers })
+          .then(r => r.json())
+          .then(data2 => {
+            const body2 = {
+              message: '💰 Preços atualizados — ' + new Date().toLocaleString('pt-BR'),
+              content: conteudoBase64,
+              branch: GH_BRANCH
+            };
+            if(data2.sha) body2.sha = data2.sha;
+            return fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body2) });
+          })
+          .then(r => r.json())
+          .then(res2 => {
+            if(res2.content) toast('✅ Preços salvos!');
+            else toast('❌ Erro: ' + res2.message);
+          });
       } else if(res.message){
         if(res.message.includes('Bad credentials')){
           localStorage.removeItem('gh_token');
           toast('❌ Token inválido! Clique Salvar novamente.');
         } else if(res.message.includes('Not Found') || res.message.includes('not found')){
-          // Branch não encontrado — tentar com branch alternativo
           toast('❌ Branch não encontrado. Verifique o token e tente novamente.');
         } else {
           toast('❌ Erro: ' + res.message);
