@@ -918,26 +918,28 @@ function aplicarSeparacaoRefeicoes(){
   ['grid-card','grid-regular-merenda','grid-integral-inner'].forEach(gid=>{
     const g = document.getElementById(gid);
     if(!g) return;
-    // Número de linhas de cada refeição no contrato
     const linhasPorRef = gid==='grid-card' ? [3,1,6,2,2]
                        : gid==='grid-regular-merenda' ? [4]
                        : [3,6,3];
     const gcells = Array.from(g.querySelectorAll('.gcell'));
+    const grefs  = Array.from(g.querySelectorAll('.gref'));
     let offset = 0;
     linhasPorRef.forEach((linhas, refIdx) => {
       if(refIdx > 0){
-        // Marcar as 6 primeiras células desta refeição com borda superior
+        // Borda superior nas células brancas
         for(let d=0; d<6; d++){
           const c = gcells[offset*6 + d];
           if(c) c.style.borderTop = '5px solid #EBEBEB';
         }
+        // Borda superior no bloco colorido da refeição
+        if(grefs[refIdx]) grefs[refIdx].style.borderTop = '5px solid #EBEBEB';
       }
       offset += linhas;
     });
   });
 }
 
-
+function recalc(){
   const gridId=CT==='c05'?'grid-card':(CT==='c03'&&modalidade==='integral'?'grid-integral-inner':'grid-regular-merenda');
   const gridEl=document.getElementById(gridId);
   const d=[0,0,0,0,0,0];
