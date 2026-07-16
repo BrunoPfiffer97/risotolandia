@@ -1536,8 +1536,8 @@ function salvarVersaoAtualizada(){
     'Accept': 'application/vnd.github.v3+json'
   };
 
-  // Buscar SHA atual do arquivo
-  fetch(apiUrl + '?ref=' + GH_BRANCH, { headers })
+  // Buscar SHA atual do arquivo (sem cache)
+  fetch(apiUrl + '?ref=' + GH_BRANCH + '&t=' + Date.now(), { headers, cache: 'no-store' })
     .then(r => r.ok ? r.json() : {})
     .then(data => {
       const body = {
