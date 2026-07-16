@@ -1493,7 +1493,7 @@ document.addEventListener('DOMContentLoaded', function(){
 const GH_USER   = 'BrunoPfiffer97';
 const GH_REPO   = 'risotolandia';
 const GH_DADOS  = 'dados.json';
-const GH_BRANCH = 'principal';
+const GH_BRANCH = 'main';
 
 async function carregarDadosGitHub(){
   try {
@@ -1544,6 +1544,7 @@ function salvarVersaoAtualizada(){
         content: conteudoBase64,
         branch: GH_BRANCH
       };
+      // Se arquivo já existe, incluir SHA para update; se não existe, cria novo
       if(data.sha) body.sha = data.sha;
       return fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
     })
@@ -1555,6 +1556,9 @@ function salvarVersaoAtualizada(){
         if(res.message.includes('Bad credentials')){
           localStorage.removeItem('gh_token');
           toast('❌ Token inválido! Clique Salvar novamente.');
+        } else if(res.message.includes('Not Found') || res.message.includes('not found')){
+          // Branch não encontrado — tentar com branch alternativo
+          toast('❌ Branch não encontrado. Verifique o token e tente novamente.');
         } else {
           toast('❌ Erro: ' + res.message);
         }
