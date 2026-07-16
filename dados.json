@@ -131,7 +131,7 @@
     "BISC.ROSQ. LEITE (09 UN)CONS 3 DIAS 50G": 0.4795,
     "QUEIJO 15G": 0.58,
     "MELAO PICADO 150G": 0.4491,
-    "MACA 100G": 0.5,
+    "MACA 100G": 0.6,
     "MANGA PICADA 90 GR": 1.244,
     "CHINEQUE DE BANANA 60G": 0.45,
     "BROCOLIS COZIDO 50G": 0.3961,
@@ -1919,7 +1919,7 @@
     {
       "nome": "MACA 100G",
       "mar": 0.44,
-      "abr": 0.5,
+      "abr": 0.6,
       "mai": 0.44,
       "fev": 0.44,
       "jul": 0.44,
@@ -3587,5 +3587,5 @@
       "jun": 0.1144
     }
   ],
-  "atualizado": "16/07/2026, 11:53:22"
+  "atualizado": "16/07/2026, 11:55:39"
 }
