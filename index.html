@@ -118,7 +118,6 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 .grid{display:grid;grid-template-columns:90px repeat(6,minmax(120px,1fr));gap:1px;background:var(--bd);border-radius:10px;overflow:hidden;min-width:750px;grid-auto-rows:auto}
 .gh{padding:8px 5px;text-align:center;font-weight:600;font-size:10px;color:#fff;line-height:1.5}
 .gref{padding:7px 8px;font-weight:600;font-size:10px;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
-.gcell-sep{border-top:4px solid #E8E8E8 !important}
 .gcell{background:#fff;padding:5px 7px;position:relative}
 .ginput{width:100%;border:none;background:transparent;font-size:10px;color:var(--cz);outline:none}
 .ginput::placeholder{color:#CCC}
@@ -1308,17 +1307,12 @@ function importarJSON(event){
         const gId2 = CT==='c05' ? 'grid-card' : (isInt2 ? 'grid-integral-inner' : 'grid-regular-merenda');
         
         // Mostrar grid correto
-        ['grid-card','grid-regular','grid-merenda','grid-integral'].forEach(id=>{
-          const el=document.getElementById(id);
-          if(el) el.style.display='none';
-        });
-        // Mostrar wrap correto
-        const wrapCard=document.getElementById('grid-card')?.closest('.grid-wrap');
-        const wrapMer=document.getElementById('grid-merenda');
-        const wrapInt=document.getElementById('grid-integral');
-        if(wrapCard) wrapCard.style.display = CT==='c05' ? 'block' : 'none';
-        if(wrapMer)  wrapMer.style.display  = isReg2 ? 'block' : 'none';
-        if(wrapInt)  wrapInt.style.display  = isInt2 ? 'block' : 'none';
+        const elGR = document.getElementById('grid-regular');
+        const elGM = document.getElementById('grid-merenda');
+        const elGI = document.getElementById('grid-integral');
+        if(elGR) elGR.style.display = CT==='c05' ? 'block' : 'none';
+        if(elGM) elGM.style.display = isReg2 ? 'block' : 'none';
+        if(elGI) elGI.style.display = isInt2 ? 'block' : 'none';
         
         // Restaurar pratos da semana ativa
         const gEl2 = document.getElementById(gId2);
@@ -1466,24 +1460,6 @@ function importarPlanilha(event){
 document.addEventListener('DOMContentLoaded', function(){
   filtrarPainel();
   carregarDadosGitHub();
-  // Separação visual entre refeições no grid
-  ['grid-card','grid-regular-merenda','grid-integral-inner'].forEach(gid=>{
-    const g = document.getElementById(gid);
-    if(!g) return;
-    const grefs = g.querySelectorAll('.gref');
-    grefs.forEach((ref, i) => {
-      if(i === 0) return; // primeira refeição sem separador
-      ref.style.borderTop = '4px solid #E8E8E8';
-      // marcar células adjacentes na mesma linha
-      let el = ref.nextElementSibling;
-      for(let d=0; d<6; d++){
-        if(el && el.classList.contains('gcell')){
-          el.classList.add('gcell-sep');
-          el = el.nextElementSibling;
-        }
-      }
-    });
-  });
 });
 
 // ── CONFIGURAÇÃO GITHUB ───────────────────────────────────────────────────────
