@@ -547,46 +547,36 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 
   <!-- T5: MARGEM -->
   <div class="tela" id="tela-5">
-    <div class="aviso">
-      <i class="ti ti-info-circle"></i>
-      <div><div class="av-tit">Informações de faturamento pendentes</div>
-      <div class="av-desc">Preencha os valores de faturamento por refeição. O sistema calculará automaticamente a margem e lucro bruto por dia.</div></div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px">
+      <input id="mg-search" type="text" placeholder="Buscar receita..." oninput="renderMargem()"
+        style="flex:1;min-width:160px;padding:8px 12px;border:1px solid var(--bd);border-radius:8px;font-size:12px;color:var(--cz);background:#fff;outline:none">
+      <select id="mg-cat" onchange="renderMargem()"
+        style="padding:8px 10px;border:1px solid var(--bd);border-radius:8px;font-size:12px;color:var(--cz);background:#fff;outline:none;cursor:pointer">
+        <option value="">Todas categorias</option>
+      </select>
+      <select id="mg-ordem" onchange="renderMargem()"
+        style="padding:8px 10px;border:1px solid var(--bd);border-radius:8px;font-size:12px;color:var(--cz);background:#fff;outline:none;cursor:pointer">
+        <option value="margem_desc">Margem &#x2193;</option>
+        <option value="margem_asc">Margem &#x2191;</option>
+        <option value="cat">Por categoria</option>
+        <option value="nome_asc">Nome A-Z</option>
+        <option value="pv_desc">P.V &#x2193;</option>
+      </select>
+      <div id="mg-count" style="font-size:11px;color:#999;white-space:nowrap"></div>
     </div>
-    <div class="fat-card">
-      <div class="fat-tit"><div class="fat-dot" style="background:#1F6B3E"></div>CMEI's Curitiba — Faturamento por porção</div>
-      <div class="fat-grid">
-        <div><div class="fat-lbl">Desjejum (R$/porção)</div><input class="fat-inp" id="f05-d" type="number" step="0.01" placeholder="ex: 1,25" oninput="calcMargem('c05')"></div>
-        <div><div class="fat-lbl">Colação (R$/porção)</div><input class="fat-inp" id="f05-c" type="number" step="0.01" placeholder="ex: 0,70" oninput="calcMargem('c05')"></div>
-        <div><div class="fat-lbl">Almoço (R$/porção)</div><input class="fat-inp" id="f05-a" type="number" step="0.01" placeholder="ex: 2,90" oninput="calcMargem('c05')"></div>
-        <div><div class="fat-lbl">Lanche (R$/porção)</div><input class="fat-inp" id="f05-l" type="number" step="0.01" placeholder="ex: 1,10" oninput="calcMargem('c05')"></div>
-        <div><div class="fat-lbl">Jantar (R$/porção)</div><input class="fat-inp" id="f05-j" type="number" step="0.01" placeholder="ex: 2,10" oninput="calcMargem('c05')"></div>
-        <div><div class="fat-lbl">Nº de porções/dia</div><input class="fat-inp" id="f05-p" type="number" step="1" placeholder="ex: 80" oninput="calcMargem('c05')"></div>
-      </div>
-      <div class="res-margem c05" id="rm-c05">
-        <div class="res-g">
-          <div class="res-item"><div class="res-val" id="rm05-fat" style="color:#1F6B3E">—</div><div class="res-lbl">Faturamento/dia</div></div>
-          <div class="res-item"><div class="res-val" id="rm05-cus" style="color:var(--czm)">—</div><div class="res-lbl">Custo médio/dia</div></div>
-          <div class="res-item"><div class="res-val" id="rm05-luc">—</div><div class="res-lbl">Lucro bruto/dia</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="fat-card">
-      <div class="fat-tit"><div class="fat-dot" style="background:#8B2500"></div>Escolas Curitiba — Faturamento por porção</div>
-      <div class="fat-grid">
-        <div><div class="fat-lbl">Desjejum (R$/porção)</div><input class="fat-inp" id="f03-d" type="number" step="0.01" placeholder="ex: 1,25" oninput="calcMargem('c03')"></div>
-        <div><div class="fat-lbl">Colação (R$/porção)</div><input class="fat-inp" id="f03-c" type="number" step="0.01" placeholder="ex: 0,70" oninput="calcMargem('c03')"></div>
-        <div><div class="fat-lbl">Almoço (R$/porção)</div><input class="fat-inp" id="f03-a" type="number" step="0.01" placeholder="ex: 2,90" oninput="calcMargem('c03')"></div>
-        <div><div class="fat-lbl">Lanche (R$/porção)</div><input class="fat-inp" id="f03-l" type="number" step="0.01" placeholder="ex: 1,10" oninput="calcMargem('c03')"></div>
-        <div><div class="fat-lbl">Jantar (R$/porção)</div><input class="fat-inp" id="f03-j" type="number" step="0.01" placeholder="ex: 2,10" oninput="calcMargem('c03')"></div>
-        <div><div class="fat-lbl">Nº de porções/dia</div><input class="fat-inp" id="f03-p" type="number" step="1" placeholder="ex: 120" oninput="calcMargem('c03')"></div>
-      </div>
-      <div class="res-margem c03" id="rm-c03">
-        <div class="res-g">
-          <div class="res-item"><div class="res-val" id="rm03-fat" style="color:#8B2500">—</div><div class="res-lbl">Faturamento/dia</div></div>
-          <div class="res-item"><div class="res-val" id="rm03-cus" style="color:var(--czm)">—</div><div class="res-lbl">Custo médio/dia</div></div>
-          <div class="res-item"><div class="res-val" id="rm03-luc">—</div><div class="res-lbl">Lucro bruto/dia</div></div>
-        </div>
-      </div>
+    <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--lrj)">
+            <th style="padding:10px 12px;text-align:left;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em">Receita</th>
+            <th style="padding:10px 8px;text-align:right;color:#fff;font-size:10px;font-weight:700;white-space:nowrap">P.V</th>
+            <th style="padding:10px 8px;text-align:right;color:#fff;font-size:10px;font-weight:700;white-space:nowrap">P.U</th>
+            <th style="padding:10px 8px;text-align:right;color:#fff;font-size:10px;font-weight:700;white-space:nowrap">Dif.</th>
+            <th style="padding:10px 12px;text-align:left;color:#fff;font-size:10px;font-weight:700;min-width:120px">Margem</th>
+          </tr>
+        </thead>
+        <tbody id="mg-body"></tbody>
+      </table>
     </div>
   </div>
 
@@ -707,8 +697,11 @@ function calcCell(inp){
     cel.dataset.pv=0;
   } else if(r){
     const puCor=pu?(pu>r.val?'#E24B4A':'#1F6B3E'):c.cor;
-    const puTxt=pu?`<span style="font-size:10px;font-weight:700;color:${puCor};display:block;margin-top:2px">P.U. ${fmt2(pu)}</span>`:'';
-    cel.innerHTML=`<span style="color:#111;font-weight:700;font-size:10px">P.V. ${fmt2(r.val)}</span>${puTxt}`;
+    const mgVal=pu&&r.val>0?((r.val-pu)/r.val*100):null;
+    const mgCor=mgVal!=null?(mgVal>=0?'#1F6B3E':'#E24B4A'):'';
+    const mgTxt=mgVal!=null?`<div style="text-align:center;font-size:9px;font-weight:700;color:${mgCor};margin:1px 0">${mgVal>=0?'+':''}${mgVal.toFixed(1)}%</div>`:'';
+    const puTxt=pu?`<div><span style="font-size:10px;font-weight:700;color:${puCor}">P.U. ${fmt2(pu)}</span></div>`:'';
+    cel.innerHTML=`<div style="margin-top:2px"><span style="color:#111;font-weight:700;font-size:10px">P.V. ${fmt2(r.val)}</span></div>${mgTxt}${puTxt}`;
     cel.dataset.pv=r.val;
   } else {
     const puCor2=pu?(pu>0?'#888':'#888'):'#888';
@@ -813,7 +806,8 @@ let modalidade='regular';
 function selC(el,id){
   document.querySelectorAll('.cbtn').forEach(b=>{b.classList.remove('ativo','c05','c03');b.querySelector('.cchk').innerHTML='<i class="ti ti-circle"></i>';});
   el.classList.add('ativo');if(id==='c05')el.classList.add('c05');else el.classList.add('c03');el.querySelector('.cchk').innerHTML='<i class="ti ti-check"></i>';
-  CT=id;const c=C[id];
+  CT=id;var c=C[id];
+  if(document.getElementById('tela-5').classList.contains('active'))setTimeout(renderMargem,50);
   document.getElementById('info-bar').className='info-bar '+c.cls;
   document.getElementById('btn-buscar').style.background=c.cor;
   if(id==='c05'){
@@ -989,19 +983,136 @@ function recalc(){
   const tvpum=document.getElementById('tv-pu-mes');if(tvpum)tvpum.textContent=fmt2(tmpu2);
 }
 
-function calcMargem(id){
-  const p=id==='c05';
-  const pf=s=>parseFloat(document.getElementById((p?'f05':'f03')+'-'+s).value)||0;
-  const d=pf('d'),co=pf('c'),a=pf('a'),l=pf('l'),j=pf('j'),po=pf('p');
-  if(po>0&&(d||co||a||l||j)){
-    const fat=(d+co+a+l+j)*po,cust=(p?4.39:5.16)*po,luc=fat-cust;
-    document.getElementById('rm-'+id).style.display='block';
-    document.getElementById('rm'+(p?'05':'03')+'-fat').textContent=fmt2(fat);
-    document.getElementById('rm'+(p?'05':'03')+'-cus').textContent=fmt2(cust);
-    const lEl=document.getElementById('rm'+(p?'05':'03')+'-luc');
-    lEl.textContent=(luc>=0?'+':'')+fmt2(luc);
-    lEl.style.color=luc>=0?'#1F6B3E':'#C00000';
+function getCategoria(nome){
+  var n=nome.toUpperCase();
+  if(n.indexOf('CHA DE')===0||n.indexOf('CHA ')===0) return 'CHA';
+  if(n.indexOf('LEITE')===0||n.indexOf('MINGAU')===0||n.indexOf('MAMADEIRA')===0||n.indexOf('CAFE COM LEITE')===0) return 'LEITE';
+  if(n.indexOf('VITAMINA')===0||n.indexOf('VITAMIN')===0||n.indexOf('VITAM')===0||n.indexOf('VIT.')===0||n.indexOf('VIT ')===0||n.indexOf('BATIDA')===0||(n[0]==='('&&n.indexOf('VITAM')>=0)||(n[0]==='('&&n.indexOf('VIT')>=0)) return 'VITAMINA';
+  if(n.indexOf('SOP ')===0||n.indexOf('SOPA')===0||n.indexOf('CANJA')===0||(n[0]==='('&&n.indexOf('SOP')>=0)) return 'SOPA';
+  if(n.indexOf('CANJICA')===0||n.indexOf('SAGU')===0) return 'GRANEL';
+  if(n.indexOf('SALADA')===0||n.indexOf('ALFACE')===0) return 'SALADA';
+  if(n.indexOf('IOGURTE')>=0) return 'IOGURTE';
+  if(n.indexOf('SUCO')>=0||n.indexOf('AGUA DE COCO')>=0) return 'SUCO';
+  if(n.indexOf('SUPLEMENTO')>=0||n.indexOf('FORMULA')>=0) return 'COMPLEMENTO';
+  if(n.indexOf('CACHORRO QUENTE')>=0||n.indexOf('SALSICHA')>=0) return 'CACHORRO QUENTE';
+  if(n.indexOf('PATE')>=0||n.indexOf('FRANGO PARA PAO')>=0||n.indexOf('CARNE PARA PAO')>=0||n.indexOf('FRANGO REFOGADO PARA PAO')>=0) return 'RECHEIO PARA PAO';
+  if(n.indexOf('SANDUICHE')===0||n.indexOf('SANDUI')===0||(n[0]==='('&&n.indexOf('SANDUICHE')>=0)||(n[0]==='('&&n.indexOf('SANDUI')>=0)||n.indexOf('PAO ')===0||n.indexOf('PAO')===0) return 'PAO';
+  if(n.indexOf('FEIJAO')>=0||n.indexOf('LENTILHA')>=0) return 'FEIJAO';
+  if(n.indexOf('RISOTO')===0||n.indexOf('RISOT ')===0||n.indexOf('ARROZ')===0) return 'ARROZ E RISOTO';
+  if(n.indexOf('FRANGO')>=0||n.indexOf('ISCAS')>=0||n.indexOf('BIFE')>=0||n.indexOf('STROGONOFF')>=0||n.indexOf('PICADINHO')>=0||n.indexOf('BARREADO')>=0||n.indexOf('ALMONDEGA')>=0||n.indexOf('BOLINHO')>=0||n.indexOf('HAMBURGUER')>=0||n.indexOf('QUIBE')>=0||n.indexOf('FRICASSE')>=0||n.indexOf('POSTA')>=0) return 'PROTEINA';
+  if(n.indexOf('BOLO')>=0||n.indexOf('MUFFIN')>=0||n.indexOf('CUQUE')>=0||n.indexOf('CHINEQUE')>=0) return 'BOLO';
+  if(n.indexOf('BISCOITO')===0||n.indexOf('BISC')===0||n.indexOf('COOKIE')===0) return 'BISCOITO';
+  if(n.indexOf('MOLHO')===0||n.indexOf('MOL ')===0||n.indexOf('MOL DE')===0) return 'MOLHO';
+  if(n.indexOf('PONKAN')>=0||n.indexOf('MAMAO')>=0||n.indexOf('MELANCIA')>=0||n.indexOf('MELAO')>=0||n.indexOf('KIWI')>=0||n.indexOf('LARANJA')>=0||n.indexOf('GOIABA')>=0||n.indexOf('ABACAXI')>=0||n.indexOf('PESSEGO')>=0||n.indexOf('CAQUI')>=0||n.indexOf('ABACATE')>=0||n.indexOf('PAPINHA')>=0||n.indexOf('LIMAO')===0||n.indexOf('AMEIXA')===0) return 'FRUTA';
+  if(n.indexOf('MANGA PICADA')===0||n.indexOf('MELAO PICADO')===0||n.indexOf('MELAO FATIADO')===0||n.indexOf('MEXERICA')===0||(n[0]==='('&&n.indexOf('MANGA')>=0)) return 'FRUTA';
+  if(n.indexOf('MACARRAO')===0||n.indexOf('MACARR')===0) return 'GRANEL';
+  if(n.indexOf('MACA')===0||n.indexOf('MANGA')===0||n.indexOf('BANANA')===0||n.indexOf('PERA')===0) return 'FRUTA';
+  if(n.indexOf('PAPA ')===0||n.indexOf('PAPA DE')>=0) return 'PAPA E CREME';
+  if(n.indexOf('CREME DE')>=0) return 'PAPA E CREME';
+  if(n.indexOf('MANTEIGA')===0||n.indexOf('MARGARINA')===0||n.indexOf('REQUEIJAO')===0||n.indexOf('QUEIJO')===0||n.indexOf('DOCE')===0||(n[0]==='('&&n.indexOf('REQUEIJAO')>=0)) return 'RECHEIO PARA PAO';
+  if(n.indexOf('(I)VITAMINA')===0||(n.indexOf('(I)VIT')===0&&n.indexOf('(I)VITAM')===0)||(n[0]==='('&&n.indexOf('VITAMINA')>=0)) return 'VITAMINA';
+  if(n.indexOf('TOMATE RODELA')>=0||n.indexOf('TOMATE EM RODELA')>=0) return 'SALADA';
+  if(n.indexOf('CARNE MOIDA')===0||n.indexOf('CARNE MOI')===0||n.indexOf('CAR MOIDA')===0||n.indexOf('CAR MOI')===0) return 'PROTEINA';
+  if(n.indexOf('COZIDO')>=0||n.indexOf('COZIDA')>=0||n.indexOf('REFOGADO')>=0||n.indexOf('REFOGADA')>=0||n.indexOf('ABOBRINHA')===0) return 'COMPLEMENTO';
+  if(n.indexOf('MOL DE CARNE')===0||n.indexOf('MOL DE FRANG')===0) return 'MOLHO';
+  if(n.indexOf('CARNE')>=0) return 'PROTEINA';
+  if(n.indexOf('AVEIA')===0||n.indexOf('FAROFA')>=0||n.indexOf('POLENTA')>=0||n.indexOf('QUIRERA')>=0||n.indexOf('PURE')>=0||n.indexOf('FLOCOS')>=0||n.indexOf('MACARRAO')>=0||n.indexOf('AIPIM')>=0||n.indexOf('BATATA')===0) return 'GRANEL';
+  return 'OUTROS';
+}
+
+function calcMargem(id){}
+
+function renderMargem(){
+  var ings=INGS[CT]||{};
+  var busca=(document.getElementById('mg-search')||{value:''}).value.trim().toUpperCase();
+  var ordem=(document.getElementById('mg-ordem')||{value:'margem_desc'}).value;
+  var catFiltro=(document.getElementById('mg-cat')||{value:''}).value;
+
+  function calcCusto(nome){
+    var arr=ings[nome.toUpperCase()];
+    if(!arr||!arr.length) return null;
+    var t=arr.reduce(function(s,i){return s+i.q*i.p;},0);
+    return t>0?t:null;
   }
+
+  var nomes=Object.keys(ings);
+  var rows=[];
+  for(var i=0;i<nomes.length;i++){
+    var nome=nomes[i];
+    var pu=calcCusto(nome);
+    var pv=PU_REAL[nome.trim().toUpperCase()]||null;
+    if(!pv&&!pu) continue;
+    var cat=getCategoria(nome);
+    if(busca&&nome.toUpperCase().indexOf(busca)<0) continue;
+    if(catFiltro&&cat!==catFiltro) continue;
+    var dif=(pv!=null&&pu!=null)?(pu-pv):null;
+    var pct=(pv!=null&&pv>0&&dif!=null)?(dif/pv*100):null;
+    rows.push({nome:nome,pv:pv,pu:pu,dif:dif,pct:pct,cat:cat});
+  }
+
+  rows.sort(function(a,b){
+    if(ordem==='margem_desc'){var pa=a.pct!=null?a.pct:-99999,pb=b.pct!=null?b.pct:-99999;return pb-pa;}
+    if(ordem==='margem_asc'){var pa=a.pct!=null?a.pct:99999,pb=b.pct!=null?b.pct:99999;return pa-pb;}
+    if(ordem==='nome_asc') return a.nome.localeCompare(b.nome,'pt');
+    if(ordem==='pv_desc') return (b.pv||0)-(a.pv||0);
+    if(ordem==='cat'){var cc=a.cat.localeCompare(b.cat,'pt');if(cc!==0)return cc;var pa=a.pct!=null?a.pct:-99999,pb=b.pct!=null?b.pct:-99999;return pb-pa;}
+    return 0;
+  });
+
+  var catSel=document.getElementById('mg-cat');
+  if(catSel&&!catSel.dataset.loaded){
+    catSel.dataset.loaded='1';
+    var cats=[];
+    var seen={};
+    nomes.forEach(function(n){var c=getCategoria(n);if(!seen[c]){seen[c]=1;cats.push(c);}});
+    cats.sort();
+    cats.forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=c;catSel.appendChild(o);});
+  }
+
+  var cnt=document.getElementById('mg-count');
+  if(cnt) cnt.textContent=rows.length+' receitas';
+
+  function f2(v){return v!=null?'R$ '+v.toFixed(2).replace('.',','):'--';}
+  function f2s(v){return v!=null?(v>=0?'+R$ ':'-R$ ')+Math.abs(v).toFixed(2).replace('.',','):'--';}
+  var corContrato=CT==='c05'?'#1F6B3E':'#8B2500';
+  var tbody=document.getElementById('mg-body');
+  if(!tbody) return;
+
+  var agrupar=ordem==='cat';
+  var html='';
+
+  if(agrupar){
+    var grupos={};
+    rows.forEach(function(r){if(!grupos[r.cat])grupos[r.cat]=[];grupos[r.cat].push(r);});
+    Object.keys(grupos).sort().forEach(function(cat){
+      var gr=grupos[cat];
+      var validos=gr.filter(function(r){return r.pct!=null;});
+      var media=validos.length?validos.reduce(function(s,r){return s+r.pct;},0)/validos.length:null;
+      var mediaCor=media==null?'#999':media>=0?'#1F6B3E':'#C00000';
+      html+='<tr style="background:#F2F2F2;border-top:2px solid #DDD"><td colspan="4" style="padding:9px 12px;font-size:11px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.06em">'+cat+' <span style="font-weight:400;color:#999">('+gr.length+')</span></td><td style="padding:9px 12px;font-size:11px;font-weight:700;color:'+mediaCor+';text-align:right">'+(media!=null?'med. '+media.toFixed(1)+'%':'--')+'</td></tr>';
+      gr.forEach(function(r){html+=mgRow(r,f2,f2s,corContrato,false);});
+    });
+  } else {
+    rows.forEach(function(r){html+=mgRow(r,f2,f2s,corContrato,true);});
+  }
+  tbody.innerHTML=html;
+}
+
+function mgRow(r,f2,f2s,corContrato,badge){
+  var pos=r.dif!=null&&r.dif>=0;
+  var corDif=r.dif==null?'#999':pos?'#1F6B3E':'#C00000';
+  var pctStr=r.pct!=null?r.pct.toFixed(1)+'%':'--';
+  var barHTML='<span style="color:#CCC;font-size:10px">sem P.U</span>';
+  if(r.pct!=null){
+    var MAX=100;
+    var cl=Math.max(-MAX,Math.min(MAX,r.pct));
+    var bw=Math.abs(cl)/MAX*100;
+    var bc=pos?'#1F6B3E':'#E24B4A';
+    var fill=pos?'<div style="position:absolute;left:0;top:0;height:100%;width:'+bw+'%;background:'+bc+';border-radius:4px"></div>':'<div style="position:absolute;right:0;top:0;height:100%;width:'+bw+'%;background:'+bc+';border-radius:4px"></div>';
+    barHTML='<div style="display:flex;align-items:center;gap:6px"><div style="flex:1;height:8px;background:#F0F0F0;border-radius:4px;overflow:hidden;position:relative">'+fill+'</div><span style="font-size:10px;font-weight:700;color:'+bc+';min-width:40px;text-align:right">'+pctStr+'</span></div>';
+  }
+  var b=badge?'<span style="font-size:9px;background:#F0F0F0;color:#888;border-radius:4px;padding:1px 5px;margin-left:6px">'+r.cat+'</span>':'';
+  return '<tr style="border-bottom:1px solid #F5F5F5" onmouseover="this.style.background=\'#FAFAFA\'" onmouseout="this.style.background=\'\'"><td style="padding:8px 12px;color:var(--cz);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+r.nome+'">'+r.nome+b+'</td><td style="padding:8px;text-align:right;font-weight:600;color:'+corContrato+';white-space:nowrap">'+f2(r.pu)+'</td><td style="padding:8px;text-align:right;color:var(--czm);white-space:nowrap">'+f2(r.pv)+'</td><td style="padding:8px;text-align:right;font-weight:600;color:'+corDif+';white-space:nowrap">'+f2s(r.dif)+'</td><td style="padding:8px 12px">'+barHTML+'</td></tr>';
 }
 
 function showTela(idx,el){
@@ -1013,6 +1124,7 @@ function showTela(idx,el){
   document.getElementById('tb-sub').textContent=SUBS[idx];
   if(idx===1)atualizarCores();
   if(idx===3)renderIndice();
+  if(idx===5)setTimeout(renderMargem,50);
 }
 
 // ── GERAÇÃO PDF CARDÁPIO MENSAL ───────────────────────────────────────────────
