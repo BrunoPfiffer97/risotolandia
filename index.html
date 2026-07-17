@@ -1046,7 +1046,7 @@ function renderMargem(){
     if(busca&&nome.toUpperCase().indexOf(busca)<0) continue;
     if(catFiltro&&cat!==catFiltro) continue;
     var dif=(pv!=null&&pu!=null)?(pu-pv):null;
-    var pct=(pv!=null&&pv>0&&dif!=null)?(dif/pv*100):null;
+    var pct=(pu!=null&&pu>0&&dif!=null)?(dif/pu*100):null;
     rows.push({nome:nome,pv:pv,pu:pu,dif:dif,pct:pct,cat:cat});
   }
 
