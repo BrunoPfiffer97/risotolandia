@@ -439,26 +439,36 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 
     </div></div></div>
     
-    <div class="totais" style="grid-template-columns:1fr 1fr 1fr 1fr">
-      <div class="tot-c tot-sem-c05" id="tc-sem">
-        <div class="tot-lbl" id="tl-sem" style="color:#1F6B3E">P.V. — Total da semana</div>
-        <div class="tot-val tv-c05" id="tv-sem">R$ 0,00</div>
-        <div class="tot-sub" id="ts-sem" style="color:var(--czm)">Semana 1 — 6 dias</div>
+    <div class="totais" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr">
+      <div class="tot-c" id="tc-sem" style="background:#1F6B3E;border:1px solid #1F6B3E">
+        <div class="tot-lbl" id="tl-sem" style="color:#fff;opacity:1">P.V. — Total da semana</div>
+        <div class="tot-val" id="tv-sem" style="color:#fff">R$ 0,00</div>
+        <div class="tot-sub" id="ts-sem" style="color:rgba(255,255,255,.85);opacity:1">Semana 1 — 6 dias</div>
       </div>
-      <div class="tot-c tot-mes-c05" id="tc-mes">
-        <div class="tot-lbl">P.V. — Total geral do mês</div>
-        <div class="tot-val" id="tv-mes">R$ 0,00</div>
-        <div class="tot-sub">5 semanas</div>
+      <div class="tot-c" id="tc-mes" style="background:#1F6B3E;border:1px solid #1F6B3E">
+        <div class="tot-lbl" style="color:#fff;opacity:1">P.V. — Total geral do mês</div>
+        <div class="tot-val" id="tv-mes" style="color:#fff">R$ 0,00</div>
+        <div class="tot-sub" style="color:rgba(255,255,255,.85);opacity:1">5 semanas</div>
       </div>
-      <div class="tot-c" id="tc-pu-sem" style="background:#F5F0FF;border:1px solid #D4B8F0">
-        <div class="tot-lbl" style="color:#6B35A8">P.U. — Total da semana</div>
-        <div class="tot-val" id="tv-pu-sem" style="color:#6B35A8">R$ 0,00</div>
-        <div class="tot-sub" id="ts-pu-sem" style="color:var(--czm)">Semana 1 — 6 dias</div>
+      <div class="tot-c" id="tc-pv-media" style="background:#1F6B3E;border:1px solid #1F6B3E">
+        <div class="tot-lbl" style="color:#fff;opacity:1">P.V. — Média por semana</div>
+        <div class="tot-val" id="tv-pv-media" style="color:#fff">R$ 0,00</div>
+        <div class="tot-sub" style="color:rgba(255,255,255,.85);opacity:1">Prévia: semanas preenchidas</div>
       </div>
-      <div class="tot-c" id="tc-pu-mes" style="background:#EDE0FF;border:1px solid #C49EE8">
-        <div class="tot-lbl" style="color:#5A2A9A">P.U. — Total geral do mês</div>
-        <div class="tot-val" id="tv-pu-mes" style="color:#5A2A9A">R$ 0,00</div>
-        <div class="tot-sub" style="color:var(--czm)">5 semanas</div>
+      <div class="tot-c" id="tc-pu-sem" style="background:#E65100;border:1px solid #E65100">
+        <div class="tot-lbl" style="color:#fff;opacity:1">P.U. — Total da semana</div>
+        <div class="tot-val" id="tv-pu-sem" style="color:#fff">R$ 0,00</div>
+        <div class="tot-sub" id="ts-pu-sem" style="color:rgba(255,255,255,.85);opacity:1">Semana 1 — 6 dias</div>
+      </div>
+      <div class="tot-c" id="tc-pu-mes" style="background:#E65100;border:1px solid #E65100">
+        <div class="tot-lbl" style="color:#fff;opacity:1">P.U. — Total geral do mês</div>
+        <div class="tot-val" id="tv-pu-mes" style="color:#fff">R$ 0,00</div>
+        <div class="tot-sub" style="color:rgba(255,255,255,.85);opacity:1">5 semanas</div>
+      </div>
+      <div class="tot-c" id="tc-pu-media" style="background:#E65100;border:1px solid #E65100">
+        <div class="tot-lbl" style="color:#fff;opacity:1">P.U. — Média por semana</div>
+        <div class="tot-val" id="tv-pu-media" style="color:#fff">R$ 0,00</div>
+        <div class="tot-sub" style="color:rgba(255,255,255,.85);opacity:1">Prévia: semanas preenchidas</div>
       </div>
     </div>
   </div>
@@ -872,10 +882,7 @@ function atualizarCores(){
   const c=C[CT];
   document.querySelectorAll('.dia').forEach(h=>h.style.background=c.cor);
   document.querySelectorAll('.stab').forEach((t,i)=>{t.className='stab';if(i===SA)t.classList.add('ativo',c.cls);});
-  document.getElementById('tc-sem').className='tot-c tot-sem-'+c.cls;
-  document.getElementById('tc-mes').className='tot-c tot-mes-'+c.cls;
-  document.getElementById('tl-sem').style.color=c.cor;
-  document.getElementById('tv-sem').className='tot-val tv-'+c.cls;
+  // cards de totais agora têm estilo fixo — não sobrescrever cores
 }
 
 function selSem(idx){
@@ -982,6 +989,31 @@ function recalc(){
     semD.forEach(nome=>{if(nome){tmpu2+=PU_REAL[nome.trim().toUpperCase()]||0;}});
   }
   const tvpum=document.getElementById('tv-pu-mes');if(tvpum)tvpum.textContent=fmt2(tmpu2);
+
+  // Médias por semana (prévia: conta apenas semanas com valor > 0)
+  const semanasPV = TS.filter(v => v > 0);
+  const mediaPV = semanasPV.length > 0 ? semanasPV.reduce((a,b)=>a+b,0) / semanasPV.length : 0;
+  const tvpvm = document.getElementById('tv-pv-media');
+  if(tvpvm) tvpvm.textContent = fmt2(mediaPV);
+  const subpvm = document.getElementById('tc-pv-media')?.querySelector('.tot-sub');
+  if(subpvm) subpvm.textContent = semanasPV.length > 0 ? `Prévia: ${semanasPV.length} semana${semanasPV.length>1?'s':''} preenchida${semanasPV.length>1?'s':''}` : 'Nenhuma semana preenchida';
+
+  // Média PU: calcular total de cada semana e tirar média das preenchidas
+  const totaisPU = [];
+  for(let s=0;s<5;s++){
+    let tpu=0;
+    if(s===SA){tpu=tspu;}
+    else{
+      const semD2=SEMANAS_DATA[s]||[];
+      semD2.forEach(nome=>{if(nome){tpu+=PU_REAL[nome.trim().toUpperCase()]||0;}});
+    }
+    if(tpu>0) totaisPU.push(tpu);
+  }
+  const mediaPU = totaisPU.length > 0 ? totaisPU.reduce((a,b)=>a+b,0) / totaisPU.length : 0;
+  const tvpum2 = document.getElementById('tv-pu-media');
+  if(tvpum2) tvpum2.textContent = fmt2(mediaPU);
+  const subpum = document.getElementById('tc-pu-media')?.querySelector('.tot-sub');
+  if(subpum) subpum.textContent = totaisPU.length > 0 ? `Prévia: ${totaisPU.length} semana${totaisPU.length>1?'s':''} preenchida${totaisPU.length>1?'s':''}` : 'Nenhuma semana preenchida';
 }
 
 function getCategoria(nome){
