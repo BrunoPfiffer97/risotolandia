@@ -124,6 +124,7 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 .gcusto{font-size:10px;font-weight:600;margin-top:2px}
 .gtl{background:#4D4D4D;padding:6px 8px;font-size:10px;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center}
 .gtv{background:#F5F5F5;padding:6px 5px;font-size:10px;font-weight:700;text-align:right}
+.tpu{color:#E65100}
 .totais{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
 .tot-c{border-radius:10px;padding:14px 16px}
 .tot-sem-c05{background:#F0FAF4;border:1px solid #A8D5B8}
@@ -292,11 +293,13 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
     </div>
     <div style="display:flex;gap:8px;align-items:center">
       <button class="btn-sec" onclick="carregarJSON()" title="Carregar cardápio salvo"><i class="ti ti-folder-open"></i> Carregar</button>
+      <button class="btn-sec" onclick="document.getElementById('input-xlsx-cardapio').click()" title="Importar planilha xlsx"><i class="ti ti-table-import"></i> Importar xlsx</button>
       <button class="btn-sec" onclick="salvarJSON()" title="Salvar cardápio atual"><i class="ti ti-device-floppy"></i> Salvar</button>
       <button class="btn-pdf" onclick="showTela(6,document.querySelectorAll('.nav-item')[6])"><i class="ti ti-download"></i> Gerar PDF</button>
     </div>
   </div>
   <input type="file" id="input-json" accept=".json" style="display:none" onchange="importarJSON(event)">
+  <input type="file" id="input-xlsx-cardapio" accept=".xlsx" style="display:none" onchange="importarXlsxCardapio(event)">
 
   <!-- T0: SELETOR -->
   <div class="tela active" id="tela-0">
@@ -399,8 +402,8 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 <div class="gref" style="background:#7030A0;grid-row:span 2">Jantar</div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
-<div class="gtl">Total dia</div>
-<div class="gtv td" id="td0">—</div><div class="gtv td" id="td1">—</div><div class="gtv td" id="td2">—</div><div class="gtv td" id="td3">—</div><div class="gtv td" id="td4">—</div><div class="gtv td" id="td5">—</div>
+<div class="gtl">P.V. dia</div>
+<div class="gtv td" data-dia="0">—</div><div class="gtv td" data-dia="1">—</div><div class="gtv td" data-dia="2">—</div><div class="gtv td" data-dia="3">—</div><div class="gtv td" data-dia="4">—</div><div class="gtv td" data-dia="5">—</div><div class="gtl" style="background:#5a5a5a">P.U. dia</div><div class="gtv tpu" data-dia="0">—</div><div class="gtv tpu" data-dia="1">—</div><div class="gtv tpu" data-dia="2">—</div><div class="gtv tpu" data-dia="3">—</div><div class="gtv tpu" data-dia="4">—</div><div class="gtv tpu" data-dia="5">—</div>
 
     </div></div></div>
     <div id="grid-merenda" style="display:none"><div class="grid-wrap"><div class="grid" id="grid-regular-merenda"><div class="gh" style="background:#4D4D4D">Refeição</div><div class="gh dia" id="hd0">Seg<br><small>—</small></div><div class="gh dia" id="hd1">Ter<br><small>—</small></div><div class="gh dia" id="hd2">Qua<br><small>—</small></div><div class="gh dia" id="hd3">Qui<br><small>—</small></div><div class="gh dia" id="hd4">Sex<br><small>—</small></div><div class="gh dia" id="hd5">Sáb<br><small>—</small></div><div class="gref" style="background:#ED7D31;grid-row:span 6">Merenda</div>
@@ -410,8 +413,8 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto"><span style="color:#CCC">—</span></div></div>
-<div class="gtl">Total dia</div>
-<div class="gtv td" id="td0">—</div><div class="gtv td" id="td1">—</div><div class="gtv td" id="td2">—</div><div class="gtv td" id="td3">—</div><div class="gtv td" id="td4">—</div><div class="gtv td" id="td5">—</div></div></div></div>
+<div class="gtl">P.V. dia</div>
+<div class="gtv td" data-dia="0">—</div><div class="gtv td" data-dia="1">—</div><div class="gtv td" data-dia="2">—</div><div class="gtv td" data-dia="3">—</div><div class="gtv td" data-dia="4">—</div><div class="gtv td" data-dia="5">—</div><div class="gtl" style="background:#5a5a5a">P.U. dia</div><div class="gtv tpu" data-dia="0">—</div><div class="gtv tpu" data-dia="1">—</div><div class="gtv tpu" data-dia="2">—</div><div class="gtv tpu" data-dia="3">—</div><div class="gtv tpu" data-dia="4">—</div><div class="gtv tpu" data-dia="5">—</div></div></div></div>
     <div id="grid-integral" style="display:none"><div class="grid-wrap"><div class="grid" id="grid-integral-inner">
       <div class="gh" style="background:#4D4D4D">Refeição</div>
       <div class="gh dia" id="hd0">Seg<br><small>—</small></div>
@@ -420,7 +423,9 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
       <div class="gh dia" id="hd3">Qui<br><small>03/09</small></div>
       <div class="gh dia" id="hd4">Sex<br><small>04/09</small></div>
       <div class="gh dia" id="hd5">Sáb<br><small>05/09</small></div>
-      <div class="gref" style="background:#4472C4;grid-row:span 3">Café da manhã</div>
+      <div class="gref" style="background:#4472C4;grid-row:span 5">Café da manhã</div>
+<div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
+<div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
@@ -431,12 +436,14 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
-<div class="gref" style="background:#FFC000;grid-row:span 3">Lanche da tarde</div>
+<div class="gref" style="background:#FFC000;grid-row:span 5">Lanche da tarde</div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
 <div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
-<div class="gtl">Total dia</div>
-<div class="gtv td" id="td0">—</div><div class="gtv td" id="td1">—</div><div class="gtv td" id="td2">—</div><div class="gtv td" id="td3">—</div><div class="gtv td" id="td4">—</div><div class="gtv td" id="td5">—</div>
+<div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
+<div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div><div class="gcell"><div class="ac-wrap"><input class="ginput" placeholder="prato..." oninput="acInput(this)" onkeydown="acKey(event,this)" onblur="acBlur(this)"><div class="ac-list"></div></div><div class="gcusto" style="color:#CCC">—</div></div>
+<div class="gtl">P.V. dia</div>
+<div class="gtv td" data-dia="0">—</div><div class="gtv td" data-dia="1">—</div><div class="gtv td" data-dia="2">—</div><div class="gtv td" data-dia="3">—</div><div class="gtv td" data-dia="4">—</div><div class="gtv td" data-dia="5">—</div><div class="gtl" style="background:#5a5a5a">P.U. dia</div><div class="gtv tpu" data-dia="0">—</div><div class="gtv tpu" data-dia="1">—</div><div class="gtv tpu" data-dia="2">—</div><div class="gtv tpu" data-dia="3">—</div><div class="gtv tpu" data-dia="4">—</div><div class="gtv tpu" data-dia="5">—</div>
 
     </div></div></div>
     
@@ -472,6 +479,7 @@ html,body{margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:
         <div class="tot-sub" style="color:rgba(255,255,255,.85);opacity:1">Prévia: semanas preenchidas</div>
       </div>
     </div>
+    <div id="media-categorias" style="margin-top:10px;display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))"></div>
   </div>
 
   <!-- T2: CONSULTA -->
@@ -621,6 +629,9 @@ const LABELS=['Selecionar contrato','Montar cardápio','Consulta de receitas','�
 const SUBS=['Escolha o receituário para começar','Preencha o cardápio — sugestões automáticas ao digitar','Busque ingredientes e custo de qualquer prato','Pesquise e copie nomes de pratos para o cardápio','Visão geral dos contratos e custos','Informe o faturamento para calcular a margem','Exporte relatórios em PDF'];
 let CT='c05',SA=0;
 const TS=[0,0,0,0,0];
+let TMPU2=0;
+let MAPEAMENTO_XLSX = {}; // persistir mapeamentos entre importações
+let _pendXlsx = null;    // dados pendentes aguardando confirmação do mapeamento
 
 let SEMANAS_DATA=[[],[],[],[],[]];
 const PU_REAL={"BISCOITO SALGADO EMBALAG. INDIVIDUAL 50G":0.8967,"ALFACE CRESPA FOLHA 10G":0.0581,"ALFACE LISA FOLHA 10G":0.0705,"BETERRABA COZIDA 20 GR":0.1602,"SALADA DE REPOLHO 40G":0.1144,"POLENTA CREMOSA 60G":0.0402,"SALADA DE BETERRABA RALADA 25G":0.0752,"SALADA DE REPOLHO VERDE C/ REP ROXO 40G":0.1316,"SALADA DE REPO VERD C/ REPO ROX 15G":0.1316,"SALADA DE ALFACE 15G":0.0871,"SALADA DE ACELGA 30G":0.073,"SALADA DE REPOLHO E CENOURA 35G":0.1492,"TOMATE RODELA 15G":0.0912,"SALADA DE CENOURA 30 GR":0.2496,"BETERRABA COZIDA 30 GR":0.1602,"(I)SALADA DE CENOURA COM LIMAO 25G":0.1529,"(I)SALADA DE CENOURA COM LIMAO 25 GR":0.1529,"SALADA DE CENOURA RALADA COM LIMAO 25G":0.1529,"POLENTA CREMOSA 90G":0.0402,"SALADA DE ALFACE COM LIMAO 23G":0.0742,"SALADA DE BETERRABA COZ 30G":0.1044,"SALADA DE REPOLHO AO VINAGRETE 40G":0.1438,"SALADA DE ABOBRINHA 30G":0.1745,"QUIRERA 70G":0.0727,"SALADA DE CHUCHU COM TOMATE 25G":0.1952,"SALADA DE ALFACE COM CENOURA 30G":0.1731,"CHUCHU REFOGADO 40G":0.2264,"SALADA DE CHUCHU COM CENOURA 30G":0.1923,"SALADA DE PEPINO 40G":0.2452,"SALADA DE PEPINO COM CHEIRO VERDE 40G":0.2084,"BATATA DOCE ASSADA 40G":0.2194,"ACELGA REFOGADA 45G":0.1511,"ABOBORA REFOGADA 35G":0.1223,"CENOURA REFOGADA 30G":0.234,"(I)SALADA DE CHUCHU COM CENOURA 35G":0.1923,"FAROFA DE REPOLHO 30G":0.1172,"POLENTA 100G":0.0746,"DOCE DE FRUTA 20G":0.0,"CHA DE CAPIM LIMAO 190ML":0.0591,"SALADA DE ALFACE COM TOMATE 25G":0.1479,"SALADA DE CENOURA COZIDA 40G":0.2496,"ABOBRINHA REFOGADA COM TOMATE 35G":0.1602,"BROCOLIS COZIDO 22 GR":0.3961,"(I)SALADA DE BETERRABA COZIDA 50G":0.1044,"BATATA ASSADA C/AZEITE E OREGANO 50G":0.222,"DOCE DE BANANA NATURAL 20G":0.0,"SALADA DE CHUCHU 40G":0.4264,"CENOURA E CHUCHU REFOGADOS 40G":0.2772,"ABOBRINHA REFOGADA 35G":0.1361,"BATATA CENOURA E CHUCHU REFOGADOS 40G":0.2169,"ARROZ INTEGRAL 80G":0.1337,"CHA DE CAMOMILA 190ML":0.101,"CHA DE ERVA DOCE 190ML":0.0509,"CHUCHU REFOGADO 50G":0.2264,"BATATA ASSADA COM AZEITE OREG E TOMA 50G":0.3697,"COUVE FLOR COZIDA 30G":0.5711,"BATATA REFOGADA 50G":0.2231,"ARROZ INTEGRAL 100G":0.1146,"ARROZ 100G":0.1192,"FEIJAO CARIOCA 90G":0.1684,"FEIJAO PRETO 90G":0.1187,"BATATA SAUTE 55G":0.2212,"ARROZ 110G":0.118,"LARANJA 100G":0.31,"CHA DE HORTELA 190ML":0.065,"MAMAO FATIADO 85G":0.4497,"PURE DE AIPIM 50 GR":0.2115,"QUIRERA G/NOT 180G":0.0592,"BATATA ASSADA COM AZEITE E OREGANO 70G":0.2282,"BATATA ASS COM AZEI OREG E TOM 70G":0.2282,"SALADA DE TOMATE 60G":0.4626,"MELANCIA 150G":0.549,"MELANCIA FATIADA 150G":0.5124,"BATATA ASSADA COM ALECRIM 50G":0.2094,"FAROFA DE ESPINAFRE 30 GR":0.1498,"FAROFA DE ESPINAFRE 30G":0.1498,"SALADA DE TOMATE COM LIMAO 60G":0.4479,"SAGU DE UVA 100G":0.2369,"AIPIM COM MOLHO 60G":0.4367,"MANTEIGA 7G":0.2284,"AIPIM COZIDO 85G":0.2958,"REQUEIJAO CREMOSO 15G":0.3742,"SALADA DE BROCOLIS 30G":0.2745,"PURE DE AIPIM 65 G":0.2115,"FAROFA DE COUVE 30G":0.1568,"AIPIM SAUTE 85G":0.4541,"FARINHA DE MANDIOCA TORRADA 35G":0.1963,"SALADA DE COUVE FLOR 30 GR":0.5626,"MACARRAO PARAFUSO 100G":0.2803,"SAGU DE UVA 150G":0.4273,"MACARRAO PARAFUSO ALHO E OLEO 80G":0.2823,"QUEIJO 10G":0.37,"FAROFA DE CENOURA 45G":0.2451,"BANANA 130G":0.3289,"ARROZ G/NOT 180G":0.2195,"BATATA REFOGADA 100G":0.4054,"SALADA DE BROCOLIS COM CENOURA 55G":0.4816,"VAGEM REFOGADA 40G":0.4092,"MANTEIGA 10G":0.2284,"SALADA DE BROCOLIS COM TOMATE 55G":0.5354,"BATATA SALSA REFOGADA 40G":0.3899,"MANGA PICADA 70 GR":1.244,"PAO DE LEITE 50G":0.3,"PAO DE AVEIA 50G":0.3,"PAO DE HAMBURGUER 50G":0.45,"PAO DE CENOURA 50 G":0.3,"PAO DE CENTEIO 50G":0.3,"BATATA SALSA COZIDA 40G":0.3667,"MACARRAO PARAFUSO AO SUGO 80G":0.3581,"BATATA SALSA SAUTE 40G":0.332,"MELAO FATIADO 150G ALMOCO":0.7065,"MELAO FATIADO 150G MERENDA":0.7065,"BATATA PALHA 25G":0.1594,"GOIABA 80G":2.0,"BROCOLIS REFOGADO 50G":0.4953,"CAQUI 120 GR":0.6386,"PAO DE BATATA 50G":0.3,"MACARRAO PARAFUSO AO SUGO 100G":0.4141,"SALADA DE FRUTAS 100G":0.4756,"CREME DE LEITE 20G":0.3579,"COUVE FLOR COZIDA 50G":0.4833,"BROCOLIS REFOGADO COM CENOURA 80G":0.6214,"PAO FRANCES 50GR":0.45,"MACARRAO PARAFUSO COLORIDO 100G":0.3464,"PAO FRANCES 50G":0.45,"BISCOITO CREAM CRACKER 50G":0.5555,"BISCOITO DE LEITE 50G":0.5745,"BISCOITO ROSQUINHA 50G":0.4795,"BISC.ROSQ. LEITE (09 UN)CONS 3 DIAS 50G":0.4795,"QUEIJO 15G":0.58,"MELAO PICADO 150G":0.4491,"MACA 100G":0.44,"MANGA PICADA 90 GR":1.244,"CHINEQUE DE BANANA 60G":0.45,"BROCOLIS COZIDO 50G":0.3961,"CREME DE GOIABA 90G":0.4291,"PATE DE FRANGO 30G":0.6286,"CHINEQUE DE GOIABADA 60G":0.45,"LEITE COM AROMA DE COCO 150ML":0.4264,"LEITE COM AROMA DE BAUNILHA 150ML":0.4274,"MACARRAO PARAFUSO INTEGRAL AO SUGO 80GR":0.3067,"BOLO DE FUBA 50G":0.4753,"MANGA PICADA 100G":1.244,"BISCOITO DOCE INTEGRAL 50G":0.6545,"MACARRAO PARAFUSO G/NOT 180G":0.4675,"PURE DE BATATA 40G":0.2528,"PURE DE BATATA 80 G":0.2528,"PAO DE AVEIA G/NOT 75G":0.4,"PAO DE LEITE G/NOT 75G":0.4,"PAO DE HAMBURGUER G/NOT 75G":0.45,"PAO DE CENTEIO G/NOT 75G":0.4,"LEITE 190ML":0.5012,"MACARRAO PARAFUSO INTEGRAL 100G":0.4421,"BATATA REFOGADA G/NOT 180G":0.6721,"PAO DE LEITE FATIADO 50G":0.475,"PAO INTEGRAL FATIADO 50G":0.5625,"FLOCOS DE MILHO SEM ACUCAR 50G":0.589,"LEITE COM CHOCOLATE EM PO 160ML":0.5833,"PAO FRANCES G/NOT 75G":0.45,"SUCO POLPA DE GOIABA 180ML":0.7492,"LEITE COM AROMA DE BAUNILHA 190ML":0.4274,"VITAMINA DE BANANA 160ML":0.6146,"SUCO POLPA DE MANGA 180ML":0.9993,"SUCO POLPA DE LIMAO 180ML":0.1957,"MANGA PICADA 140G":1.244,"MINGAU DE AMIDO 150G":0.4074,"LEITE COM CHOCOLATE EM PO 190ML":0.5833,"PATE DE FRANGO G/NOT 45G":0.3909,"SUCO POLPA DE GOIABA 200ML":0.5423,"CAFE COM LEITE 190ML":0.6896,"ABACAXI 100G":0.95,"BOLO INGLES 50G":0.4753,"CHINEQUE DE UVA 60G":0.45,"SUCO POLPA DE ABACAXI 180ML":1.1003,"BOLO DE CENOURA 50G":0.5041,"SUCO POLPA DE ACEROLA 180ML":0.9473,"SUCO POLPA DE TANGERINA 180ML":0.8566,"MOLHO DE FRANGO E CHUCHU 50G":0.3897,"ISCAS DE FRANGO E CENOURA 60G":0.8421,"MACARRAO PARAFUSO ALHO E OLEO 180G":0.2823,"KIWI 80G":2.83,"SUCO POLPA DE LARANJA 180ML":1.2083,"VITAMINA DE BANANA COM CACAU 160 ML":0.6106,"MOLHO DE FRANGO E ABOBRINHA 50G":0.4352,"BOLO DE COCO 50G":0.5093,"PERA 100G":1.09,"MOLHO DE FRANGO E BROCOLIS 50G":0.3254,"BOLO DE LARANJA 50G":0.4753,"ISCAS DE FRANGO REF COM BROCOLIS 60G":0.8437,"BOLO DE BANANA E CANELA 50G":0.4753,"BOLO DE CHOCOLATE 50G":0.5041,"VITAMINA DE GOIABA 160ML":0.6219,"SUCO POLPA DE ACEROLA 200ML":0.9473,"MINGAU DE AVEIA 150G":0.3825,"SUCO POLPA DE LARANJA 200ML":1.2083,"BOLO DE MACA AVEIA E CANELA 50G":0.5,"ISCAS DE FRANGO E CENOURA G/NOT 70 G":1.0318,"MOLHO DE FRANGO E CENOURA 50G":0.9483,"VITAMINA DE MANGA 160ML":0.9297,"HAMBURGUER DE FRANGO ASSADO 42G":0.7488,"CHINEQUE DE GOIABADA G/NOT 120G":0.45,"IOGURTE DE COCO 180ML":1.008,"IOGURTE DE MORANGO 180ML":1.0914,"SUCO POLPA DE UVA 180ML":1.1182,"SUCO POLPA DE MORANGO 180ML":1.2263,"CANJICA 200G":0.8569,"BOLO EMBALAGEM INDIVIDUAL 40G":1.56,"MOLHO DE FRANGO CENOURA E ERVILHA 50G":0.4286,"BISCOITO DOCE EMBALAGEM INDIVIDUAL 50GR":1.16,"FRANGO E CENOURA PARA PAO 60G":0.7454,"SUCO POLPA DE MARACUJA 180ML":1.9732,"SUCO POLPA DE MACA 180ML":0.657,"BISCOITO COOKIES INTEGRAIS 50G":0.7405,"VITAMINA DE MARACUJA 160 ML":1.5713,"FRANGO REFOGADO PARA PAO 60G":1.1606,"MOLHO DE FRANGO 50G":0.3356,"FRANGO PARA PAO COM TOMATE 60G":1.1989,"FRANGO P/ PAO COM TOMATE G/NOT 60 GR":0.9238,"FRANGO PARA PAO C/TOM. G/NOT 60G":0.9238,"ISCAS DE FRANGO REFOGADAS 50G":0.8049,"SANDUICHE NATURAL G/NOT 150G":2.0128,"FRANGO COM CEN E PIMENTAO 150G":1.4571,"BOLO CHOCOLAT EMBALAGEM INDIVIDUAL 50 GR":1.56,"ISCAS DE FRANGO AO SUGO 90G":1.3475,"MOLHO DE CARNE COM VAGEM 50G":1.096,"SUCO TETRA PAK 200ML":1.8075,"ISCAS DE FRANGO REFOGADAS G/NOT 70G":1.4883,"SUCO DE LARANJA TETRAPAK 200ML":2.81,"PEITO DE FRANGO GRELHADO 60G":1.9206,"FRICASSE DE FRANGO 90G":1.7493,"VITAMINA DE MORANGO 160ML":1.0962,"FRANGO ASSADO 110G":1.0945,"ALMONDEGAS DE FRANGO ASS AO SUGO 100G":1.3886,"MOLHO DE CARNE E CHUCHU 50G":1.688,"FRANGO AO MOLHO 110G":1.2998,"BOLO DE COCO G/NOT 100G":0.8148,"BOLO DE CHOCOLATE G/NOT 100G":0.8066,"MOLHO DE CARNE E BROCOLIS 50G":0.8189,"CARNE MOIDA REFOGADA 60G":1.2401,"CARNE MOIDA PARA PAO 60G":2.3079,"CARNE MOIDA REFOGADA COM TOMATE 60G":2.3207,"CARNE MOIDA COM CENOURA 60G":1.3717,"MOLHO DE CARNE 50G":0.4173,"FRICASSE DE FRANGO 110G":1.7493,"MOLHO DE FRANGO E CHUC G/NOT 120G":0.5282,"BOLINHO DE CARNE AO MOLHO 70G":1.0429,"BOLINHO DE CARNE AO SUGO 70G":1.0429,"ISCAS DE CARNE COM ABOBRINHA 60GR":1.5123,"HAMBURGUER DE CARNE MOIDA 60G":0.7146,"ISCAS DE CARNE E ABOBRINHA 60G":1.5123,"ISCAS DE FRANGO REFOGADAS 80G":1.0215,"FRANGO AO MOLHO DE TOMATE COM ERV 100G":1.7672,"MOLHO DE FRANGO E ABOBRINHA G/NOT 120G":1.7479,"PEITO DE FRANGO GRELHADO 80G":1.9206,"ISCAS DE CARNE E BROCOLIS 60G":1.1039,"PEITO DE FRANGO GRELHADO (DIETA) 80G":1.9206,"PEITO DE FRANGO A MILANESA 100G":1.8732,"MOLHO DE FRANGO E BROCOLIS G/NOT 120G":0.9027,"ISCAS DE CARNE COM ABOBORA 60G":1.0489,"MOLHO DE CARNE E CENOURA 50G":0.8988,"ISCAS DE CARNE E TOMATE 60G":1.5421,"ISCAS DE CARNE E CENOURA 60G":2.3521,"MOLHO DE CARNE E ABOBRINHA 50G":2.3705,"MOLHO DE CARNE E ABOBORA 50G":2.4296,"ISCAS DE CARNE AO SUGO 50G":4.262,"BARREADO 90G":2.9781,"BOLINHO DE CARNE ASSADO 90G":1.276,"BISCOITO SEQUILHOS 50G":0.661,"BISCOITO SEQUILHOS SABORES DIVERSOS 50G":0.661,"BOLINHO DE CARNE AO SUGO G/NOT 120G":1.7739,"ALMONDEGAS DE CARNE ASSADAS AO SUGO 100G":1.3539,"ISCAS DE CARNE REFOGADAS 50G":5.1326,"ISCAS DE CARNE AO SUGO 80G":2.4327,"STROGONOFF DE CARNE 90G":3.7138,"CARNE MOIDA COM TOMATE CHEIRO VERDE 100G":1.7881,"POSTA ASSADA AO MOLHO 100G":4.6616,"ISCAS DE CARNE REFOGADAS G/NOT 70G":3.8145,"BARREADO 110G":2.9781,"PICADINHO DE CARNE 80G":3.9824,"QUIBE ASSADO COM MOLHO 100G":1.4091,"CARNE MOIDA REFOGADA 100G":1.9286,"CARNE MOIDA REFOGADA 80 GR":1.2401,"MOLHO DE CARNE E CHUCHU G/NOT 120 G":4.0704,"QUIBE ASSADO SEM MOLHO 100G":1.298,"BIFE GRELHADO 100G":3.1322,"BIFE ACEBOLADO 100G":3.1137,"BIFE COM MOLHO 100G":5.5792,"CARNE DE PANELA COM MANJERICAO 100G":2.7969,"STROGONOFF DE CARNE 110G":3.7138,"PICADINHO DE CARNE 100G":3.9824,"ISCAS DE CARNE REFOGADAS 100G":1.9015,"ISCAS DE CARNE REFOGADA 80G":5.1326,"BIFE A MILANESA 100G":4.1668,"ISCAS DE CARNE AO SUGO 100G":2.4327,"SALADA DE REPOLHO 30 GR":0.1144,"CACHORRO QUENTE MOLHO 20ML E SALSICH 50G":0.3784,"MOLHO PARA CACHORRO QUENTE 20G":0.3784,"SALADA DE REPOLHO ROXO 40G":0.1604,"SALADA DE ACELGA COM LIMAO 30G":0.0731,"BATATA COZIDA 50G":0.2172,"BATATA DOCE ASSADA 50G":0.1817,"BETERRABA COZIDA 50G":0.1602,"SALADA DE PEPINO COM TOMATE 45G":0.2746,"SALADA DE BETERRABA COZIDA COM LIMAO 50G":0.1515,"SALADA DE BETERRABA COM LIMAO 50G":0.1515,"BATATA PALHA 10G":0.1594,"POLENTA G/NOT 180G":0.1343,"PONKAN 120G":2.0,"PONKAN 80G":2.0,"SALADA DE VAGEM COM TOMATE 40G":0.3849,"PAO DE AVEIA":0.3,"PAO DE ABOBORA 50G":0.3,"PAO DE MILHO 50G":0.3,"(I)SALADA DE FRUTAS 90G":0.4628,"SALADA DE VAGEM 40G":0.565,"PAO DE BATATA G/NOT 75G":0.4,"MACARRAO PARAFUSO INTEGRAL G/NOT 300G":0.7937,"BOLO DE BAUNILHA 50G":0.4753,"SOPA DE ARROZ C/FRANG,BATATA,CENOU 150GR":0.8196,"BOLO DE AIPIM 50G":0.5375,"VITAMINA DE MACA 160ML":0.6096,"CREME DE MANGA 90G":0.3856,"SALSICHA 50G":0.3784,"BISCOITO DE POLVILHO SALGADO 50G":1.15,"CANJICA G/NOT 250G":1.0711,"SUCO DE UVA TETRAPAK 200ML":1.1182,"BISCOITO DE POLVILHO DOCE 50G":0.661,"SOPA ARROZ COM CARNE, BATAT E COUVE 150G":0.7436,"SOPA DE FEIJAO C/CAR/BATATA/MACARR 150GR":1.7962,"SOPA DE BATATA C/CARN/CENO E MACARR 150G":1.8823,"SOPA DE BATA CARNE CENOURA MACAR 150G":1.8823,"SOPA DE FUB C CAR BAT COU E ERV 150G":0.7881,"CARNE MOIDA E CENOURA REF 60G":1.3717,"MOLHO DE FRANGO E VAGEM G/NOT 120G":0.2842,"ISCAS DE FRANGO AO SUGO 110G":1.3475,"(I)PURE DE BATATA G/NOT 160 GR":0.3852,"MOLHO DE FRANGO E CENOURA G/NOT 120G":2.0405,"RISOTO DE FRANGO E CENOURA G/NOT 300GR":1.8767,"CARNE PICADINHA COM AIPIM 100G":2.192,"PICADINHO DE CAR C CEN E CHAM 100G":3.0302,"MOLHO DE CARNE E ABOBRINHA G/NOT 120G":4.2701,"CARNE MOIDA COM CENOURA G/NOT 120G":5.8173,"SALADA DE AGRIAO 15G":0.1598,"SALADA DE AGRIAO COM TOMATE 20G":0.1895,"QUIRERA 100G":0.0319,"CENOURA REFOGADA 40G":0.234,"CENOURA E REPOLHO REFOGADOS 60G":0.265,"BETERRABA COZIDA 70G":0.1602,"PONKAN 150G":2.0,"ARROZ COM BROCOLIS 100G":0.1241,"SALADA DE VAGEM COM CENOURA 40G":0.3002,"BATATA SALSA REFOGADA 55G":0.3899,"SALADA DE FRUTAS 120 GR":0.4628,"PAO DE MILHO G/NOT 75G":0.4,"LEITE COM AROMA DE COCO 190ML":0.4264,"CHINEQUE DE UVA G/NOT 120G":0.45,"MACARRAO PARAFUSO COLORIDO G/NOT 180G":0.6606,"BOLO DE ABACAXI E CANELA 50G":0.4363,"CARNE MOIDA PARA PAO 75G":2.3079,"BIFE COM MOLHO DE ERVILHAS 100G":3.1246,"MOLHO DE CARNE E CENOURA G/NOT 120G":2.1695};
@@ -641,6 +652,209 @@ function lookup(db,nome){
   const ws=n.split(' ').filter(w=>w.length>3);
   for(const[k,v] of Object.entries(db)){if(ws.length>0&&ws.every(w=>k.includes(w)))return{key:k,val:v};}
   return null;
+}
+
+// Lookup melhorado para importação xlsx — ignora prefixos, sufixos e palavras irrelevantes
+function lookupXlsx(db, nome){
+  if(!nome) return null;
+  let n = nome.toUpperCase().trim();
+
+  // 1. Mapeamento fixo para nomes comuns da planilha integral
+  const MAP_FIXO = {
+    'ARROZ BRANCO 110G': 'ARROZ 110G',
+    'ARROZ BRANCO': 'ARROZ 110G',
+    'ARROZ INTEGRAL 110G': 'ARROZ INTEGRAL 110G',
+    'FEIJÃO PRETO 90G': 'FEIJAO PRETO 90G',
+    'FEIJAO PRETO 90G': 'FEIJAO PRETO 90G',
+    'FEIJÃO CARIOCA 90G': 'FEIJAO CARIOCA 90G',
+    'FEIJAO CARIOCA 90G': 'FEIJAO CARIOCA 90G',
+    'BRÓCOLIS REFOGADO': 'BROCOLIS REFOGADO 50G',
+    'BROCOLIS REFOGADO': 'BROCOLIS REFOGADO 50G',
+    'BRÓCOLIS REFOGADO COM CENOURA': 'BROCOLIS REFOGADO COM CENOURA 80G',
+    'HAMBÚGUER BOVINO ASSADO': 'HAMBURGUER BOVINO ASSADO 42G',
+    'HAMBURGUER BOVINO ASSADO': 'HAMBURGUER BOVINO ASSADO 42G',
+    'MACARRÃO PARAFUSO': 'MACARRAO PARAFUSO 100G',
+    'MACARRAO PARAFUSO': 'MACARRAO PARAFUSO 100G',
+    'MACARRÃO PARAFUSO AO SUGO': 'MACARRAO PARAFUSO AO SUGO 80G',
+    'MACARRÃO PARAFUSO COLORIDO': 'MACARRAO PARAFUSO COLORIDO 100G',
+    'SUCO DE MARACUJÁ': 'SUCO POLPA DE MARACUJA 180ML',
+    'SUCO DE MARACUJA': 'SUCO POLPA DE MARACUJA 180ML',
+    'PATÊ DE FRANGO': 'PATE DE FRANGO 30G',
+    'PATE DE FRANGO': 'PATE DE FRANGO 30G',
+    'PURÊ DE BATATA 40G': 'PURE DE BATATA 40G',
+    'PURE DE BATATA 40G': 'PURE DE BATATA 40G',
+    'PURÊ DE AIPIM': 'PURE DE AIPIM 50 GR',
+    'PURE DE AIPIM': 'PURE DE AIPIM 50 GR',
+    'MELÃO FATIADO 125G': 'MELAO FATIADO 150G ALMOCO',
+    'MELÃO FATIADO': 'MELAO FATIADO 150G ALMOCO',
+    'MELÃO': 'MELAO FATIADO 150G ALMOCO',
+    'MELAO': 'MELAO FATIADO 150G ALMOCO',
+    'VITAMINA DE MARACUJÁ': 'VITAMINA DE MARACUJA 160 ML',
+    'VITAMINA DE MARACUJA': 'VITAMINA DE MARACUJA 160 ML',
+    'CHÁ DE HORTELÃ 190ML': 'CHA DE HORTELA 190ML',
+    'CHA DE HORTELA 190ML': 'CHA DE HORTELA 190ML',
+    'LEITE COM AROMA DE BAUNILHA': 'LEITE COM AROMA DE BAUNILHA 190ML',
+    'LEITE COM CHOCOLATE EM PÓ 190ML': 'LEITE COM CHOCOLATE EM PO 190ML',
+    'LEITE COM CHOCOLATE EM PO 190ML': 'LEITE COM CHOCOLATE EM PO 190ML',
+    'MAÇÃ': 'MACA 100G', 'MACA': 'MACA 100G',
+    'MAÇÃ 100G': 'MACA 100G',
+    'BANANA': 'BANANA 130G',
+    'ABACAXI': 'ABACAXI 100G',
+    'LARANJA': 'LARANJA 100G',
+    'ISCAS DE FRANGO E CENOURA': 'ISCAS DE FRANGO E CENOURA 60G',
+    'POSTA ASSADA AO MOLHO': 'POSTA ASSADA AO MOLHO RESTRICAO 100G',
+    'ALMÔNDEGA DE CARNE ASSADA AO SUGO': 'ALMONDEGAS DE CARNE ASSADAS AO SUGO 100G',
+    'ALMÔNDEGAS DE CARNE AO SUGO 100G': 'ALMONDEGAS DE CARNE ASSADAS AO SUGO 100G',
+    'CARNE MOÍDA REFOGADA COM TOMATE': 'CARNE MOIDA REFOGADA COM TOMATE 60G',
+    'CARNE MOIDA REFOGADA COM TOMATE': 'CARNE MOIDA REFOGADA COM TOMATE 60G',
+    'CARNE MOÍDA COM TOMATE E CHEIRO VERDE 100G': 'CARNE MOIDA COM TOMATE CHEIRO VERDE 100G',
+    'FRANGO ASSADO': 'FRANGO ASSADO 110G',
+    'FRANGO ASSADO 100G': 'FRANGO ASSADO 110G',
+    'PEITO DE FRANGO À MILANESA': 'PEITO DE FRANGO A MILANESA 100G',
+    'PEITO DE FRANGO GRELHADO 100G': 'PEITO DE FRANGO GRELHADO 80G',
+    'ISCAS DE FRANGO AO SUGO': 'ISCAS DE FRANGO AO SUGO 110G',
+    'ISCAS DE FRANGO REFOGADAS COM BRÓCOLIS 50G': 'ISCAS DE FRANGO REF COM BROCOLIS 60G',
+    'BARREADO': 'BARREADO 110G',
+    'BIFE ACEBOLADO 100G': 'BIFE ACEBOLADO 100G',
+    'QUIBE SEM MOLHO': 'QUIBE ASSADO SEM MOLHO 100G',
+    'QUIRERA 90G': 'QUIRERA 100G',
+    'SAGU': 'SAGU DE UVA 150G',
+    'POLENTA': 'POLENTA 100G',
+    'REQUEIJÃO CREMOSO': 'REQUEIJAO CREMOSO 15G',
+    'REQUEIJAO CREMOSO': 'REQUEIJAO CREMOSO 15G',
+    'REQUEIJÃO': 'REQUEIJAO CREMOSO 15G',
+    'QUEIJO': 'QUEIJO 15G', 'QUEIJO 20G': 'QUEIJO 15G',
+    'MANTEIGA': 'MANTEIGA 10G',
+    'PÃES DE LEITE 50G': 'PAO DE LEITE 50G',
+    'PÃO DE LEITE': 'PAO DE LEITE 50G',
+    'PÃO DE LEITE 50G': 'PAO DE LEITE 50G',
+    'PÃO DE LEITE FATIADO 50G': 'PAO DE LEITE FATIADO 50G',
+    'PÃO DE AVEIA 50G': 'PAO DE AVEIA 50G',
+    'PÃO DE BATATA': 'PAO DE BATATA 50G',
+    'PÃO DE BATATA 50G': 'PAO DE BATATA 50G',
+    'PÃO DE CENTEIO': 'PAO DE CENTEIO 50G',
+    'PÃO DE HAMBURGUER': 'PAO DE HAMBURGUER 50G',
+    'PÃO DE MILHO 50G': 'PAO DE MILHO 50G',
+    'PÃO INTEGRAL FATIADO': 'PAO INTEGRAL FATIADO 50G',
+    'PÃO INTEGRAL FATIADO 50G': 'PAO INTEGRAL FATIADO 50G',
+    'PÃO DE INTEGRAL FATIADO 50G': 'PAO INTEGRAL FATIADO 50G',
+    'PÃO DE ABÓBORA': 'PAO DE ABOBORA 50G',
+    'PÃO DE ABÓBORA 50G': 'PAO DE ABOBORA 50G',
+    'CHINEQUE DE UVA': 'CHINEQUE DE UVA 60G',
+    'CHINEQUE DE GOIABADA': 'CHINEQUE DE GOIABADA 60G',
+    'BISCOITO CREAM CRACKER': 'BISCOITO CREAM CRACKER 50G',
+    'BISCOITO ROSQUINHA': 'BISCOITO ROSQUINHA 50G',
+    'BISCOITO DE POLVILHO SALGADO': 'BISCOITO DE POLVILHO SALGADO 50G',
+    'BOLO DE CENOURA': 'BOLO DE CENOURA 50G',
+    'BOLO DE CHOCOLATE': 'BOLO DE CHOCOLATE 50G',
+    'LEITE': 'LEITE 190ML',
+    'IOGURTE DE COCO 180ML': 'IOGURTE DE COCO 180ML',
+    'IOGURTE DE MORANGO 180ML': 'IOGURTE DE MORANGO 180ML',
+    'FLOCOS DE MILHO SEM AÇUCAR 50G': 'FLOCOS DE MILHO SEM ACUCAR 50G',
+    'AIPIM COM MOLHO': 'AIPIM COM MOLHO 60G',
+    'FARINHA DE MANDIOCA TORRADA 35G': 'FARINHA DE MANDIOCA TORRADA 35G',
+    'FAROFA DE CENOURA 30G': 'FAROFA DE CENOURA 45G',
+    'FAROFA DE COUVE 30G': 'FAROFA DE COUVE 30G',
+    'FAROFA DE ESPINAFRE': 'FAROFA DE ESPINAFRE 30G',
+    'FAROFA DE REPOLHO': 'FAROFA DE REPOLHO 30G',
+    'CENOURA REFOGADA': 'CENOURA REFOGADA 30G',
+    'ABOBRINHA REFOGADA': 'ABOBRINHA REFOGADA 35G',
+    'BATATA DOCE ASSADA': 'BATATA DOCE ASSADA 50G',
+    'BATATA ASSADA COM AZEITE E ORÉGANO': 'BATATA ASSADA COM AZEITE E OREGANO 70G',
+    'COUVE FLOR REFOGADA': 'COUVE FLOR COZIDA 30G',
+    'ALFACE': 'ALFACE CRESPA FOLHA 10G',
+    'ALFACE CRESPA': 'ALFACE CRESPA FOLHA 10G',
+    'SALADA DE ACELGA': 'SALADA DE ACELGA 30G',
+    'SALADA DE ALFACE': 'SALADA DE ALFACE 15G',
+    'SALADA DE BETERRABA RALADA': 'SALADA DE BETERRABA RALADA 25G',
+    'SALADA DE CENOURA': 'SALADA DE CENOURA 30 GR',
+    'SALADA DE CHUCHU COM CHEIRO VERDE': 'SALADA DE CHUCHU COM CHEIRO VERDE 30G',
+    'SALADA DE CHUCHU COM CENOURA 35G': '(I)SALADA DE CHUCHU COM CENOURA 35G',
+    'SALADA DE FRUTA 100G': 'SALADA DE FRUTAS 100G',
+    'SALADA DE PEPINO': 'SALADA DE PEPINO 40G',
+    'SALADA DE PEPINO 30G': 'SALADA DE PEPINO 40G',
+    'SALADA DE PEPINO COM TOMATE': 'SALADA DE PEPINO COM TOMATE 45G',
+    'SALADA DE REPOLHO AO VINAGRETE 40G': 'SALADA DE REPOLHO AO VINAGRETE 40G',
+    'SALADA DE REPOLHO VERDE E ROXO': 'SALADA DE REPOLHO VERDE C/ REP ROXO 40G',
+    'SALADA DE TOMATE': 'SALADA DE TOMATE 60G',
+    'MACARRÃO ALHO E ÓLEO 80G': 'MACARRAO PARAFUSO ALHO E OLEO 80G',
+    'MOLHO DE CARNE E CHUCHU': 'MOLHO DE CARNE E CHUCHU 50G',
+    'MOLHO DE FRANGO E ABOBRINHA': 'MOLHO DE FRANGO E ABOBRINHA 50G',
+    'MOLHO DE CARNE E CENOURA 50G': 'MOLHO DE CARNE E CENOURA 50G',
+    'FRANGO PARA PÃO COM TOMATE 60G': 'FRANGO PARA PAO COM TOMATE 60G',
+    'ISCAS DE FRANGO REFOGADAS COM BRÓCOLIS 50G': 'ISCAS DE FRANGO REF COM BROCOLIS 60G',
+    'ALMÔNDEGAS DE CARNE ASSADAS AO SUGO 100G': 'ALMONDEGAS DE CARNE ASSADAS AO SUGO 100G',
+    'CHÁ DE CAMOMILA 190ML': 'CHA DE CAMOMILA 190ML',
+    'CHA DE CAMOMILA 190ML': 'CHA DE CAMOMILA 190ML',
+    'SUCO POLPA DE UVA 180ML': 'SUCO POLPA DE UVA 180ML',
+    'SUCO POLPA DE ACEROLA 200ML': 'SUCO POLPA DE ACEROLA 200ML',
+    'VITAMINA DE BANANA': 'VITAMINA DE BANANA 160ML',
+    'VITAMINA DE MANGA': 'VITAMINA DE MANGA 160ML',
+    'VITAMINA DE MORANGO 180ML': 'VITAMINA DE MORANGO 160ML',
+    'CANJICA 200G': 'CANJICA 200G',
+    'BOLINHO DE CARNE AO MOLHO 70G': 'BOLINHO DE CARNE AO MOLHO 70G',
+    'BOLINHO DE CARNE ASSADO 90G': 'BOLINHO DE CARNE ASSADO 90G',
+  };
+
+  if(MAP_FIXO[n]) return {key:MAP_FIXO[n], val:1};
+
+  // 2. Busca exata
+  if(db[n]) return {key:n, val:db[n]};
+
+  // 2. Remover palavras/padrões irrelevantes da planilha
+  const remover = [
+    /\(I\)/g, /\bALM\b/g, /\bSEM LEITE\b/g, /\bSEM ACUCAR\b/g,
+    /\bDIET\b/g, /\bINTEGRAL\b/g, /\bFATIADO\b/g, /\bCOZIDO\b/g,
+    /\bFRESCO\b/g, /\bNATURAL\b/g, /\bBRANCO\b/g, /\bPRETO\b/g,
+    /\bCARIOCA\b/g, /\bCOLORIDO\b/g, /\bREFOGADO\b/g, /\bASSADO\b/g,
+    /\bGRELHADO\b/g, /\bCOZIDA\b/g, /\bRALADA\b/g, /\bFATIADA\b/g,
+    /-\s*ALM/g, /\bSEM\b/g
+  ];
+  let nLimpo = n;
+  remover.forEach(r => { nLimpo = nLimpo.replace(r, ''); });
+  nLimpo = nLimpo.replace(/\s+/g, ' ').trim();
+
+  // 3. Busca com nome limpo
+  if(db[nLimpo]) return {key:nLimpo, val:db[nLimpo]};
+
+  // 4. Extrair gramagem (ex: 110G, 50 GR, 180ML) e nome base
+  const gramMatch = n.match(/(\d+\s*(?:G|GR|ML|KG))\s*$/i);
+  const gram = gramMatch ? gramMatch[1].replace(/\s/g,'') : null;
+  const nSemGram = n.replace(/\d+\s*(?:G|GR|ML|KG)\s*$/i,'').trim();
+  const nLimpoSemGram = nLimpo.replace(/\d+\s*(?:G|GR|ML|KG)\s*$/i,'').trim();
+
+  // 5. Palavras-chave com pelo menos 4 letras, ignorando stopwords
+  const stopwords = new Set(['COM','SEM','AO','DE','DA','DO','EM','NO','NA','OS','AS','UM','UMA','E','A','O']);
+  const palavras = nLimpoSemGram.split(' ').filter(w => w.length >= 4 && !stopwords.has(w));
+
+  // 6. Busca por inclusão com nome limpo
+  for(const[k,v] of Object.entries(db)){
+    if(k.includes(nLimpo) || nLimpo.includes(k)) return {key:k,val:v};
+  }
+
+  // 7. Busca por todas as palavras-chave no nome do receituário
+  if(palavras.length > 0){
+    for(const[k,v] of Object.entries(db)){
+      if(palavras.every(w => k.includes(w))) return {key:k,val:v};
+    }
+  }
+
+  // 8. Busca por maioria das palavras (>= 60%) se tiver pelo menos 2
+  if(palavras.length >= 2){
+    let melhor = null, melhorScore = 0;
+    for(const[k,v] of Object.entries(db)){
+      const matches = palavras.filter(w => k.includes(w)).length;
+      const score = matches / palavras.length;
+      if(score >= 0.6 && score > melhorScore){
+        melhorScore = score;
+        melhor = {key:k,val:v};
+      }
+    }
+    if(melhor) return melhor;
+  }
+
+  // 9. Fallback: lookup normal
+  return lookup(db, nome);
 }
 
 function sugestoes(db,termo,max=8){
@@ -859,7 +1073,7 @@ function atualizarGrid(){
   // Limpar tudo
   document.querySelectorAll('.ginput').forEach(i=>{i.value='';});
   document.querySelectorAll('.gcusto').forEach(c=>{c.innerHTML='<span style="color:#CCC">—</span>';c.dataset.pv=0;});
-  document.querySelectorAll('.td').forEach(el=>{el.style.color='#CCC';el.textContent='—';});
+  document.querySelectorAll('.td,.tpu').forEach(el=>{el.style.color='#CCC';el.textContent='—';});
   TS.fill(0);
   SEMANAS_DATA=[[],[],[],[],[]];
   const tvs=document.getElementById('tv-sem');if(tvs)tvs.textContent='R$ 0,00';
@@ -887,10 +1101,17 @@ function atualizarCores(){
 }
 
 function selSem(idx){
-  // Salvar semana atual
+  // Salvar semana atual (só se tiver conteúdo no grid)
   const gId0=CT==='c05'?'grid-card':(modalidade==='integral'?'grid-integral-inner':'grid-regular-merenda');
   const gEl0=document.getElementById(gId0);
-  if(gEl0) SEMANAS_DATA[SA]=Array.from(gEl0.querySelectorAll('.ginput')).map(inp=>inp.value);
+  if(gEl0){
+    const vals=Array.from(gEl0.querySelectorAll('.ginput')).map(inp=>inp.value);
+    const temConteudo=vals.some(v=>v);
+    // Só sobrescreve se o grid tem conteúdo OU se SEMANAS_DATA[SA] estava vazio
+    if(temConteudo || !SEMANAS_DATA[SA] || !SEMANAS_DATA[SA].some(v=>v)){
+      SEMANAS_DATA[SA]=vals;
+    }
+  }
   SA=idx; const c=C[CT];
   document.querySelectorAll('.stab').forEach((t,i)=>{t.className='stab';if(i===idx)t.classList.add('ativo',c.cls);});
   const d0=DATAS[idx]?DATAS[idx][0]:'—'; const d5=DATAS[idx]?DATAS[idx][5]:'—';
@@ -910,7 +1131,7 @@ function selSem(idx){
     const inputs=gEl.querySelectorAll('.ginput');
     inputs.forEach(inp=>{inp.value='';});
     gEl.querySelectorAll('.gcusto').forEach(cel=>{cel.innerHTML='<span style="color:#CCC">—</span>';cel.dataset.pv=0;});
-    for(let i=0;i<6;i++){const td=document.getElementById('td'+i);if(td){td.style.color='#CCC';td.textContent='—';}}
+    document.querySelectorAll('.td,.tpu').forEach(el=>{el.style.color='#CCC';el.textContent='—';});
     const semData=SEMANAS_DATA[idx]||[];
     semData.forEach((v,i)=>{if(inputs[i]&&v){inputs[i].value=v;calcCell(inputs[i]);}});
     recalc();
@@ -923,7 +1144,7 @@ function aplicarSeparacaoRefeicoes(){
     if(!g) return;
     const linhasPorRef = gid==='grid-card' ? [3,1,6,2,2]
                        : gid==='grid-regular-merenda' ? [6]
-                       : [3,6,3];
+                       : [5,6,5];
     const gcells = Array.from(g.querySelectorAll('.gcell'));
     const grefs  = Array.from(g.querySelectorAll('.gref'));
     let offset = 0;
@@ -960,9 +1181,12 @@ function recalc(){
     });
   }
   const c=C[CT];let ts=0;let tspu=0;
+  const gridWrap=gridEl?gridEl.closest('.grid-wrap'):null;
   for(let i=0;i<6;i++){
-    const el=document.getElementById('td'+i);
+    const el=gridWrap?gridWrap.querySelector(`.td[data-dia="${i}"]`):null;
     if(el){if(d[i]>0){el.style.color=c.cor;el.textContent=fmt2(d[i]);ts+=d[i];}else{el.style.color='#CCC';el.textContent='—';}}
+    const elpu=gridWrap?gridWrap.querySelector(`.tpu[data-dia="${i}"]`):null;
+    if(elpu){if(dpu[i]>0){elpu.style.color='#E65100';elpu.textContent=fmt2(dpu[i]);}else{elpu.style.color='#CCC';elpu.textContent='—';}}
     tspu+=dpu[i];
   }
   TS[SA]=ts;
@@ -990,6 +1214,7 @@ function recalc(){
     semD.forEach(nome=>{if(nome){tmpu2+=PU_REAL[nome.trim().toUpperCase()]||0;}});
   }
   const tvpum=document.getElementById('tv-pu-mes');if(tvpum)tvpum.textContent=fmt2(tmpu2);
+  TMPU2=tmpu2;
 
   // Médias por semana (prévia: conta apenas semanas com valor > 0)
   const semanasPV = TS.filter(v => v > 0);
@@ -1015,6 +1240,45 @@ function recalc(){
   if(tvpum2) tvpum2.textContent = fmt2(mediaPU);
   const subpum = document.getElementById('tc-pu-media')?.querySelector('.tot-sub');
   if(subpum) subpum.textContent = totaisPU.length > 0 ? `Prévia: ${totaisPU.length} semana${totaisPU.length>1?'s':''} preenchida${totaisPU.length>1?'s':''}` : 'Nenhuma semana preenchida';
+
+  // ── Médias por categoria ──────────────────────────────────────────────────
+  const mcEl = document.getElementById('media-categorias');
+  if(mcEl && gridEl){
+    const isIntegral = modalidade==='integral';
+    const refs_cmei2 = [{nome:'Desjejum',linhas:3},{nome:'Colação',linhas:1},{nome:'Almoço',linhas:6},{nome:'Lanche',linhas:2},{nome:'Jantar',linhas:2}];
+    const refs_reg2  = [{nome:'Merenda',linhas:6}];
+    const refs_int2  = [{nome:'Café da manhã',linhas:5},{nome:'Almoço',linhas:6},{nome:'Lanche da tarde',linhas:5}];
+    const refsAtual  = CT==='c05'?refs_cmei2:(isIntegral?refs_int2:refs_reg2);
+    const cells = Array.from(gridEl.querySelectorAll('.gcell'));
+    let offset = 0;
+    const cores = {'Desjejum':'#4472C4','Colação':'#70AD47','Almoço':'#ED7D31','Lanche':'#FFC000','Jantar':'#7030A0','Merenda':'#ED7D31','Café da manhã':'#4472C4','Lanche da tarde':'#FFC000'};
+    let html = '';
+    refsAtual.forEach(ref=>{
+      let pvSum=0,pvCnt=0,puSum=0,puCnt=0;
+      for(let l=0;l<ref.linhas;l++){
+        for(let d=0;d<6;d++){
+          const idx=(offset+l)*6+d;
+          if(cells[idx]){
+            const pv=parseFloat(cells[idx].querySelector('.gcusto')?.dataset?.pv||0);
+            const nome=cells[idx].querySelector('.ginput')?.value?.trim()?.toUpperCase()||'';
+            const pu=nome?(PU_REAL[nome]||0):0;
+            if(pv>0){pvSum+=pv;pvCnt++;}
+            if(pu>0){puSum+=pu;puCnt++;}
+          }
+        }
+      }
+      const pvMedia=pvCnt>0?pvSum/pvCnt:null;
+      const puMedia=puCnt>0?puSum/puCnt:null;
+      const cor=cores[ref.nome]||'#888';
+      html+=`<div style="background:${cor};border-radius:8px;padding:10px 12px;color:#fff">
+        <div style="font-size:9px;font-weight:700;opacity:.85;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">${ref.nome}</div>
+        <div style="font-size:11px;font-weight:700">PV médio: ${pvMedia?fmt2(pvMedia):'—'}</div>
+        <div style="font-size:11px;font-weight:700;opacity:.85">PU médio: ${puMedia?fmt2(puMedia):'—'}</div>
+      </div>`;
+      offset+=ref.linhas;
+    });
+    mcEl.innerHTML=html;
+  }
 }
 
 function getCategoria(nome){
@@ -1185,9 +1449,9 @@ function gerarPDFCardapio(){
     {nome:'Merenda',       cor:'#ED7D31', linhas:4},
   ];
   const refs_integral = [
-    {nome:'Café da manhã', cor:'#4472C4', linhas:3},
+    {nome:'Café da manhã', cor:'#4472C4', linhas:5},
     {nome:'Almoço',        cor:'#ED7D31', linhas:6},
-    {nome:'Lanche da tarde',cor:'#FFC000',linhas:3},
+    {nome:'Lanche da tarde',cor:'#FFC000',linhas:5},
   ];
   const refs = CT==='c05' ? refs_cmei : (isIntegral ? refs_integral : refs_regular);
   const totalLinhas = refs.reduce((s,r)=>s+r.linhas, 0);
@@ -1198,12 +1462,22 @@ function gerarPDFCardapio(){
   if(gElAtual) SEMANAS_DATA[SA] = Array.from(gElAtual.querySelectorAll('.ginput')).map(i=>i.value);
 
   // ── Função auxiliar: calcular custo P.V. de um prato ─────────────────────
-  function calcPV(nome){
+  function calcPV(nome, semIdx, posIdx){
     if(!nome) return null;
-    const ings = INGS[CT] ? INGS[CT][nome.toUpperCase()] : null;
-    if(!ings || !ings.length) return null;
-    const total = ings.reduce((s,i)=>s+i.q*i.p, 0);
-    return total>0 ? total : null;
+    if(semIdx === SA){
+      const gridId = CT==='c05'?'grid-card':(isIntegral?'grid-integral-inner':'grid-regular-merenda');
+      const gridEl = document.getElementById(gridId);
+      if(gridEl){
+        const cells = gridEl.querySelectorAll('.gcell');
+        if(cells[posIdx]){
+          const pv = parseFloat(cells[posIdx].querySelector('.gcusto')?.dataset?.pv || 0);
+          if(pv > 0) return pv;
+        }
+      }
+    }
+    const r = lookup(CUSTO[CT]||{}, nome);
+    if(r && r.val > 0) return r.val;
+    return null;
   }
   function fmt2(v){ return 'R$ '+v.toFixed(2).replace('.',','); }
 
@@ -1215,7 +1489,9 @@ function gerarPDFCardapio(){
   // totalLinhas * 6 valores por semana
   let semsHTML = '';
   let totalMesVal = 0;
+  let totalMesPU = 0;
   const totaisSemana = [0,0,0,0,0];
+  const totaisSemPU  = [0,0,0,0,0];
 
   for(let s=0; s<5; s++){
     const semData = SEMANAS_DATA[s] || [];
@@ -1228,7 +1504,7 @@ function gerarPDFCardapio(){
       for(let dia=0; dia<6; dia++){
         const idx = linha*6 + dia;
         const nome = semData[idx] || '';
-        const pv   = nome ? calcPV(nome) : null;
+        const pv   = nome ? calcPV(nome, s, idx) : null;
         const pu   = nome ? (PU_REAL[nome.trim().toUpperCase()] || null) : null;
         linhaData.push({ nome, pv, pu });
       }
@@ -1243,9 +1519,19 @@ function gerarPDFCardapio(){
         if(pv) totaisDia[dia] += pv;
       }
     }
-    const totalSem = totaisDia.reduce((a,b)=>a+b,0);
+    const totalSem = (TS && TS[s] > 0) ? TS[s] : totaisDia.reduce((a,b)=>a+b,0);
     totaisSemana[s] = totalSem;
     totalMesVal += totalSem;
+
+    // Total PU desta semana
+    let totalSemPU = 0;
+    for(let linha=0; linha<totalLinhas; linha++){
+      for(let dia=0; dia<6; dia++){
+        const pu = dadosSem[linha][dia].pu;
+        if(pu) totalSemPU += pu;
+      }
+    }
+    totaisSemPU[s] = totalSemPU;
 
     // Cabeçalho de dias
     const diasHeader = DIAS_NOME.map((d,i)=>{
@@ -1275,9 +1561,11 @@ function gerarPDFCardapio(){
           const nomeExib = d.nome ? d.nome.charAt(0)+d.nome.slice(1).toLowerCase() : '';
           const pvStr = d.pv ? `<div style="font-size:9px;font-weight:700;color:#111;margin-top:2px">P.V. ${fmt2(d.pv)}</div>` : '';
           const puCor = (d.pu && d.pv) ? (d.pu > d.pv ? '#E24B4A' : '#1F6B3E') : '#888';
+          const mgPct = (d.pv && d.pu) ? ((d.pv - d.pu) / d.pv * 100) : null;
+          const mgStr = mgPct !== null ? `<div style="font-size:9px;font-weight:700;color:${puCor};text-align:right">${mgPct>=0?'+':''}${mgPct.toFixed(1)}%</div>` : '';
           const puStr = d.pu ? `<div style="font-size:9px;font-weight:700;color:${puCor};margin-top:1px">P.U. ${fmt2(d.pu)}</div>` : '';
           celulas += `<td style="padding:5px 7px;border:1px solid #EEE;font-size:10px;vertical-align:top">
-            <div style="color:#333;line-height:1.3">${nomeExib}</div>${pvStr}${puStr}
+            <div style="color:#333;line-height:1.3">${nomeExib}</div>${pvStr}${mgStr}${puStr}
           </td>`;
         }
         if(sub===0){
@@ -1322,7 +1610,7 @@ function gerarPDFCardapio(){
           ${linhasHTML}
           <tbody>
             <tr>
-              <td style="background:#4D4D4D;color:#fff;font-weight:700;font-size:10px;text-align:center;padding:5px;border:1px solid #EEE">Total dia</td>
+              <td style="background:#4D4D4D;color:#fff;font-weight:700;font-size:10px;text-align:center;padding:5px;border:1px solid #EEE">P.V. dia</td>
               ${totaisRow}
             </tr>
           </tbody>
@@ -1331,7 +1619,7 @@ function gerarPDFCardapio(){
   }
 
   // ── Resumo mensal ─────────────────────────────────────────────────────────
-  const detalhes = totaisSemana.map((v,i)=>`Semana ${i+1}: ${v>0?fmt2(v):'—'}`).join(' &nbsp;|&nbsp; ');
+  const detalhes = totaisSemana.map((v,i)=>`Semana ${i+1}: PV ${v>0?fmt2(v):'—'} | PU ${totaisSemPU[i]>0?fmt2(totaisSemPU[i]):'—'}`).join(' &nbsp;&nbsp; ');
   const totalMesStr = totalMesVal>0 ? fmt2(totalMesVal) : '—';
 
   // ── HTML completo do relatório ────────────────────────────────────────────
@@ -1370,9 +1658,15 @@ function gerarPDFCardapio(){
       <div style="font-size:10px;opacity:.8;margin-bottom:3px">${detalhes}</div>
       <div style="font-size:9px;opacity:.6">Preços baseados no Contrato ${c.cod} — ${c.nome}${modalNome}</div>
     </div>
-    <div style="text-align:right">
-      <div style="font-size:10px;opacity:.8;margin-bottom:2px">CUSTO TOTAL P.V. DO MÊS</div>
-      <div style="font-size:22px;font-weight:700">${totalMesStr}</div>
+    <div style="text-align:right;display:flex;gap:24px;align-items:center">
+      <div>
+        <div style="font-size:10px;opacity:.8;margin-bottom:2px">CUSTO TOTAL P.V. DO MÊS</div>
+        <div style="font-size:22px;font-weight:700">${totalMesStr}</div>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,.4);padding-left:24px">
+        <div style="font-size:10px;opacity:.8;margin-bottom:2px">CUSTO TOTAL P.U. DO MÊS</div>
+        <div style="font-size:22px;font-weight:700">${TMPU2>0?fmt2(TMPU2):'—'}</div>
+      </div>
     </div>
   </div>
 </body>
@@ -1414,6 +1708,277 @@ function salvarJSON(){
 
 function carregarJSON(){
   document.getElementById('input-json').click();
+}
+
+function importarXlsxCardapio(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  event.target.value = '';
+  if(typeof XLSX === 'undefined'){ toast('⚠ SheetJS não carregado.'); return; }
+
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const data = new Uint8Array(e.target.result);
+      const wb = XLSX.read(data, {type:'array'});
+      const ws = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:null});
+      const MAP_CAT = {'CM1':'cafe','ALMOÇO A1':'almoco','ALMOÇO':'almoco','LI1':'lanche','MERENDA':'merenda','DJ1':'desjejum','LI':'lanche'};
+      const estrutura = CT==='c05'
+        ? [{cat:'desjejum',linhas:3},{cat:'colacao',linhas:1},{cat:'almoco',linhas:6},{cat:'lanche',linhas:2},{cat:'jantar',linhas:2}]
+        : modalidade==='integral'
+          ? [{cat:'cafe',linhas:5},{cat:'almoco',linhas:6},{cat:'lanche',linhas:5}]
+          : [{cat:'merenda',linhas:6}];
+      const db = CUSTO[CT] || {};
+      const normalizar = s => s ? String(s).trim().toUpperCase().replace(/\s+/g,' ') : '';
+
+      let semanas = [];
+      let semAtual = null, catAtual = null;
+
+      const resolverNome = (val) => {
+        if(!val) return '';
+        // 1. Verificar mapeamento salvo
+        if(MAPEAMENTO_XLSX[val]) return MAPEAMENTO_XLSX[val];
+        // 2. Lookup fuzzy
+        const r = lookupXlsx(db, val);
+        return r ? r.key : null; // null = não encontrado
+      };
+
+      rows.forEach((row) => {
+        const col0 = normalizar(row[0]);
+        const temData = row.some(v => v && String(v).toUpperCase().includes('FEIRA'));
+        if(temData){
+          semAtual = {colsIdx:new Array(6).fill(null), dados:{cafe:[],almoco:[],lanche:[],merenda:[],desjejum:[],colacao:[],jantar:[]}};
+          semanas.push(semAtual);
+          catAtual = null;
+          // Mapear cada coluna ao dia correto (0=Seg,1=Ter,2=Qua,3=Qui,4=Sex,5=Sab)
+          row.forEach((v,i)=>{
+            if(i>=1 && v && String(v).toUpperCase().includes('FEIRA')){
+              const u = String(v).toUpperCase();
+              let d = -1;
+              if(u.includes('SEGUNDA') || u.includes('SEG-')) d=0;
+              else if(u.includes('TER')) d=1;
+              else if(u.includes('QUARTA') || u.includes('QUA')) d=2;
+              else if(u.includes('QUINTA') || u.includes('QUI')) d=3;
+              else if(u.includes('SEXTA') || u.includes('SEX')) d=4;
+              else if(u.includes('SAB') || u.includes('SÁB')) d=5;
+              if(d>=0) semAtual.colsIdx[d]=i;
+            }
+          });
+          return;
+        }
+        if(!semAtual) return;
+        const catKey = Object.keys(MAP_CAT).find(k => col0.startsWith(k));
+        if(catKey){
+          catAtual = MAP_CAT[catKey];
+          // Ler dados desta linha (categoria + dados na mesma linha)
+          if(semAtual.colsIdx){
+            const linhaDia = [];
+            let temAlgo = false;
+            const IGNORAR_CEL = ['FERIADO','NAO ALTERAR','NÃO ALTERAR','EMENDA'];
+            for(let d=0; d<6; d++){
+              const ci = semAtual.colsIdx[d];
+              let val = ci!=null ? normalizar(row[ci]) : '';
+              if(IGNORAR_CEL.some(ig=>val.includes(ig))) val='';
+              if(val) temAlgo = true;
+              linhaDia.push(val ? {orig:val, res:resolverNome(val)} : {orig:'',res:''});
+            }
+            if(temAlgo) semAtual.dados[catAtual].push(linhaDia);
+          }
+          return;
+        }
+        if(!catAtual || !semAtual.colsIdx) return;
+        const col1 = normalizar(row[1]);
+        // NÃO ALTERAR/FERIADO na col1 significa apenas que aquele dia está bloqueado
+        // mas os outros dias da linha podem ter dados válidos — não ignorar a linha inteira
+        const PALAVRAS_IGNORAR_LINHA = ['SUSPENSÃO','SUSPENSAO','RECESSO'];
+        if(PALAVRAS_IGNORAR_LINHA.some(ig => col0.includes(ig))) return;
+        const linhaDia = [];
+        const IGNORAR_CEL2 = ['FERIADO','NAO ALTERAR','NÃO ALTERAR','EMENDA'];
+        let temDados = false;
+        for(let d=0; d<6; d++){
+          const ci = semAtual.colsIdx[d];
+          let val = ci!=null ? normalizar(row[ci]) : '';
+          if(IGNORAR_CEL2.some(ig=>val.includes(ig))) val='';
+          if(val) temDados = true;
+          linhaDia.push(val ? {orig:val, res:resolverNome(val)} : {orig:'',res:''});
+        }
+        if(temDados) semAtual.dados[catAtual].push(linhaDia);
+      });
+
+      if(semanas.length === 0){ toast('⚠ Nenhuma semana encontrada na planilha.'); return; }
+      console.log('Semanas detectadas:', semanas.length);
+      semanas.forEach((s,i)=>{ console.log(`Semana ${i+1} colsIdx:`, s.colsIdx, 'cafe:', s.dados.cafe.length, 'almoco:', s.dados.almoco.length, 'lanche:', s.dados.lanche.length); });
+
+      // Coletar não-encontrados únicos (excluindo palavras que não são pratos)
+      const PALAVRAS_IGNORAR = new Set(['FERIADO','RECESSO','NAO ALTERAR','NÃO ALTERAR','SUSPENSÃO','SUSPENSAO','EMENDA']);
+      const naoEncontrados = new Map();
+      semanas.forEach(sem => {
+        Object.values(sem.dados).forEach(cat => {
+          cat.forEach(linha => {
+            linha.forEach(cell => {
+              if(cell.orig && cell.res === null && !naoEncontrados.has(cell.orig) && !PALAVRAS_IGNORAR.has(cell.orig)){
+                // Gerar sugestões top 5
+                const n = cell.orig.toUpperCase().trim();
+                const sugs = [];
+                const palavras = n.split(' ').filter(w=>w.length>=4);
+                for(const[k] of Object.entries(db)){
+                  const matches = palavras.filter(w=>k.includes(w)).length;
+                  if(matches > 0) sugs.push({k, score: matches/palavras.length});
+                }
+                sugs.sort((a,b)=>b.score-a.score);
+                naoEncontrados.set(cell.orig, sugs.slice(0,5).map(s=>s.k));
+              }
+            });
+          });
+        });
+      });
+
+      // Salvar dados pendentes
+      _pendXlsx = {semanas, estrutura, db};
+
+      // Sempre abrir modal para revisão completa
+      abrirModalMapeamento(naoEncontrados);
+    } catch(err){
+      console.error(err);
+      toast('⚠ Erro ao ler planilha: ' + err.message);
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function abrirModalMapeamento(naoEncontrados){
+  const db = CUSTO[CT] || {};
+  const receitas = Object.keys(db).sort();
+
+  // Coletar TODOS os pratos únicos da planilha (encontrados e não encontrados)
+  const todosPratos = new Map(); // orig → {res, encontrado}
+  if(_pendXlsx){
+    _pendXlsx.semanas.forEach(sem => {
+      Object.values(sem.dados).forEach(cat => {
+        cat.forEach(linha => {
+          linha.forEach(cell => {
+            if(cell.orig && !todosPratos.has(cell.orig)){
+              todosPratos.set(cell.orig, {
+                res: cell.res || MAPEAMENTO_XLSX[cell.orig] || '',
+                encontrado: cell.res !== null
+              });
+            }
+          });
+        });
+      });
+    });
+  }
+
+  const total = todosPratos.size;
+  const naoEnc = naoEncontrados.size;
+
+  let html = `
+  <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+    <input id="map-filtro" placeholder="Filtrar pratos da planilha..." 
+      style="flex:1;padding:7px 10px;border:1px solid #ddd;border-radius:6px;font-size:12px"
+      oninput="filtrarMapModal(this.value)">
+    <label style="font-size:11px;color:#888;white-space:nowrap">
+      <input type="checkbox" id="map-so-erros" onchange="filtrarMapModal(document.getElementById('map-filtro').value)">
+      Só não encontrados (${naoEnc})
+    </label>
+    <span style="font-size:11px;color:#888;white-space:nowrap">${total} pratos</span>
+  </div>
+  <table style="width:100%;border-collapse:collapse" id="map-tabela">
+    <thead><tr style="position:sticky;top:0;background:#fff;z-index:1">
+      <th style="text-align:left;padding:6px 8px;font-size:11px;color:#888;border-bottom:2px solid #eee;width:40%">Nome na planilha</th>
+      <th style="text-align:left;padding:6px 8px;font-size:11px;color:#888;border-bottom:2px solid #eee">Nome no app</th>
+      <th style="width:24px;border-bottom:2px solid #eee"></th>
+    </tr></thead><tbody id="map-tbody">`;
+
+  todosPratos.forEach((info, orig) => {
+    const enc = info.encontrado;
+    const cor = enc ? '#1F6B3E' : '#E24B4A';
+    const icone = enc ? '✓' : '!';
+    const opts = receitas.map(r => `<option value="${r}" ${info.res===r?'selected':''}>${r}</option>`).join('');
+    html += `<tr class="map-row${enc?'':' map-nao-enc'}" style="border-bottom:1px solid #f5f5f5">
+      <td style="padding:5px 8px;font-size:11px;color:#333;vertical-align:middle">${orig}</td>
+      <td style="padding:5px 8px">
+        <select data-orig="${orig}" style="width:100%;padding:4px 6px;border:1px solid ${enc?'#ddd':'#ffaaaa'};border-radius:5px;font-size:11px;color:#333">
+          <option value="">— ignorar —</option>
+          ${opts}
+        </select>
+      </td>
+      <td style="padding:5px 4px;text-align:center;font-size:11px;color:${cor};font-weight:700">${icone}</td>
+    </tr>`;
+  });
+
+  html += '</tbody></table>';
+
+  document.getElementById('map-corpo').innerHTML = html;
+  document.getElementById('modal-mapeamento').querySelector('.tot-lbl, div[style*="font-size:15px"]');
+  document.getElementById('modal-mapeamento').style.display = 'flex';
+}
+
+function filtrarMapModal(texto){
+  const soErros = document.getElementById('map-so-erros')?.checked;
+  const t = (texto||'').toUpperCase().trim();
+  document.querySelectorAll('#map-tbody .map-row').forEach(tr => {
+    const nome = tr.querySelector('td')?.textContent?.toUpperCase()||'';
+    const eErro = tr.classList.contains('map-nao-enc');
+    const visivel = (!t || nome.includes(t)) && (!soErros || eErro);
+    tr.style.display = visivel ? '' : 'none';
+  });
+}
+
+function fecharMapeamento(){
+  document.getElementById('modal-mapeamento').style.display = 'none';
+  _pendXlsx = null;
+}
+
+function confirmarMapeamento(){
+  console.log('confirmarMapeamento chamado, _pendXlsx:', _pendXlsx ? 'OK' : 'NULL');
+  // Salvar mapeamentos escolhidos
+  document.querySelectorAll('#map-corpo select').forEach(sel => {
+    const orig = sel.dataset.orig;
+    const val = sel.value;
+    if(orig && val) MAPEAMENTO_XLSX[orig] = val;
+    else if(orig && !val) MAPEAMENTO_XLSX[orig] = ''; // ignorar
+  });
+  document.getElementById('modal-mapeamento').style.display = 'none';
+  aplicarImportacaoXlsx();
+}
+
+function aplicarImportacaoXlsx(){
+  if(!_pendXlsx) return;
+  const {semanas, estrutura} = _pendXlsx;
+
+  // Resolver nomes pendentes com mapeamento confirmado
+  const resolver = (orig) => {
+    if(!orig) return '';
+    if(MAPEAMENTO_XLSX.hasOwnProperty(orig)) return MAPEAMENTO_XLSX[orig] || '';
+    const db = CUSTO[CT] || {};
+    const r = lookupXlsx(db, orig);
+    return r ? r.key : orig;
+  };
+
+  let importados = 0;
+  semanas.forEach((sem, si) => {
+    if(si >= 5) return;
+    const flat = [];
+    estrutura.forEach(ref => {
+      const dados = sem.dados[ref.cat] || [];
+      for(let l=0; l<ref.linhas; l++){
+        for(let d=0; d<6; d++){
+          const cell = dados[l] ? dados[l][d] : null;
+          const nome = cell ? resolver(cell.orig) : '';
+          flat.push(nome);
+          if(nome) importados++;
+        }
+      }
+    });
+    console.log(`Semana ${si+1} flat não-vazios:`, flat.filter(v=>v).length, flat.filter(v=>v).slice(0,5));
+    SEMANAS_DATA[si] = flat;
+  });
+
+  _pendXlsx = null;
+  selSem(0);
+  toast(`✅ ${importados} pratos importados de ${semanas.length} semana(s).`);
 }
 
 function importarJSON(event){
@@ -1470,7 +2035,46 @@ function importarJSON(event){
       // Restaurar pratos
       SA = dados.semana || 0;
       const pratosArr = Array.isArray(dados.pratos[0]) ? dados.pratos : [dados.pratos,[],[],[],[]];
-      SEMANAS_DATA = pratosArr;
+
+      // Adaptar estrutura se JSON foi salvo com número diferente de linhas por categoria
+      const isIntAtual = CT==='c03' && modalidade==='integral';
+      if(isIntAtual){
+        const refs_atual = [{linhas:5},{linhas:6},{linhas:5}]; // cafe, almoco, lanche atual
+        const linhasAtual = refs_atual.reduce((s,r)=>s+r.linhas,0) * 6; // 96
+        SEMANAS_DATA = pratosArr.map(sem => {
+          if(!sem || sem.length === 0) return sem;
+          if(sem.length === linhasAtual) return sem; // já no formato atual
+          const linhas_json = Math.round(sem.length / 6);
+          // Detectar estrutura do JSON
+          const refs_json = linhas_json === 15 ? [{linhas:4},{linhas:6},{linhas:5}]
+                          : linhas_json === 14 ? [{linhas:3},{linhas:6},{linhas:5}]
+                          : linhas_json === 12 ? [{linhas:3},{linhas:6},{linhas:3}]
+                          : null;
+          if(!refs_json){
+            const novo = new Array(linhasAtual).fill('');
+            sem.forEach((v,i)=>{ if(i<linhasAtual) novo[i]=v; });
+            return novo;
+          }
+          // Redistribuir categoria a categoria
+          const novo = new Array(linhasAtual).fill('');
+          let offJSON=0, offNovo=0;
+          refs_json.forEach((ref,ri)=>{
+            const linhasNovo = refs_atual[ri].linhas;
+            for(let l=0; l<linhasNovo; l++){
+              for(let d=0; d<6; d++){
+                const idxNovo = (offNovo+l)*6+d;
+                const idxJSON = (offJSON+l)*6+d;
+                novo[idxNovo] = (l < ref.linhas && idxJSON < sem.length) ? (sem[idxJSON]||'') : '';
+              }
+            }
+            offJSON += ref.linhas;
+            offNovo += linhasNovo;
+          });
+          return novo;
+        });
+      } else {
+        SEMANAS_DATA = pratosArr;
+      }
 
       setTimeout(()=>{
         // Determinar grid ativo
@@ -1660,6 +2264,15 @@ async function carregarDadosGitHub(){
 }
 
 function salvarVersaoAtualizada(){
+  // Verificar senha de acesso
+  const SENHA = 'risotolandia2026';
+  const senhaOk = sessionStorage.getItem('painel_auth') === SENHA;
+  if(!senhaOk){
+    const digitada = prompt('🔒 Digite a senha para salvar:');
+    if(!digitada || digitada !== SENHA){ toast('❌ Senha incorreta.'); return; }
+    sessionStorage.setItem('painel_auth', SENHA);
+  }
+
   let token = localStorage.getItem('gh_token');
   if(!token){
     token = prompt('🔑 Cole seu token do GitHub (ghp_...):\n\nEle será salvo no navegador para próximas vezes.');
@@ -1711,4 +2324,26 @@ function salvarVersaoAtualizada(){
 }
 
 </script>
+
+<!-- Modal de mapeamento xlsx -->
+<div id="modal-mapeamento" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:12px;width:90%;max-width:780px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,.25)">
+    <div style="padding:18px 20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a">Revisar mapeamento de pratos</div>
+        <div style="font-size:11px;color:#888;margin-top:2px">Confirme ou ajuste os pratos não encontrados automaticamente</div>
+      </div>
+      <button onclick="fecharMapeamento()" style="background:none;border:none;font-size:20px;cursor:pointer;color:#888">✕</button>
+    </div>
+    <div id="map-corpo" style="overflow-y:auto;padding:16px 20px;flex:1"></div>
+    <div style="padding:14px 20px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center">
+      <div style="font-size:11px;color:#888">Deixe em branco para ignorar o prato</div>
+      <div style="display:flex;gap:8px">
+        <button onclick="fecharMapeamento()" style="padding:8px 16px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;font-size:13px">Cancelar</button>
+        <button onclick="confirmarMapeamento()" style="padding:8px 18px;border:none;border-radius:6px;background:#1F6B3E;color:#fff;cursor:pointer;font-size:13px;font-weight:600">Confirmar e importar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body></html>
