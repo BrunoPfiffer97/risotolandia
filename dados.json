@@ -400,7 +400,8 @@
     "VAGEM REFOGADA COM BROCOLIS 45G": 0.4112,
     "SALADA DE REPOLHO 20 GR": 0.1144,
     "SOPA BAT CAR CEN MAC G/NOT 300G": 3.109,
-    "HAMBURGUER BOVINO ASSADO 42G": 0.71
+    "HAMBURGUER BOVINO ASSADO 42G": 0.71,
+    "KIT DESCARTAVEIS/LIMPEZA": 0.26
   },
   "COMP_CUSTOS": [
     {
@@ -3594,7 +3595,21 @@
     {
       "nome": "HAMBURGUER BOVINO ASSADO 42G",
       "ago": 0.71
+    },
+    {
+      "nome": "KIT DESCARTAVEIS/LIMPEZA",
+      "ago": 0.26
     }
   ],
-  "atualizado": "21/07/2026, 09:46:43"
+  "BAND_VALS": {
+    "grid-regular-merenda": {
+      "com": {
+        "0": "4852"
+      },
+      "dias": {
+        "0": "20"
+      }
+    }
+  },
+  "atualizado": "24/07/2026, 15:54:47"
 }
