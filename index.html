@@ -2803,6 +2803,17 @@ function importarJSON(event){
         SEMANAS_DATA = pratosArr;
       }
 
+      // Restaurar cardápios independentes
+      if(dados.CARDAPIO_SEMANAS) Object.assign(CARDAPIO_SEMANAS, dados.CARDAPIO_SEMANAS);
+      if(dados.CARDAPIO_COM) Object.assign(CARDAPIO_COM, dados.CARDAPIO_COM);
+      if(dados.BAND_VALS) Object.assign(BAND_VALS, dados.BAND_VALS);
+      if(dados.cardapioAtivo){
+        cardapioAtivo = dados.cardapioAtivo;
+        document.querySelectorAll('.chip-cardapio').forEach(ch=>{
+          ch.classList.toggle('ativo', ch.dataset.nome===cardapioAtivo);
+        });
+      }
+
       setTimeout(()=>{
         // Determinar grid ativo
         const isInt2 = CT==='c03' && modalidade==='integral';
