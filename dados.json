@@ -1,5 +1,6 @@
 {
   "PU_REAL": {
+    "KIT DESC PLANEJAMENTO": 0.48,
     "KIT DESCARTAVEIS/LIMPEZA": 0.26,
     "BISCOITO SALGADO EMBALAG. INDIVIDUAL 50G": 0.8967,
     "ALFACE CRESPA FOLHA 10G": 0.0581,
@@ -401,8 +402,7 @@
     "MOLHO DE CARNE E BROCOLIS G/NOT 120G": 3.5623,
     "SALADA DE GRAO DE BICO 30G": 0.0804,
     "SOPA BAT CAR CEN MAC G/NOT 300G": 3.109,
-    "HAMBURGUER BOVINO ASSADO 42G": 0.71,
-    "KIT DESC PLANEJAMENTO": 0.48
+    "HAMBURGUER BOVINO ASSADO 42G": 0.71
   },
   "COMP_CUSTOS": [
     {
@@ -3612,7 +3612,50 @@
   "BAND_VALS": {},
   "CARDAPIO_SEMANAS": {
     "A": [
-      [],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
       [],
       [],
       [],
@@ -3726,7 +3769,14 @@
   },
   "CARDAPIO_COM": {
     "A": [
-      [],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
       [],
       [],
       [],
@@ -3839,5 +3889,5 @@
     ]
   },
   "cardapioAtivo": "A",
-  "atualizado": "28/07/2026, 14:02:04"
+  "atualizado": "28/07/2026, 15:24:18"
 }
