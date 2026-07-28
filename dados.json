@@ -401,7 +401,8 @@
     "MOLHO DE CARNE E BROCOLIS G/NOT 120G": 3.5623,
     "SALADA DE GRAO DE BICO 30G": 0.0804,
     "SOPA BAT CAR CEN MAC G/NOT 300G": 3.109,
-    "HAMBURGUER BOVINO ASSADO 42G": 0.71
+    "HAMBURGUER BOVINO ASSADO 42G": 0.71,
+    "KIT DESC PLANEJAMENTO": 0.48
   },
   "COMP_CUSTOS": [
     {
@@ -3595,6 +3596,17 @@
     {
       "nome": "KIT DESCARTAVEIS/LIMPEZA",
       "ago": 0.26
+    },
+    {
+      "nome": "KIT DESC PLANEJAMENTO",
+      "jan": 0.48,
+      "fev": 0.48,
+      "mar": 0.48,
+      "abr": 0.48,
+      "mai": 0.48,
+      "jun": 0.48,
+      "jul": 0.48,
+      "ago": 0.48
     }
   ],
   "BAND_VALS": {},
