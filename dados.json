@@ -3597,12 +3597,15 @@
       "ago": 0.71
     },
     {
-      "nome": "KIT DESCARTAVEIS/LIMPEZA",
-      "ago": 0.26
     {
+    "nome": "KIT DESCARTAVEIS/LIMPEZA",
+    "ago": 0.26
+  },
+  {
     "nome": "KIT DESC PLANEJAMENTO",
     "atrás": 0.48
-  ],
+  }
+],
   "BAND_VALS": {
     "grid-regular-merenda": {
       "com": {
