@@ -2,10 +2,11 @@
   "PU_REAL": {
     "KIT DESC PLANEJAMENTO": 0.48,
     "KIT DESCARTAVEIS/LIMPEZA": 0.26,
+    "GARRAFINHA DESCARTÁVEL CTBA": 0.56,
     "BISCOITO SALGADO EMBALAG. INDIVIDUAL 50G": 0.8967,
     "ALFACE CRESPA FOLHA 10G": 0.0539,
     "ALFACE LISA FOLHA 10G": 0.0655,
-    "BETERRABA COZIDA 20 GR": 0.1492,
+    "BETERRABA COZIDA 20 GR": 0.1493,
     "SALADA DE REPOLHO 40G": 0.1064,
     "POLENTA CREMOSA 60G": 0.0221,
     "SALADA DE BETERRABA RALADA 25G": 0.07,
@@ -16,7 +17,7 @@
     "SALADA DE REPOLHO E CENOURA 35G": 0.1386,
     "TOMATE RODELA 15G": 0.0455,
     "SALADA DE CENOURA 30 GR": 0.2316,
-    "BETERRABA COZIDA 30 GR": 0.1492,
+    "BETERRABA COZIDA 30 GR": 0.1493,
     "(I)SALADA DE CENOURA COM LIMAO 25G": 0.142,
     "(I)SALADA DE CENOURA COM LIMAO 25 GR": 0.142,
     "SALADA DE CENOURA RALADA COM LIMAO 25G": 0.142,
@@ -28,56 +29,56 @@
     "QUIRERA 70G": 0.0238,
     "SALADA DE CHUCHU COM TOMATE 25G": 0.1482,
     "SALADA DE ALFACE COM CENOURA 30G": 0.1606,
-    "CHUCHU REFOGADO 40G": 0.2111,
+    "CHUCHU REFOGADO 40G": 0.2113,
     "SALADA DE CHUCHU COM CENOURA 30G": 0.1787,
     "SALADA DE PEPINO 40G": 0.228,
     "SALADA DE PEPINO COM CHEIRO VERDE 40G": 0.1938,
     "BATATA DOCE ASSADA 40G": 0.204,
-    "ACELGA REFOGADA 45G": 0.1418,
-    "ABOBORA REFOGADA 35G": 0.1141,
-    "CENOURA REFOGADA 30G": 0.2126,
+    "ACELGA REFOGADA 45G": 0.1421,
+    "ABOBORA REFOGADA 35G": 0.1142,
+    "CENOURA REFOGADA 30G": 0.2127,
     "(I)SALADA DE CHUCHU COM CENOURA 35G": 0.1787,
-    "FAROFA DE REPOLHO 30G": 0.0881,
-    "POLENTA 100G": 0.0404,
+    "FAROFA DE REPOLHO 30G": 0.0883,
+    "POLENTA 100G": 0.0405,
     "DOCE DE FRUTA 20G": 0,
     "CHA DE CAPIM LIMAO 190ML": 0.0599,
     "SALADA DE ALFACE COM TOMATE 25G": 0.1111,
     "SALADA DE CENOURA COZIDA 40G": 0.2316,
-    "ABOBRINHA REFOGADA COM TOMATE 35G": 0.1384,
+    "ABOBRINHA REFOGADA COM TOMATE 35G": 0.1386,
     "BROCOLIS COZIDO 22 GR": 0.3682,
     "(I)SALADA DE BETERRABA COZIDA 50G": 0.0969,
-    "BATATA ASSADA C/AZEITE E OREGANO 50G": 0.2117,
+    "BATATA ASSADA C/AZEITE E OREGANO 50G": 0.2118,
     "DOCE DE BANANA NATURAL 20G": 0,
     "SALADA DE CHUCHU 40G": 0.3965,
     "CENOURA E CHUCHU REFOGADOS 40G": 0.2577,
-    "ABOBRINHA REFOGADA 35G": 0.1407,
-    "BATATA CENOURA E CHUCHU REFOGADOS 40G": 0.202,
-    "ARROZ INTEGRAL 80G": 0.1333,
+    "ABOBRINHA REFOGADA 35G": 0.1411,
+    "BATATA CENOURA E CHUCHU REFOGADOS 40G": 0.2022,
+    "ARROZ INTEGRAL 80G": 0.1339,
     "CHA DE CAMOMILA 190ML": 0.0995,
     "CHA DE ERVA DOCE 190ML": 0.0504,
-    "CHUCHU REFOGADO 50G": 0.2111,
+    "CHUCHU REFOGADO 50G": 0.2113,
     "BATATA ASSADA COM AZEITE OREG E TOMA 50G": 0.1927,
     "COUVE FLOR COZIDA 30G": 0.5315,
-    "BATATA REFOGADA 50G": 0.208,
-    "ARROZ INTEGRAL 100G": 0.1141,
-    "ARROZ 100G": 0.1098,
+    "BATATA REFOGADA 50G": 0.2082,
+    "ARROZ INTEGRAL 100G": 0.1142,
+    "ARROZ 100G": 0.11,
     "FEIJAO CARIOCA 90G": 0.1566,
     "FEIJAO PRETO 90G": 0.1156,
-    "BATATA SAUTE 55G": 0.2065,
+    "BATATA SAUTE 55G": 0.2069,
     "ARROZ 110G": 0.1154,
     "LARANJA 100G": 0.28,
     "CHA DE HORTELA 190ML": 0.0644,
     "MAMAO FATIADO 85G": 0.4182,
     "PURE DE AIPIM 50 GR": 0.1973,
-    "QUIRERA G/NOT 180G": 0.0586,
-    "BATATA ASSADA COM AZEITE E OREGANO 70G": 0.2117,
-    "BATATA ASS COM AZEI OREG E TOM 70G": 0.2117,
+    "QUIRERA G/NOT 180G": 0.0589,
+    "BATATA ASSADA COM AZEITE E OREGANO 70G": 0.2118,
+    "BATATA ASS COM AZEI OREG E TOM 70G": 0.2118,
     "SALADA DE TOMATE 60G": 0.2304,
     "MELANCIA 150G": 0.3645,
     "MELANCIA FATIADA 150G": 0.3402,
-    "BATATA ASSADA COM ALECRIM 50G": 0.1955,
-    "FAROFA DE ESPINAFRE 30 GR": 0.1489,
-    "FAROFA DE ESPINAFRE 30G": 0.1489,
+    "BATATA ASSADA COM ALECRIM 50G": 0.1958,
+    "FAROFA DE ESPINAFRE 30 GR": 0.1492,
+    "FAROFA DE ESPINAFRE 30G": 0.1492,
     "SALADA DE TOMATE COM LIMAO 60G": 0.23,
     "SAGU DE UVA 100G": 0.2368,
     "AIPIM COM MOLHO 60G": 0.3931,
@@ -86,23 +87,23 @@
     "REQUEIJAO CREMOSO 15G": 0.3571,
     "SALADA DE BROCOLIS 30G": 0.255,
     "PURE DE AIPIM 65 G": 0.1973,
-    "FAROFA DE COUVE 30G": 0.1406,
-    "AIPIM SAUTE 85G": 0.4237,
-    "FARINHA DE MANDIOCA TORRADA 35G": 0.196,
+    "FAROFA DE COUVE 30G": 0.141,
+    "AIPIM SAUTE 85G": 0.424,
+    "FARINHA DE MANDIOCA TORRADA 35G": 0.1984,
     "SALADA DE COUVE FLOR 30 GR": 0.5236,
-    "MACARRAO PARAFUSO 100G": 0.2954,
+    "MACARRAO PARAFUSO 100G": 0.2959,
     "SAGU DE UVA 150G": 0.2841,
-    "MACARRAO PARAFUSO ALHO E OLEO 80G": 0.2494,
+    "MACARRAO PARAFUSO ALHO E OLEO 80G": 0.2495,
     "QUEIJO 10G": 0.37,
-    "FAROFA DE CENOURA 45G": 0.2156,
+    "FAROFA DE CENOURA 45G": 0.2159,
     "BANANA 130G": 0.3068,
-    "ARROZ G/NOT 180G": 0.1935,
+    "ARROZ G/NOT 180G": 0.1938,
     "BATATA REFOGADA 100G": 0.3772,
-    "SALADA DE BROCOLIS COM CENOURA 55G": 0.4504,
-    "VAGEM REFOGADA 40G": 0.3806,
+    "SALADA DE BROCOLIS COM CENOURA 55G": 0.4514,
+    "VAGEM REFOGADA 40G": 0.3807,
     "MANTEIGA 10G": 0.2274,
     "SALADA DE BROCOLIS COM TOMATE 55G": 0.3731,
-    "BATATA SALSA REFOGADA 40G": 0.3622,
+    "BATATA SALSA REFOGADA 40G": 0.3624,
     "MANGA PICADA 70 GR": 1.156,
     "PAO DE LEITE 50G": 0.3,
     "PAO DE AVEIA 50G": 0.3,
@@ -110,22 +111,22 @@
     "PAO DE CENOURA 50 G": 0.3,
     "PAO DE CENTEIO 50G": 0.3,
     "BATATA SALSA COZIDA 40G": 0.3401,
-    "MACARRAO PARAFUSO AO SUGO 80G": 0.3188,
+    "MACARRAO PARAFUSO AO SUGO 80G": 0.3192,
     "BATATA SALSA SAUTE 40G": 0.3284,
     "MELAO FATIADO 150G ALMOCO": 0.657,
     "MELAO FATIADO 150G MERENDA": 0.657,
     "BATATA PALHA 25G": 0.1574,
     "GOIABA 80G": 2,
-    "BROCOLIS REFOGADO 50G": 0.4616,
+    "BROCOLIS REFOGADO 50G": 0.4619,
     "CAQUI 120 GR": 0.5974,
     "PAO DE BATATA 50G": 0.3,
-    "MACARRAO PARAFUSO AO SUGO 100G": 0.3012,
+    "MACARRAO PARAFUSO AO SUGO 100G": 0.3017,
     "SALADA DE FRUTAS 100G": 0.4446,
     "CREME DE LEITE 20G": 0.1676,
     "COUVE FLOR COZIDA 50G": 0.5315,
-    "BROCOLIS REFOGADO COM CENOURA 80G": 0.5915,
+    "BROCOLIS REFOGADO COM CENOURA 80G": 0.5919,
     "PAO FRANCES 50GR": 0.45,
-    "MACARRAO PARAFUSO COLORIDO 100G": 0.4032,
+    "MACARRAO PARAFUSO COLORIDO 100G": 0.4037,
     "PAO FRANCES 50G": 0.45,
     "BISCOITO CREAM CRACKER 50G": 0.5485,
     "BISCOITO DE LEITE 50G": 0.5745,
@@ -142,19 +143,19 @@
     "CHINEQUE DE GOIABADA 60G": 0.45,
     "LEITE COM AROMA DE COCO 150ML": 0.3336,
     "LEITE COM AROMA DE BAUNILHA 150ML": 0.3374,
-    "MACARRAO PARAFUSO INTEGRAL AO SUGO 80GR": 0.2839,
+    "MACARRAO PARAFUSO INTEGRAL AO SUGO 80GR": 0.5054,
     "BOLO DE FUBA 50G": 0.4753,
     "MANGA PICADA 100G": 1.156,
     "BISCOITO DOCE INTEGRAL 50G": 0.6545,
-    "MACARRAO PARAFUSO G/NOT 180G": 0.2964,
-    "PURE DE BATATA 40G": 0.4011,
-    "PURE DE BATATA 80 G": 0.4011,
+    "MACARRAO PARAFUSO G/NOT 180G": 0.2969,
+    "PURE DE BATATA 40G": 0.4012,
+    "PURE DE BATATA 80 G": 0.4012,
     "PAO DE AVEIA G/NOT 75G": 0.4,
     "PAO DE LEITE G/NOT 75G": 0.4,
     "PAO DE HAMBURGUER G/NOT 75G": 0.45,
     "PAO DE CENTEIO G/NOT 75G": 0.4,
     "LEITE 190ML": 0.3971,
-    "MACARRAO PARAFUSO INTEGRAL 100G": 0.442,
+    "MACARRAO PARAFUSO INTEGRAL 100G": 0.9075,
     "BATATA REFOGADA G/NOT 180G": 0.6252,
     "PAO DE LEITE FATIADO 50G": 0.475,
     "PAO INTEGRAL FATIADO 50G": 0.5625,
@@ -181,7 +182,7 @@
     "SUCO POLPA DE TANGERINA 180ML": 0.8561,
     "MOLHO DE FRANGO E CHUCHU 50G": 0.3819,
     "ISCAS DE FRANGO E CENOURA 60G": 0.6287,
-    "MACARRAO PARAFUSO ALHO E OLEO 180G": 0.2494,
+    "MACARRAO PARAFUSO ALHO E OLEO 180G": 0.2495,
     "KIWI 80G": 2.62,
     "SUCO POLPA DE LARANJA 180ML": 0.9657,
     "VITAMINA DE BANANA COM CACAU 160 ML": 0.5725,
@@ -201,7 +202,7 @@
     "ISCAS DE FRANGO E CENOURA G/NOT 70 G": 1.0032,
     "MOLHO DE FRANGO E CENOURA 50G": 0.6969,
     "VITAMINA DE MANGA 160ML": 0.7459,
-    "HAMBURGUER DE FRANGO ASSADO 42G": 0.7488,
+    "HAMBURGUER DE FRANGO ASSADO 42G": 0.7492,
     "CHINEQUE DE GOIABADA G/NOT 120G": 0.45,
     "IOGURTE DE COCO 180ML": 1.008,
     "IOGURTE DE MORANGO 180ML": 1.0851,
@@ -223,50 +224,50 @@
     "FRANGO PARA PAO C/TOM. G/NOT 60G": 0.9045,
     "ISCAS DE FRANGO REFOGADAS 50G": 0.7854,
     "SANDUICHE NATURAL G/NOT 150G": 1.9646,
-    "FRANGO COM CEN E PIMENTAO 150G": 1.4533,
+    "FRANGO COM CEN E PIMENTAO 150G": 1.4534,
     "BOLO CHOCOLAT EMBALAGEM INDIVIDUAL 50 GR": 1.56,
-    "ISCAS DE FRANGO AO SUGO 90G": 1.4235,
+    "ISCAS DE FRANGO AO SUGO 90G": 1.4236,
     "MOLHO DE CARNE COM VAGEM 50G": 1.0821,
     "SUCO TETRA PAK 200ML": 1.7725,
     "ISCAS DE FRANGO REFOGADAS G/NOT 70G": 0.9219,
     "SUCO DE LARANJA TETRAPAK 200ML": 2.67,
-    "PEITO DE FRANGO GRELHADO 60G": 1.4275,
-    "FRICASSE DE FRANGO 90G": 1.3224,
+    "PEITO DE FRANGO GRELHADO 60G": 1.4277,
+    "FRICASSE DE FRANGO 90G": 1.3225,
     "VITAMINA DE MORANGO 160ML": 1.2683,
     "FRANGO ASSADO 110G": 1.2532,
     "ALMONDEGAS DE FRANGO ASS AO SUGO 100G": 1.3803,
-    "MOLHO DE CARNE E CHUCHU 50G": 1.2978,
+    "MOLHO DE CARNE E CHUCHU 50G": 1.2979,
     "FRANGO AO MOLHO 110G": 1.3027,
     "BOLO DE COCO G/NOT 100G": 0.8148,
     "BOLO DE CHOCOLATE G/NOT 100G": 0.8066,
     "MOLHO DE CARNE E BROCOLIS 50G": 0.8116,
-    "CARNE MOIDA REFOGADA 60G": 1.2401,
-    "CARNE MOIDA PARA PAO 60G": 2.0809,
-    "CARNE MOIDA REFOGADA COM TOMATE 60G": 1.9303,
+    "CARNE MOIDA REFOGADA 60G": 1.2406,
+    "CARNE MOIDA PARA PAO 60G": 2.081,
+    "CARNE MOIDA REFOGADA COM TOMATE 60G": 1.9304,
     "CARNE MOIDA COM CENOURA 60G": 1.3565,
     "MOLHO DE CARNE 50G": 0.4044,
-    "FRICASSE DE FRANGO 110G": 1.3224,
+    "FRICASSE DE FRANGO 110G": 1.3225,
     "MOLHO DE FRANGO E CHUC G/NOT 120G": 0.5178,
     "BOLINHO DE CARNE AO MOLHO 70G": 0.9834,
     "BOLINHO DE CARNE AO SUGO 70G": 0.9834,
     "ISCAS DE CARNE COM ABOBRINHA 60GR": 1.4891,
     "HAMBURGUER DE CARNE MOIDA 60G": 0.7146,
     "ISCAS DE CARNE E ABOBRINHA 60G": 1.4891,
-    "ISCAS DE FRANGO REFOGADAS 80G": 1.0199,
+    "ISCAS DE FRANGO REFOGADAS 80G": 1.0201,
     "FRANGO AO MOLHO DE TOMATE COM ERV 100G": 1.7158,
     "MOLHO DE FRANGO E ABOBRINHA G/NOT 120G": 1.8141,
-    "PEITO DE FRANGO GRELHADO 80G": 1.4275,
+    "PEITO DE FRANGO GRELHADO 80G": 1.4277,
     "ISCAS DE CARNE E BROCOLIS 60G": 1.0896,
-    "PEITO DE FRANGO GRELHADO (DIETA) 80G": 1.4275,
+    "PEITO DE FRANGO GRELHADO (DIETA) 80G": 1.4277,
     "PEITO DE FRANGO A MILANESA 100G": 1.6813,
     "MOLHO DE FRANGO E BROCOLIS G/NOT 120G": 0.8855,
     "ISCAS DE CARNE COM ABOBORA 60G": 1.0377,
     "MOLHO DE CARNE E CENOURA 50G": 0.8913,
     "ISCAS DE CARNE E TOMATE 60G": 1.5279,
     "ISCAS DE CARNE E CENOURA 60G": 1.9288,
-    "MOLHO DE CARNE E ABOBRINHA 50G": 1.7461,
+    "MOLHO DE CARNE E ABOBRINHA 50G": 1.7462,
     "MOLHO DE CARNE E ABOBORA 50G": 1.6207,
-    "ISCAS DE CARNE AO SUGO 50G": 1.6815,
+    "ISCAS DE CARNE AO SUGO 50G": 1.6816,
     "BARREADO 90G": 2.7888,
     "BOLINHO DE CARNE ASSADO 90G": 1.276,
     "BISCOITO SEQUILHOS 50G": 0.661,
@@ -274,41 +275,41 @@
     "BOLINHO DE CARNE AO SUGO G/NOT 120G": 1.6257,
     "ALMONDEGAS DE CARNE ASSADAS AO SUGO 100G": 1.3565,
     "ISCAS DE CARNE REFOGADAS 50G": 3.5968,
-    "ISCAS DE CARNE AO SUGO 80G": 3.7789,
-    "STROGONOFF DE CARNE 90G": 3.6807,
+    "ISCAS DE CARNE AO SUGO 80G": 3.7791,
+    "STROGONOFF DE CARNE 90G": 3.6808,
     "CARNE MOIDA COM TOMATE CHEIRO VERDE 100G": 1.7754,
     "POSTA ASSADA AO MOLHO 100G": 4.6412,
-    "ISCAS DE CARNE REFOGADAS G/NOT 70G": 2.3569,
+    "ISCAS DE CARNE REFOGADAS G/NOT 70G": 2.357,
     "BARREADO 110G": 2.7888,
     "PICADINHO DE CARNE 80G": 3.6613,
     "QUIBE ASSADO COM MOLHO 100G": 1.403,
-    "CARNE MOIDA REFOGADA 100G": 3.7604,
-    "CARNE MOIDA REFOGADA 80 GR": 1.2401,
-    "MOLHO DE CARNE E CHUCHU G/NOT 120 G": 3.1078,
+    "CARNE MOIDA REFOGADA 100G": 3.7605,
+    "CARNE MOIDA REFOGADA 80 GR": 1.2406,
+    "MOLHO DE CARNE E CHUCHU G/NOT 120 G": 3.1079,
     "QUIBE ASSADO SEM MOLHO 100G": 1.3629,
-    "BIFE GRELHADO 100G": 3.1309,
-    "BIFE ACEBOLADO 100G": 4.6611,
-    "BIFE COM MOLHO 100G": 5.568,
+    "BIFE GRELHADO 100G": 3.1314,
+    "BIFE ACEBOLADO 100G": 4.6613,
+    "BIFE COM MOLHO 100G": 5.5682,
     "CARNE DE PANELA COM MANJERICAO 100G": 2.7755,
-    "STROGONOFF DE CARNE 110G": 3.6807,
+    "STROGONOFF DE CARNE 110G": 3.6808,
     "PICADINHO DE CARNE 100G": 3.6613,
     "ISCAS DE CARNE REFOGADAS 100G": 1.8907,
     "ISCAS DE CARNE REFOGADA 80G": 3.5968,
     "BIFE A MILANESA 100G": 4.1659,
-    "ISCAS DE CARNE AO SUGO 100G": 3.7789,
+    "ISCAS DE CARNE AO SUGO 100G": 3.7791,
     "SALADA DE REPOLHO 30 GR": 0.1064,
     "CACHORRO QUENTE MOLHO 20ML E SALSICH 50G": 0.3692,
     "MOLHO PARA CACHORRO QUENTE 20G": 0.3692,
     "SALADA DE REPOLHO ROXO 40G": 0.1496,
     "SALADA DE ACELGA COM LIMAO 30G": 0.068,
-    "BATATA COZIDA 50G": 0.2028,
-    "BATATA DOCE ASSADA 50G": 0.1943,
-    "BETERRABA COZIDA 50G": 0.1492,
+    "BATATA COZIDA 50G": 0.2031,
+    "BATATA DOCE ASSADA 50G": 0.1946,
+    "BETERRABA COZIDA 50G": 0.1493,
     "SALADA DE PEPINO COM TOMATE 45G": 0.1898,
     "SALADA DE BETERRABA COZIDA COM LIMAO 50G": 0.141,
     "SALADA DE BETERRABA COM LIMAO 50G": 0.141,
     "BATATA PALHA 10G": 0.1574,
-    "POLENTA G/NOT 180G": 0.0726,
+    "POLENTA G/NOT 180G": 0.0728,
     "PONKAN 120G": 2,
     "PONKAN 80G": 2,
     "SALADA DE VAGEM COM TOMATE 40G": 0.2745,
@@ -318,9 +319,9 @@
     "(I)SALADA DE FRUTAS 90G": 0.4313,
     "SALADA DE VAGEM 40G": 0.525,
     "PAO DE BATATA G/NOT 75G": 0.4,
-    "MACARRAO PARAFUSO INTEGRAL G/NOT 300G": 0.7936,
+    "MACARRAO PARAFUSO INTEGRAL G/NOT 300G": 1.63,
     "BOLO DE BAUNILHA 50G": 0.4753,
-    "SOPA DE ARROZ C/FRANG,BATATA,CENOU 150GR": 0.6116,
+    "SOPA DE ARROZ C/FRANG,BATATA,CENOU 150GR": 0.6117,
     "BOLO DE AIPIM 50G": 0.5375,
     "VITAMINA DE MACA 160ML": 0.5851,
     "CREME DE MANGA 90G": 0.3673,
@@ -336,31 +337,31 @@
     "SOPA DE FUB C CAR BAT COU E ERV 150G": 0.7803,
     "CARNE MOIDA E CENOURA REF 60G": 1.3565,
     "MOLHO DE FRANGO E VAGEM G/NOT 120G": 0.2823,
-    "ISCAS DE FRANGO AO SUGO 110G": 1.4235,
+    "ISCAS DE FRANGO AO SUGO 110G": 1.4236,
     "(I)PURE DE BATATA G/NOT 160 GR": 0.37,
-    "MOLHO DE FRANGO E CENOURA G/NOT 120G": 1.6703,
-    "RISOTO DE FRANGO E CENOURA G/NOT 300GR": 1.8695,
-    "CARNE PICADINHA COM AIPIM 100G": 2.1769,
+    "MOLHO DE FRANGO E CENOURA G/NOT 120G": 1.6704,
+    "RISOTO DE FRANGO E CENOURA G/NOT 300GR": 1.8731,
+    "CARNE PICADINHA COM AIPIM 100G": 2.1773,
     "PICADINHO DE CAR C CEN E CHAM 100G": 3.0173,
     "MOLHO DE CARNE E ABOBRINHA G/NOT 120G": 4.2405,
     "CARNE MOIDA COM CENOURA G/NOT 120G": 3.9269,
     "SALADA DE AGRIAO 15G": 0.1484,
     "SALADA DE AGRIAO COM TOMATE 20G": 0.1494,
-    "QUIRERA 100G": 0.0316,
-    "CENOURA REFOGADA 40G": 0.2126,
-    "CENOURA E REPOLHO REFOGADOS 60G": 0.2464,
-    "BETERRABA COZIDA 70G": 0.1492,
+    "QUIRERA 100G": 0.0317,
+    "CENOURA REFOGADA 40G": 0.2127,
+    "CENOURA E REPOLHO REFOGADOS 60G": 0.2465,
+    "BETERRABA COZIDA 70G": 0.1493,
     "PONKAN 150G": 2,
-    "ARROZ COM BROCOLIS 100G": 0.1224,
+    "ARROZ COM BROCOLIS 100G": 0.1226,
     "SALADA DE VAGEM COM CENOURA 40G": 0.2787,
-    "BATATA SALSA REFOGADA 55G": 0.3622,
+    "BATATA SALSA REFOGADA 55G": 0.3624,
     "SALADA DE FRUTAS 120 GR": 0.4313,
     "PAO DE MILHO G/NOT 75G": 0.4,
     "LEITE COM AROMA DE COCO 190ML": 0.3336,
     "CHINEQUE DE UVA G/NOT 120G": 0.45,
-    "MACARRAO PARAFUSO COLORIDO G/NOT 180G": 0.67,
+    "MACARRAO PARAFUSO COLORIDO G/NOT 180G": 0.6705,
     "BOLO DE ABACAXI E CANELA 50G": 0.4363,
-    "CARNE MOIDA PARA PAO 75G": 2.0809,
+    "CARNE MOIDA PARA PAO 75G": 2.081,
     "BIFE COM MOLHO DE ERVILHAS 100G": 3.1163,
     "MOLHO DE CARNE E CENOURA G/NOT 120G": 2.1517,
     "PESSEGO 80G": 2,
@@ -377,31 +378,31 @@
     "SALADA DE REPOLHO COM LIMAO 40G": 0.1074,
     "PICADINHO DE CAR C CEN TOM VAG 100G": 2.5098,
     "SOPA FEI CAR BAT MAC G/NOT 300G": 1.2579,
-    "SOPA DE ARROZ C/ FRAN/BAT/CEN G/NOT 300G": 1.2233,
+    "SOPA DE ARROZ C/ FRAN/BAT/CEN G/NOT 300G": 1.2234,
     "BISC.POLVILHO(12 UN) PORC CONS EM 3 DIAS": 1.15,
     "SOPA BATAT FRANGO ABOBRI CEN CHUCH 150G": 0.4944,
     "PURE DE CENOURA 40G": 0.307,
     "SALADA DE TOMATE COM PEPINO 60G": 0.2084,
     "SALADA DE BETERRABA COZ C LIMAO 30G": 0.141,
     "MELANCIA PICADA 150 GR": 0.355,
-    "VAGEM REFOGADA COM BROCOLIS 45G": 0.3827,
-    "BATATA COZIDA 30 GR": 0.2028,
+    "VAGEM REFOGADA COM BROCOLIS 45G": 0.3829,
+    "BATATA COZIDA 30 GR": 0.2031,
     "SALADA DE REPOLHO 20 GR": 0.1064,
     "MOLHO DE FRANGO E VAGEM 50G": 0.2925,
     "ARROZ COM ERVILHA 100G": 0.1379,
-    "CREME DE MILHO 50G": 0.1911,
+    "CREME DE MILHO 50G": 0.192,
     "SOPA DE BAT C/FRA/ABOBR CEN CHU G/N 300G": 0.9164,
     "SOPA DE FRANGO,AB,BAT,CE,CHU G/NOT 300G": 0.9164,
     "HAMBURGUER DE CARNE 60G": 2.409,
     "BROCOLIS COZIDO 30 GR": 0.3682,
     "SOPA DE BATATA C/FRA/ABOBR/CEN/CHU 300GR": 0.4944,
     "SALADA DE BROCOLIS COM LIMAO 30G": 0.264,
-    "CENOURA REFOGADA 50 GR": 0.2126,
+    "CENOURA REFOGADA 50 GR": 0.2127,
     "BIFE COM ERVILHA MILHO E TOMATE 100G": 3.1485,
     "SALADA DE GRAO DE BICO COM TOMATE 40G": 0.0938,
     "MOLHO DE CARNE E BROCOLIS G/NOT 120G": 3.5355,
     "SALADA DE GRAO DE BICO 30G": 0.0804,
-    "SOPA BAT CAR CEN MAC G/NOT 300G": 3.0641,
+    "SOPA BAT CAR CEN MAC G/NOT 300G": 3.0643,
     "HAMBURGUER BOVINO ASSADO 42G": 0.71
   },
   "COMP_CUSTOS": [
@@ -455,35 +456,35 @@
     },
     {
       "nome": "ABOBORA REFOGADA 35G",
-      "mar": 0.1141,
-      "abr": 0.1141,
-      "mai": 0.1141,
-      "fev": 0.1141,
-      "jun": 0.1141
+      "mar": 0.1142,
+      "abr": 0.1142,
+      "mai": 0.1142,
+      "fev": 0.1142,
+      "jun": 0.1142
     },
     {
       "nome": "ABOBRINHA REFOGADA 35G",
-      "mar": 0.1407,
-      "abr": 0.1407,
-      "mai": 0.1407,
-      "fev": 0.1407,
-      "jun": 0.1407,
-      "jul": 0.1407,
-      "ago": 0.1407
+      "mar": 0.1411,
+      "abr": 0.1411,
+      "mai": 0.1411,
+      "fev": 0.1411,
+      "jun": 0.1411,
+      "jul": 0.1411,
+      "ago": 0.1411
     },
     {
       "nome": "ABOBRINHA REFOGADA COM TOMATE 35G",
-      "mar": 0.1384,
-      "abr": 0.1384,
+      "mar": 0.1386,
+      "abr": 0.1386,
       "mai": null,
-      "jun": 0.1384
+      "jun": 0.1386
     },
     {
       "nome": "ACELGA REFOGADA 45G",
-      "mar": 0.1418,
+      "mar": 0.1421,
       "abr": null,
       "mai": null,
-      "jun": 0.1418
+      "jun": 0.1421
     },
     {
       "nome": "AIPIM COM MOLHO 60G",
@@ -502,11 +503,11 @@
     },
     {
       "nome": "AIPIM SAUTE 85G",
-      "mar": 0.4237,
-      "abr": 0.4237,
-      "mai": 0.4237,
-      "fev": 0.4237,
-      "jun": 0.4237
+      "mar": 0.424,
+      "abr": 0.424,
+      "mai": 0.424,
+      "fev": 0.424,
+      "jun": 0.424
     },
     {
       "nome": "ALFACE CRESPA FOLHA 10G",
@@ -549,13 +550,13 @@
     },
     {
       "nome": "ARROZ 100G",
-      "mar": 0.1098,
-      "abr": 0.1098,
-      "mai": 0.1098,
-      "fev": 0.1098,
-      "jun": 0.1098,
-      "jul": 0.1098,
-      "ago": 0.1098
+      "mar": 0.11,
+      "abr": 0.11,
+      "mai": 0.11,
+      "fev": 0.11,
+      "jun": 0.11,
+      "jul": 0.11,
+      "ago": 0.11
     },
     {
       "nome": "ARROZ 110G",
@@ -571,35 +572,35 @@
       "nome": "ARROZ COM BROCOLIS 100G",
       "mar": null,
       "abr": null,
-      "mai": 0.1224
+      "mai": 0.1226
     },
     {
       "nome": "ARROZ G/NOT 180G",
-      "mar": 0.1935,
-      "abr": 0.1935,
-      "mai": 0.1935,
-      "fev": 0.1935,
-      "jun": 0.1935,
-      "jul": 0.1935,
-      "ago": 0.1935
+      "mar": 0.1938,
+      "abr": 0.1938,
+      "mai": 0.1938,
+      "fev": 0.1938,
+      "jun": 0.1938,
+      "jul": 0.1938,
+      "ago": 0.1938
     },
     {
       "nome": "ARROZ INTEGRAL 100G",
-      "mar": 0.1141,
-      "abr": 0.1141,
-      "mai": 0.1141,
-      "fev": 0.1141,
-      "jun": 0.1141,
-      "ago": 0.1141
+      "mar": 0.1142,
+      "abr": 0.1142,
+      "mai": 0.1142,
+      "fev": 0.1142,
+      "jun": 0.1142,
+      "ago": 0.1142
     },
     {
       "nome": "ARROZ INTEGRAL 80G",
-      "mar": 0.1333,
-      "abr": 0.1333,
-      "mai": 0.1333,
-      "fev": 0.1333,
-      "jun": 0.1333,
-      "jul": 0.1333
+      "mar": 0.1339,
+      "abr": 0.1339,
+      "mai": 0.1339,
+      "fev": 0.1339,
+      "jun": 0.1339,
+      "jul": 0.1339
     },
     {
       "nome": "BANANA 130G",
@@ -629,32 +630,32 @@
     },
     {
       "nome": "BATATA ASS COM AZEI OREG E TOM 70G",
-      "mar": 0.2117,
+      "mar": 0.2118,
       "abr": null,
-      "mai": 0.2117,
-      "jun": 0.2117,
-      "jul": 0.2117
+      "mai": 0.2118,
+      "jun": 0.2118,
+      "jul": 0.2118
     },
     {
       "nome": "BATATA ASSADA C/AZEITE E OREGANO 50G",
-      "mar": 0.2117,
-      "abr": 0.2117,
-      "mai": 0.2117,
-      "fev": 0.2117,
-      "jun": 0.2117,
-      "jul": 0.2117,
-      "ago": 0.2117
+      "mar": 0.2118,
+      "abr": 0.2118,
+      "mai": 0.2118,
+      "fev": 0.2118,
+      "jun": 0.2118,
+      "jul": 0.2118,
+      "ago": 0.2118
     },
     {
       "nome": "BATATA ASSADA COM ALECRIM 50G",
-      "mar": 0.1955,
-      "abr": 0.1955,
-      "mai": 0.1955,
-      "jun": 0.1955
+      "mar": 0.1958,
+      "abr": 0.1958,
+      "mai": 0.1958,
+      "jun": 0.1958
     },
     {
       "nome": "BATATA ASSADA COM AZEITE E OREGANO 70G",
-      "mar": 0.2117,
+      "mar": 0.2118,
       "abr": null,
       "mai": null
     },
@@ -668,17 +669,17 @@
     },
     {
       "nome": "BATATA CENOURA E CHUCHU REFOGADOS 40G",
-      "mar": 0.202,
-      "abr": 0.202,
-      "mai": 0.202,
-      "fev": 0.202,
-      "jun": 0.202
+      "mar": 0.2022,
+      "abr": 0.2022,
+      "mai": 0.2022,
+      "fev": 0.2022,
+      "jun": 0.2022
     },
     {
       "nome": "BATATA COZIDA 50G",
       "mar": null,
-      "abr": 0.2028,
-      "mai": 0.2028
+      "abr": 0.2031,
+      "mai": 0.2031
     },
     {
       "nome": "BATATA DOCE ASSADA 40G",
@@ -692,7 +693,7 @@
     {
       "nome": "BATATA DOCE ASSADA 50G",
       "mar": null,
-      "abr": 0.1943,
+      "abr": 0.1946,
       "mai": null
     },
     {
@@ -724,12 +725,12 @@
     },
     {
       "nome": "BATATA REFOGADA 50G",
-      "mar": 0.208,
-      "abr": 0.208,
-      "mai": 0.208,
-      "fev": 0.208,
-      "jun": 0.208,
-      "jul": 0.208
+      "mar": 0.2082,
+      "abr": 0.2082,
+      "mai": 0.2082,
+      "fev": 0.2082,
+      "jun": 0.2082,
+      "jul": 0.2082
     },
     {
       "nome": "BATATA REFOGADA G/NOT 180G",
@@ -748,16 +749,16 @@
     },
     {
       "nome": "BATATA SALSA REFOGADA 40G",
-      "mar": 0.3622,
-      "abr": 0.3622,
-      "mai": 0.3622,
-      "jun": 0.3622
+      "mar": 0.3624,
+      "abr": 0.3624,
+      "mai": 0.3624,
+      "jun": 0.3624
     },
     {
       "nome": "BATATA SALSA REFOGADA 55G",
       "mar": null,
       "abr": null,
-      "mai": 0.3622
+      "mai": 0.3624
     },
     {
       "nome": "BATATA SALSA SAUTE 40G",
@@ -770,38 +771,38 @@
     },
     {
       "nome": "BATATA SAUTE 55G",
-      "mar": 0.2065,
-      "abr": 0.2065,
-      "mai": 0.2065,
-      "fev": 0.2065,
-      "jun": 0.2065,
-      "jul": 0.2065
+      "mar": 0.2069,
+      "abr": 0.2069,
+      "mai": 0.2069,
+      "fev": 0.2069,
+      "jun": 0.2069,
+      "jul": 0.2069
     },
     {
       "nome": "BETERRABA COZIDA 20 GR",
-      "mar": 0.1492,
+      "mar": 0.1493,
       "abr": null,
-      "mai": 0.1492
+      "mai": 0.1493
     },
     {
       "nome": "BETERRABA COZIDA 30 GR",
-      "mar": 0.1492,
+      "mar": 0.1493,
       "abr": null,
-      "mai": 0.1492
+      "mai": 0.1493
     },
     {
       "nome": "BETERRABA COZIDA 50G",
       "mar": null,
-      "abr": 0.1492,
-      "mai": 0.1492,
-      "jun": 0.1492,
-      "jul": 0.1492
+      "abr": 0.1493,
+      "mai": 0.1493,
+      "jun": 0.1493,
+      "jul": 0.1493
     },
     {
       "nome": "BETERRABA COZIDA 70G",
       "mar": null,
       "abr": null,
-      "mai": 0.1492
+      "mai": 0.1493
     },
     {
       "nome": "BIFE A MILANESA 100G",
@@ -814,18 +815,18 @@
     },
     {
       "nome": "BIFE ACEBOLADO 100G",
-      "mar": 4.6611,
-      "abr": 4.6611,
-      "mai": 4.6611,
-      "jun": 4.6611
+      "mar": 4.6613,
+      "abr": 4.6613,
+      "mai": 4.6613,
+      "jun": 4.6613
     },
     {
       "nome": "BIFE COM MOLHO 100G",
-      "mar": 5.568,
-      "abr": 5.568,
-      "mai": 5.568,
-      "jun": 5.568,
-      "jul": 5.568
+      "mar": 5.5682,
+      "abr": 5.5682,
+      "mai": 5.5682,
+      "jun": 5.5682,
+      "jul": 5.5682
     },
     {
       "nome": "BIFE COM MOLHO DE ERVILHAS 100G",
@@ -835,12 +836,12 @@
     },
     {
       "nome": "BIFE GRELHADO 100G",
-      "mar": 3.1309,
-      "abr": 3.1309,
-      "mai": 3.1309,
-      "fev": 3.1309,
-      "jun": 3.1309,
-      "jul": 3.1309
+      "mar": 3.1314,
+      "abr": 3.1314,
+      "mai": 3.1314,
+      "fev": 3.1314,
+      "jun": 3.1314,
+      "jul": 3.1314
     },
     {
       "nome": "BISC.ROSQ. LEITE (09 UN)CONS 3 DIAS 50G",
@@ -1115,16 +1116,16 @@
     },
     {
       "nome": "BROCOLIS REFOGADO 50G",
-      "mar": 0.4616,
-      "abr": 0.4616,
-      "mai": 0.4616,
-      "fev": 0.4616,
-      "jun": 0.4616
+      "mar": 0.4619,
+      "abr": 0.4619,
+      "mai": 0.4619,
+      "fev": 0.4619,
+      "jun": 0.4619
     },
     {
       "nome": "BROCOLIS REFOGADO COM CENOURA 80G",
-      "mar": 0.5915,
-      "abr": 0.5915,
+      "mar": 0.5919,
+      "abr": 0.5919,
       "mai": null
     },
     {
@@ -1206,57 +1207,57 @@
     },
     {
       "nome": "CARNE MOIDA PARA PAO 60G",
-      "mar": 2.0809,
-      "abr": 2.0809,
-      "mai": 2.0809,
-      "fev": 2.0809,
-      "jun": 2.0809,
-      "jul": 2.0809
+      "mar": 2.081,
+      "abr": 2.081,
+      "mai": 2.081,
+      "fev": 2.081,
+      "jun": 2.081,
+      "jul": 2.081
     },
     {
       "nome": "CARNE MOIDA PARA PAO 75G",
       "mar": null,
       "abr": null,
-      "mai": 2.0809
+      "mai": 2.081
     },
     {
       "nome": "CARNE MOIDA REFOGADA 100G",
-      "mar": 3.7604,
+      "mar": 3.7605,
       "abr": null,
       "mai": null
     },
     {
       "nome": "CARNE MOIDA REFOGADA 60G",
-      "mar": 1.2401,
-      "abr": 1.2401,
-      "mai": 1.2401,
-      "fev": 1.2401,
-      "jun": 1.2401,
-      "jul": 1.2401,
-      "ago": 1.2401
+      "mar": 1.2406,
+      "abr": 1.2406,
+      "mai": 1.2406,
+      "fev": 1.2406,
+      "jun": 1.2406,
+      "jul": 1.2406,
+      "ago": 1.2406
     },
     {
       "nome": "CARNE MOIDA REFOGADA 80 GR",
-      "mar": 1.2401,
-      "abr": 1.2401,
-      "mai": 1.2401,
-      "fev": 1.2401,
-      "jun": 1.2401,
-      "jul": 1.2401
+      "mar": 1.2406,
+      "abr": 1.2406,
+      "mai": 1.2406,
+      "fev": 1.2406,
+      "jun": 1.2406,
+      "jul": 1.2406
     },
     {
       "nome": "CARNE MOIDA REFOGADA COM TOMATE 60G",
-      "mar": 1.9303,
-      "abr": 1.9303,
-      "mai": 1.9303,
-      "fev": 1.9303,
-      "jun": 1.9303,
-      "jul": 1.9303
+      "mar": 1.9304,
+      "abr": 1.9304,
+      "mai": 1.9304,
+      "fev": 1.9304,
+      "jun": 1.9304,
+      "jul": 1.9304
     },
     {
       "nome": "CARNE PICADINHA COM AIPIM 100G",
       "mar": null,
-      "abr": 2.1769,
+      "abr": 2.1773,
       "mai": null
     },
     {
@@ -1270,26 +1271,26 @@
       "nome": "CENOURA E REPOLHO REFOGADOS 60G",
       "mar": null,
       "abr": null,
-      "mai": 0.2464
+      "mai": 0.2465
     },
     {
       "nome": "CENOURA REFOGADA 30G",
-      "mar": 0.2126,
-      "abr": 0.2126,
-      "mai": 0.2126,
-      "fev": 0.2126,
-      "jun": 0.2126,
-      "jul": 0.2126,
-      "ago": 0.2126
+      "mar": 0.2127,
+      "abr": 0.2127,
+      "mai": 0.2127,
+      "fev": 0.2127,
+      "jun": 0.2127,
+      "jul": 0.2127,
+      "ago": 0.2127
     },
     {
       "nome": "CENOURA REFOGADA 40G",
       "mar": null,
       "abr": null,
-      "mai": 0.2126,
-      "jun": 0.2126,
-      "jul": 0.2126,
-      "ago": 0.2126
+      "mai": 0.2127,
+      "jun": 0.2127,
+      "jul": 0.2127,
+      "ago": 0.2127
     },
     {
       "nome": "CHA DE CAMOMILA 190ML",
@@ -1368,14 +1369,14 @@
     },
     {
       "nome": "CHUCHU REFOGADO 40G",
-      "mar": 0.2111,
-      "abr": 0.2111,
+      "mar": 0.2113,
+      "abr": 0.2113,
       "mai": null,
-      "jun": 0.2111
+      "jun": 0.2113
     },
     {
       "nome": "CHUCHU REFOGADO 50G",
-      "mar": 0.2111,
+      "mar": 0.2113,
       "abr": null,
       "mai": null
     },
@@ -1433,59 +1434,59 @@
     },
     {
       "nome": "FARINHA DE MANDIOCA TORRADA 35G",
-      "mar": 0.196,
-      "abr": 0.196,
-      "mai": 0.196,
-      "fev": 0.196,
-      "jun": 0.196,
-      "jul": 0.196
+      "mar": 0.1984,
+      "abr": 0.1984,
+      "mai": 0.1984,
+      "fev": 0.1984,
+      "jun": 0.1984,
+      "jul": 0.1984
     },
     {
       "nome": "FAROFA DE CENOURA 45G",
-      "mar": 0.2156,
-      "abr": 0.2156,
-      "mai": 0.2156,
-      "fev": 0.2156,
-      "jun": 0.2156,
-      "jul": 0.2156
+      "mar": 0.2159,
+      "abr": 0.2159,
+      "mai": 0.2159,
+      "fev": 0.2159,
+      "jun": 0.2159,
+      "jul": 0.2159
     },
     {
       "nome": "FAROFA DE COUVE 30G",
-      "mar": 0.1406,
-      "abr": 0.1406,
-      "mai": 0.1406,
-      "fev": 0.1406,
-      "jun": 0.1406,
-      "jul": 0.1406,
-      "ago": 0.1406
+      "mar": 0.141,
+      "abr": 0.141,
+      "mai": 0.141,
+      "fev": 0.141,
+      "jun": 0.141,
+      "jul": 0.141,
+      "ago": 0.141
     },
     {
       "nome": "FAROFA DE ESPINAFRE 30 GR",
-      "mar": 0.1489,
-      "abr": 0.1489,
-      "mai": 0.1489,
-      "fev": 0.1489,
-      "jun": 0.1489,
-      "jul": 0.1489,
-      "ago": 0.1489
+      "mar": 0.1492,
+      "abr": 0.1492,
+      "mai": 0.1492,
+      "fev": 0.1492,
+      "jun": 0.1492,
+      "jul": 0.1492,
+      "ago": 0.1492
     },
     {
       "nome": "FAROFA DE ESPINAFRE 30G",
-      "mar": 0.1489,
-      "abr": 0.1489,
-      "mai": 0.1489,
-      "fev": 0.1489,
-      "jun": 0.1489,
-      "jul": 0.1489,
-      "ago": 0.1489
+      "mar": 0.1492,
+      "abr": 0.1492,
+      "mai": 0.1492,
+      "fev": 0.1492,
+      "jun": 0.1492,
+      "jul": 0.1492,
+      "ago": 0.1492
     },
     {
       "nome": "FAROFA DE REPOLHO 30G",
-      "mar": 0.0881,
-      "abr": 0.0881,
-      "mai": 0.0881,
-      "fev": 0.0881,
-      "jul": 0.0881
+      "mar": 0.0883,
+      "abr": 0.0883,
+      "mai": 0.0883,
+      "fev": 0.0883,
+      "jul": 0.0883
     },
     {
       "nome": "FEIJAO CARIOCA 90G",
@@ -1546,8 +1547,8 @@
     },
     {
       "nome": "FRANGO COM CEN E PIMENTAO 150G",
-      "mar": 1.4533,
-      "abr": 1.4533,
+      "mar": 1.4534,
+      "abr": 1.4534,
       "mai": null
     },
     {
@@ -1593,21 +1594,21 @@
     },
     {
       "nome": "FRICASSE DE FRANGO 110G",
-      "mar": 1.3224,
-      "abr": 1.3224,
+      "mar": 1.3225,
+      "abr": 1.3225,
       "mai": null,
-      "jun": 1.3224,
-      "ago": 1.3224
+      "jun": 1.3225,
+      "ago": 1.3225
     },
     {
       "nome": "FRICASSE DE FRANGO 90G",
-      "mar": 1.3224,
-      "abr": 1.3224,
-      "mai": 1.3224,
-      "fev": 1.3224,
-      "jun": 1.3224,
-      "jul": 1.3224,
-      "ago": 1.3224
+      "mar": 1.3225,
+      "abr": 1.3225,
+      "mai": 1.3225,
+      "fev": 1.3225,
+      "jun": 1.3225,
+      "jul": 1.3225,
+      "ago": 1.3225
     },
     {
       "nome": "GOIABA 80G",
@@ -1630,13 +1631,13 @@
     },
     {
       "nome": "HAMBURGUER DE FRANGO ASSADO 42G",
-      "mar": 0.7488,
+      "mar": 0.7492,
       "abr": null,
-      "mai": 0.7488,
-      "fev": 0.7488,
-      "jun": 0.7488,
-      "jul": 0.7488,
-      "ago": 0.7488
+      "mai": 0.7492,
+      "fev": 0.7492,
+      "jun": 0.7492,
+      "jul": 0.7492,
+      "ago": 0.7492
     },
     {
       "nome": "IOGURTE DE COCO 180ML",
@@ -1659,29 +1660,29 @@
     },
     {
       "nome": "ISCAS DE CARNE AO SUGO 100G",
-      "mar": 3.7789,
+      "mar": 3.7791,
       "abr": null,
-      "mai": 3.7789,
-      "fev": 3.7789,
-      "jul": 3.7789
+      "mai": 3.7791,
+      "fev": 3.7791,
+      "jul": 3.7791
     },
     {
       "nome": "ISCAS DE CARNE AO SUGO 50G",
-      "mar": 1.6815,
-      "abr": 1.6815,
-      "mai": 1.6815,
-      "fev": 1.6815,
-      "jun": 1.6815,
-      "jul": 1.6815
+      "mar": 1.6816,
+      "abr": 1.6816,
+      "mai": 1.6816,
+      "fev": 1.6816,
+      "jun": 1.6816,
+      "jul": 1.6816
     },
     {
       "nome": "ISCAS DE CARNE AO SUGO 80G",
-      "mar": 3.7789,
-      "abr": 3.7789,
-      "mai": 3.7789,
-      "fev": 3.7789,
-      "jun": 3.7789,
-      "jul": 3.7789
+      "mar": 3.7791,
+      "abr": 3.7791,
+      "mai": 3.7791,
+      "fev": 3.7791,
+      "jun": 3.7791,
+      "jul": 3.7791
     },
     {
       "nome": "ISCAS DE CARNE COM ABOBORA 60G",
@@ -1756,30 +1757,30 @@
     },
     {
       "nome": "ISCAS DE CARNE REFOGADAS G/NOT 70G",
-      "mar": 2.3569,
-      "abr": 2.3569,
-      "mai": 2.3569,
-      "fev": 2.3569,
-      "jun": 2.3569,
-      "jul": 2.3569
+      "mar": 2.357,
+      "abr": 2.357,
+      "mai": 2.357,
+      "fev": 2.357,
+      "jun": 2.357,
+      "jul": 2.357
     },
     {
       "nome": "ISCAS DE FRANGO AO SUGO 110G",
       "mar": null,
-      "abr": 1.4235,
+      "abr": 1.4236,
       "mai": null,
-      "fev": 1.4235,
-      "jun": 1.4235
+      "fev": 1.4236,
+      "jun": 1.4236
     },
     {
       "nome": "ISCAS DE FRANGO AO SUGO 90G",
-      "mar": 1.4235,
-      "abr": 1.4235,
-      "mai": 1.4235,
-      "fev": 1.4235,
-      "jun": 1.4235,
-      "jul": 1.4235,
-      "ago": 1.4235
+      "mar": 1.4236,
+      "abr": 1.4236,
+      "mai": 1.4236,
+      "fev": 1.4236,
+      "jun": 1.4236,
+      "jul": 1.4236,
+      "ago": 1.4236
     },
     {
       "nome": "ISCAS DE FRANGO E CENOURA 60G",
@@ -1819,12 +1820,12 @@
     },
     {
       "nome": "ISCAS DE FRANGO REFOGADAS 80G",
-      "mar": 1.0199,
-      "abr": 1.0199,
-      "mai": 1.0199,
-      "fev": 1.0199,
-      "jun": 1.0199,
-      "jul": 1.0199
+      "mar": 1.0201,
+      "abr": 1.0201,
+      "mai": 1.0201,
+      "fev": 1.0201,
+      "jun": 1.0201,
+      "jul": 1.0201
     },
     {
       "nome": "ISCAS DE FRANGO REFOGADAS G/NOT 70G",
@@ -1931,98 +1932,98 @@
     },
     {
       "nome": "MACARRAO PARAFUSO 100G",
-      "mar": 0.2954,
-      "abr": 0.2954,
-      "mai": 0.2954,
-      "fev": 0.2954,
-      "jun": 0.2954,
-      "jul": 0.2954,
-      "ago": 0.2954
+      "mar": 0.2959,
+      "abr": 0.2959,
+      "mai": 0.2959,
+      "fev": 0.2959,
+      "jun": 0.2959,
+      "jul": 0.2959,
+      "ago": 0.2959
     },
     {
       "nome": "MACARRAO PARAFUSO ALHO E OLEO 180G",
-      "mar": 0.2494,
-      "abr": 0.2494,
-      "mai": 0.2494,
-      "fev": 0.2494,
-      "jun": 0.2494,
-      "jul": 0.2494
+      "mar": 0.2495,
+      "abr": 0.2495,
+      "mai": 0.2495,
+      "fev": 0.2495,
+      "jun": 0.2495,
+      "jul": 0.2495
     },
     {
       "nome": "MACARRAO PARAFUSO ALHO E OLEO 80G",
-      "mar": 0.2494,
-      "abr": 0.2494,
-      "mai": 0.2494,
-      "fev": 0.2494,
-      "jun": 0.2494,
-      "jul": 0.2494,
-      "ago": 0.2494
+      "mar": 0.2495,
+      "abr": 0.2495,
+      "mai": 0.2495,
+      "fev": 0.2495,
+      "jun": 0.2495,
+      "jul": 0.2495,
+      "ago": 0.2495
     },
     {
       "nome": "MACARRAO PARAFUSO AO SUGO 100G",
-      "mar": 0.3012,
-      "abr": 0.3012,
-      "mai": 0.3012,
-      "fev": 0.3012,
-      "jun": 0.3012,
-      "jul": 0.3012
+      "mar": 0.3017,
+      "abr": 0.3017,
+      "mai": 0.3017,
+      "fev": 0.3017,
+      "jun": 0.3017,
+      "jul": 0.3017
     },
     {
       "nome": "MACARRAO PARAFUSO AO SUGO 80G",
-      "mar": 0.3188,
+      "mar": 0.3192,
       "abr": null,
-      "mai": 0.3188,
-      "jun": 0.3188,
-      "jul": 0.3188
+      "mai": 0.3192,
+      "jun": 0.3192,
+      "jul": 0.3192
     },
     {
       "nome": "MACARRAO PARAFUSO COLORIDO 100G",
-      "mar": 0.4032,
+      "mar": 0.4037,
       "abr": null,
-      "mai": 0.4032,
-      "jun": 0.4032,
-      "jul": 0.4032,
-      "ago": 0.4032
+      "mai": 0.4037,
+      "jun": 0.4037,
+      "jul": 0.4037,
+      "ago": 0.4037
     },
     {
       "nome": "MACARRAO PARAFUSO COLORIDO G/NOT 180G",
       "mar": null,
       "abr": null,
-      "mai": 0.67,
-      "jun": 0.67,
-      "jul": 0.67,
-      "ago": 0.67
+      "mai": 0.6705,
+      "jun": 0.6705,
+      "jul": 0.6705,
+      "ago": 0.6705
     },
     {
       "nome": "MACARRAO PARAFUSO G/NOT 180G",
-      "mar": 0.2964,
-      "abr": 0.2964,
-      "mai": 0.2964,
-      "fev": 0.2964,
-      "jun": 0.2964,
-      "jul": 0.2964
+      "mar": 0.2969,
+      "abr": 0.2969,
+      "mai": 0.2969,
+      "fev": 0.2969,
+      "jun": 0.2969,
+      "jul": 0.2969
     },
     {
       "nome": "MACARRAO PARAFUSO INTEGRAL 100G",
-      "mar": 0.442,
-      "abr": 0.442,
-      "mai": 0.442,
-      "fev": 0.442,
-      "jun": 0.442,
-      "jul": 0.442
+      "mar": 0.9075,
+      "abr": 0.9075,
+      "mai": 0.9075,
+      "fev": 0.9075,
+      "jun": 0.9075,
+      "jul": 0.9075
     },
     {
       "nome": "MACARRAO PARAFUSO INTEGRAL AO SUGO 80GR",
-      "mar": 0.2839,
+      "mar": 0.5054,
       "abr": null,
-      "mai": 0.2839,
-      "jun": 0.2839,
-      "jul": 0.2839
+      "mai": 0.5054,
+      "jun": 0.5054,
+      "jul": 0.5054
     },
     {
       "nome": "MACARRAO PARAFUSO INTEGRAL G/NOT 300G",
       "mar": null,
-      "abr": 0.7936,
+      "abr": 1.63,
       "mai": null
     },
     {
@@ -2173,12 +2174,12 @@
     },
     {
       "nome": "MOLHO DE CARNE E ABOBRINHA 50G",
-      "mar": 1.7461,
-      "abr": 1.7461,
-      "mai": 1.7461,
-      "jun": 1.7461,
-      "jul": 1.7461,
-      "ago": 1.7461
+      "mar": 1.7462,
+      "abr": 1.7462,
+      "mai": 1.7462,
+      "jun": 1.7462,
+      "jul": 1.7462,
+      "ago": 1.7462
     },
     {
       "nome": "MOLHO DE CARNE E ABOBRINHA G/NOT 120G",
@@ -2213,18 +2214,18 @@
     },
     {
       "nome": "MOLHO DE CARNE E CHUCHU 50G",
-      "mar": 1.2978,
+      "mar": 1.2979,
       "abr": null,
-      "mai": 1.2978,
-      "jun": 1.2978
+      "mai": 1.2979,
+      "jun": 1.2979
     },
     {
       "nome": "MOLHO DE CARNE E CHUCHU G/NOT 120 G",
-      "mar": 3.1078,
+      "mar": 3.1079,
       "abr": null,
-      "mai": 3.1078,
-      "fev": 3.1078,
-      "jun": 3.1078
+      "mai": 3.1079,
+      "fev": 3.1079,
+      "jun": 3.1079
     },
     {
       "nome": "MOLHO DE FRANGO 50G",
@@ -2288,9 +2289,9 @@
     {
       "nome": "MOLHO DE FRANGO E CENOURA G/NOT 120G",
       "mar": null,
-      "abr": 1.6703,
-      "mai": 1.6703,
-      "ago": 1.6703
+      "abr": 1.6704,
+      "mai": 1.6704,
+      "ago": 1.6704
     },
     {
       "nome": "MOLHO DE FRANGO E CHUC G/NOT 120G",
@@ -2531,32 +2532,32 @@
     },
     {
       "nome": "PEITO DE FRANGO GRELHADO (DIETA) 80G",
-      "mar": 1.4275,
-      "abr": 1.4275,
-      "mai": 1.4275,
-      "fev": 1.4275,
-      "jun": 1.4275,
-      "jul": 1.4275
+      "mar": 1.4277,
+      "abr": 1.4277,
+      "mai": 1.4277,
+      "fev": 1.4277,
+      "jun": 1.4277,
+      "jul": 1.4277
     },
     {
       "nome": "PEITO DE FRANGO GRELHADO 60G",
-      "mar": 1.4275,
-      "abr": 1.4275,
-      "mai": 1.4275,
-      "fev": 1.4275,
-      "jun": 1.4275,
-      "jul": 1.4275,
-      "ago": 1.4275
+      "mar": 1.4277,
+      "abr": 1.4277,
+      "mai": 1.4277,
+      "fev": 1.4277,
+      "jun": 1.4277,
+      "jul": 1.4277,
+      "ago": 1.4277
     },
     {
       "nome": "PEITO DE FRANGO GRELHADO 80G",
-      "mar": 1.4275,
-      "abr": 1.4275,
-      "mai": 1.4275,
-      "fev": 1.4275,
-      "jun": 1.4275,
-      "jul": 1.4275,
-      "ago": 1.4275
+      "mar": 1.4277,
+      "abr": 1.4277,
+      "mai": 1.4277,
+      "fev": 1.4277,
+      "jun": 1.4277,
+      "jul": 1.4277,
+      "ago": 1.4277
     },
     {
       "nome": "PERA 100G",
@@ -2592,13 +2593,13 @@
     },
     {
       "nome": "POLENTA 100G",
-      "mar": 0.0404,
-      "abr": 0.0404,
-      "mai": 0.0404,
-      "fev": 0.0404,
-      "jun": 0.0404,
-      "jul": 0.0404,
-      "ago": 0.0404
+      "mar": 0.0405,
+      "abr": 0.0405,
+      "mai": 0.0405,
+      "fev": 0.0405,
+      "jun": 0.0405,
+      "jul": 0.0405,
+      "ago": 0.0405
     },
     {
       "nome": "POLENTA CREMOSA 60G",
@@ -2619,12 +2620,12 @@
     {
       "nome": "POLENTA G/NOT 180G",
       "mar": null,
-      "abr": 0.0726,
-      "mai": 0.0726,
-      "fev": 0.0726,
-      "jun": 0.0726,
-      "jul": 0.0726,
-      "ago": 0.0726
+      "abr": 0.0728,
+      "mai": 0.0728,
+      "fev": 0.0728,
+      "jun": 0.0728,
+      "jul": 0.0728,
+      "ago": 0.0728
     },
     {
       "nome": "PONKAN 120G",
@@ -2677,22 +2678,22 @@
     },
     {
       "nome": "PURE DE BATATA 40G",
-      "mar": 0.4011,
-      "abr": 0.4011,
-      "mai": 0.4011,
-      "fev": 0.4011,
-      "jun": 0.4011,
-      "jul": 0.4011,
-      "ago": 0.4011
+      "mar": 0.4012,
+      "abr": 0.4012,
+      "mai": 0.4012,
+      "fev": 0.4012,
+      "jun": 0.4012,
+      "jul": 0.4012,
+      "ago": 0.4012
     },
     {
       "nome": "PURE DE BATATA 80 G",
-      "mar": 0.4011,
-      "abr": 0.4011,
-      "mai": 0.4011,
-      "fev": 0.4011,
-      "jun": 0.4011,
-      "jul": 0.4011
+      "mar": 0.4012,
+      "abr": 0.4012,
+      "mai": 0.4012,
+      "fev": 0.4012,
+      "jun": 0.4012,
+      "jul": 0.4012
     },
     {
       "nome": "QUEIJO 10G",
@@ -2735,9 +2736,9 @@
       "nome": "QUIRERA 100G",
       "mar": null,
       "abr": null,
-      "mai": 0.0316,
-      "jun": 0.0316,
-      "jul": 0.0316
+      "mai": 0.0317,
+      "jun": 0.0317,
+      "jul": 0.0317
     },
     {
       "nome": "QUIRERA 70G",
@@ -2749,10 +2750,10 @@
     },
     {
       "nome": "QUIRERA G/NOT 180G",
-      "mar": 0.0586,
-      "abr": 0.0586,
-      "mai": 0.0586,
-      "ago": 0.0586
+      "mar": 0.0589,
+      "abr": 0.0589,
+      "mai": 0.0589,
+      "ago": 0.0589
     },
     {
       "nome": "REQUEIJAO CREMOSO 15G",
@@ -2767,7 +2768,7 @@
     {
       "nome": "RISOTO DE FRANGO E CENOURA G/NOT 300GR",
       "mar": null,
-      "abr": 1.8695,
+      "abr": 1.8731,
       "mai": null
     },
     {
@@ -2907,12 +2908,12 @@
     },
     {
       "nome": "SALADA DE BROCOLIS COM CENOURA 55G",
-      "mar": 0.4504,
-      "abr": 0.4504,
-      "mai": 0.4504,
-      "fev": 0.4504,
-      "jun": 0.4504,
-      "jul": 0.4504
+      "mar": 0.4514,
+      "abr": 0.4514,
+      "mai": 0.4514,
+      "fev": 0.4514,
+      "jun": 0.4514,
+      "jul": 0.4514
     },
     {
       "nome": "SALADA DE BROCOLIS COM TOMATE 55G",
@@ -3137,9 +3138,9 @@
     {
       "nome": "SOPA DE ARROZ C/FRANG,BATATA,CENOU 150GR",
       "mar": null,
-      "abr": 0.6116,
-      "mai": 0.6116,
-      "jun": 0.6116
+      "abr": 0.6117,
+      "mai": 0.6117,
+      "jun": 0.6117
     },
     {
       "nome": "SOPA DE BATA CARNE CENOURA MACAR 150G",
@@ -3173,20 +3174,20 @@
     },
     {
       "nome": "STROGONOFF DE CARNE 110G",
-      "mar": 3.6807,
-      "abr": 3.6807,
-      "mai": 3.6807,
-      "fev": 3.6807
+      "mar": 3.6808,
+      "abr": 3.6808,
+      "mai": 3.6808,
+      "fev": 3.6808
     },
     {
       "nome": "STROGONOFF DE CARNE 90G",
-      "mar": 3.6807,
-      "abr": 3.6807,
-      "mai": 3.6807,
-      "fev": 3.6807,
-      "jun": 3.6807,
-      "jul": 3.6807,
-      "ago": 3.6807
+      "mar": 3.6808,
+      "abr": 3.6808,
+      "mai": 3.6808,
+      "fev": 3.6808,
+      "jun": 3.6808,
+      "jul": 3.6808,
+      "ago": 3.6808
     },
     {
       "nome": "SUCO DE LARANJA TETRAPAK 200ML",
@@ -3352,8 +3353,8 @@
     },
     {
       "nome": "VAGEM REFOGADA 40G",
-      "mar": 0.3806,
-      "abr": 0.3806,
+      "mar": 0.3807,
+      "abr": 0.3807,
       "mai": null
     },
     {
@@ -3482,8 +3483,8 @@
     },
     {
       "nome": "SOPA DE ARROZ C/ FRAN/BAT/CEN G/NOT 300G",
-      "jun": 1.2233,
-      "mai": 1.2233
+      "jun": 1.2234,
+      "mai": 1.2234
     },
     {
       "nome": "BISC.POLVILHO(12 UN) PORC CONS EM 3 DIAS",
@@ -3517,12 +3518,12 @@
     },
     {
       "nome": "VAGEM REFOGADA COM BROCOLIS 45G",
-      "jun": 0.3827
+      "jun": 0.3829
     },
     {
       "nome": "BATATA COZIDA 30 GR",
-      "jun": 0.2028,
-      "mai": 0.2028
+      "jun": 0.2031,
+      "mai": 0.2031
     },
     {
       "nome": "SALADA DE REPOLHO 20 GR",
@@ -3538,7 +3539,7 @@
     },
     {
       "nome": "CREME DE MILHO 50G",
-      "mai": 0.1911
+      "mai": 0.192
     },
     {
       "nome": "SOPA DE BAT C/FRA/ABOBR CEN CHU G/N 300G",
@@ -3567,7 +3568,7 @@
     },
     {
       "nome": "CENOURA REFOGADA 50 GR",
-      "mai": 0.2126
+      "mai": 0.2127
     },
     {
       "nome": "BIFE COM ERVILHA MILHO E TOMATE 100G",
@@ -3587,7 +3588,7 @@
     },
     {
       "nome": "SOPA BAT CAR CEN MAC G/NOT 300G",
-      "ago": 3.0641
+      "ago": 3.0643
     },
     {
       "nome": "HAMBURGUER BOVINO ASSADO 42G",
@@ -3758,6 +3759,27 @@
       [],
       [],
       []
+    ],
+    "ALMOÇO A1": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "ALMOÇO A2": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "ALMOÇO A3": [
+      [],
+      [],
+      [],
+      [],
+      []
     ]
   },
   "CARDAPIO_COM": {
@@ -3879,8 +3901,30 @@
       [],
       [],
       []
+    ],
+    "ALMOÇO A1": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "ALMOÇO A2": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "ALMOÇO A3": [
+      [],
+      [],
+      [],
+      [],
+      []
     ]
   },
   "cardapioAtivo": "A",
-  "atualizado": "29/07/2026, 11:52:19"
+  "cardapioAtivoIntegral": "ALMOÇO A1",
+  "atualizado": "30/07/2026, 09:20:05"
 }
