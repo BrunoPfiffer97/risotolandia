@@ -405,6 +405,7 @@
     "SOPA BAT CAR CEN MAC G/NOT 300G": 3.0643,
     "HAMBURGUER BOVINO ASSADO 42G": 0.71
   },
+  "PV_REAL": {},
   "COMP_CUSTOS": [
     {
       "nome": "(I)PURE DE BATATA G/NOT 160 GR",
@@ -3926,5 +3927,5 @@
   },
   "cardapioAtivo": "A",
   "cardapioAtivoIntegral": "ALMOÇO A1",
-  "atualizado": "30/07/2026, 09:20:05"
+  "atualizado": "04/08/2026, 09:07:25"
 }
